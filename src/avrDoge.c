@@ -38,17 +38,14 @@
 // 37 * 1 = 37ms
 #define BUTTON_TIME 40;
 // 37 * 4 = 148ms
-#define DRAW_TIME 150;
+#define DRAW_TIME 60;
 #define STEP_TIME 1
 
 #define SPEED_MULTIPLIER 4
 
 #define DROP_NUMBER 6
 #define DROP_SIZE 10 
-
-#define SCREEN_WIDTH 260
-#define SCREEN_HEIGHT 320
-
+#define PLAYER_SIZE 30
 
 int16_t iob_delta(void);
 volatile int16_t delta;
@@ -75,7 +72,7 @@ uint8_t dropTimer[DROP_NUMBER]; //0 == should be displayed
 char buttonPressed = 'E';
 
 char gameOver = FALSE;
-uint8_t score = 0;
+uint16_t score = 0;
 
 //Only have pause available if in debug mode
 #if DEBUG
@@ -107,17 +104,18 @@ void init_game()
     buttonPressed = 'E';
     score = 0;
     
-    player.top = 0;
-    player.bottom = 50;
-    player.right = 50;
-    player.left = 0;
+    player.top = 1;
+    player.bottom = PLAYER_SIZE;
+    player.right = PLAYER_SIZE;
+    player.left = 1;
 
     //Draw drops
     uint8_t i = DROP_NUMBER;
     while(i) {
         --i;
-        dropX[i] = 20*(i+1);
-        dropY[i] = 300;
+        dropX[i] = (234*(i+1)) % (LCDWIDTH-DROP_SIZE);
+        dropY[i] = LCDHEIGHT-1;
+        dropTimer[i] = i*5;
     }
 
     clear_screen();
@@ -241,7 +239,7 @@ void button_task(void)
 void set_gameOver()
 {
     gameOver = TRUE;
-    display_string("SCORE:");
+    display_string("SCORE: ");
 
     //4 is 3 digits for the number and 1 for \0
     char str[4];
@@ -249,6 +247,7 @@ void set_gameOver()
 
     display_string(str);
     display_string("\n\n\r\r");
+    display_string("GAME OVER!");
 }
 
 void draw_task(void)
@@ -264,7 +263,7 @@ void draw_task(void)
     _delay_ms(3);
     
     if(gameOver) {
-        display_string("GAME OVER  \n");
+        //display_string("GAME OVER  \n");
         LED_ON;
         return;
     }
@@ -286,8 +285,9 @@ void draw_task(void)
 
         if(dropTimer[i] == 0) {
             if(dropY[i] <= 0) {
-                dropY[i] = SCREEN_HEIGHT;
-                dropTimer[i] = i*3;
+                dropY[i] = LCDHEIGHT;
+                dropX[i] = ((dropX[i]+(i*i))*41) % (LCDWIDTH-DROP_SIZE);
+                score++; //inc score for every doged thing
             }
             drop.top = dropY[i]-1;
             drop.bottom = dropY[i] + DROP_SIZE +1;
@@ -298,16 +298,26 @@ void draw_task(void)
             drop.top -= DROP_SIZE;
             drop.bottom -= DROP_SIZE;
             dropY[i] -= DROP_SIZE;
-            fill_rectangle(drop, RED);
+            
+            if(drop.top < player.bottom && (
+                    (drop.right > player.left && drop.right < player.right) || 
+                    (drop.left > player.left && drop.left < player.right)) 
+                    ) {
+                fill_rectangle(drop, YELLOW);
+                set_gameOver();
+                return;
+            } else {
+                fill_rectangle(drop, RED);
+            }
         } else {
             dropTimer[i]--;
         }
     }
 
     drop.top = 0;
-    drop.bottom = SCREEN_HEIGHT;
+    drop.bottom = LCDHEIGHT;
     drop.left = 0;
-    drop.right = SCREEN_WIDTH;
+    drop.right = LCDWIDTH;
     draw_rectangle(drop, YELLOW);
 
     D1_Z
