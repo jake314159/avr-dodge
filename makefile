@@ -45,7 +45,7 @@ size: $(BIN)$(FILE).elf
 	$(SIZE) -C --mcu=$(CHIP_COMPILE) $(BIN)$(FILE).elf
 
 .PHONY: transfer
-transfer: $(BIN)avrSnake.hex
+transfer: $(BIN)$(FILE).hex
 	$(AVRDUDE) -c usbasp -p $(CHIP_FLASH) -U flash:w:$(BIN)$(FILE).hex
 
 .PHONY: clean

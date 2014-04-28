@@ -20,6 +20,7 @@
 */
 
 #include <util/delay.h>
+#include <avr/interrupt.h>
 
 #include "debug.h"
 #include "lcd.h"
@@ -33,17 +34,23 @@
 #define LED_ON PORTB |= _BV(PINB7)
 #define LED_OFF PORTB &= ~_BV(PINB7)
 
+#define ROTOR_TIME 1
 // 37 * 1 = 37ms
-#define BUTTON_TIME 1;
+#define BUTTON_TIME 40;
 // 37 * 4 = 148ms
-#define DRAW_TIME 4;
-#define STEP_TIME 37.0
+#define DRAW_TIME 150;
+#define STEP_TIME 1
+
+#define SPEED_MULTIPLIER 4
+
+
+int16_t iob_delta(void);
+volatile int16_t delta;
 
 // Functions which are only for use within the program
 void pushed(char type);
-void checkSelfCollide(void);
 
-rectangle rect = {10,20,10,20};
+rectangle player = {10,20,10,20};
 
 /*
     'N' North
@@ -53,12 +60,6 @@ rectangle rect = {10,20,10,20};
 */
 char buttonPressed = 'E';
 
-// Circular array which stores the snake
-Point snake[SNAKE_LENGTH_MAX];
-
-Point food = {5,5};
-uint8_t snakeHead = 0;
-uint8_t snakeLength = 1;
 char gameOver = FALSE;
 uint8_t score = 0;
 
@@ -81,27 +82,78 @@ void init_LED() {
 
 // Set the snake in the init position
 // and clear the screen
-void init_snake()
+void init_game()
 {
     DDRC    = ddrc;  // Restore display configuration of Port C
     PORTC   = portc;
     _delay_ms(3);
 
-    uint8_t i;
-    for(i=0; i<3; i++) {
-        snake[i].x = i+3;
-        snake[i].y = 3;
-    }
-    snakeLength = 3;
-    snakeHead = 2;
     gameOver = FALSE;
 
     buttonPressed = 'E';
-    food.x = 5;
-    food.y = 5;
     score = 0;
+    
+    player.top = 0;
+    player.bottom = 50;
+    player.right = 50;
+    player.left = 0;
 
     clear_screen();
+}
+
+void rotor_task(void)
+{
+    static int8_t last;
+    uint8_t ddrc, portc;
+    uint8_t ddrd, portd;
+    int8_t new, diff;
+    uint8_t wheel;
+
+    /* Save state of Port C & D */
+    ddrc   = DDRC; portc  = PORTC;
+    ddrd   = DDRD; portd  = PORTD;
+
+
+    CZ C2_H C3_H C2_R C3_R
+    D0_Z D1_L
+    _delay_us(3);
+    wheel = PINC;
+
+
+    /*
+    Scan rotary encoder
+    ===================
+    This is adapted from Peter Dannegger's code available at:
+    http://www.mikrocontroller.net/attachment/40597/ENCODE.C
+    */
+
+    new = 0;
+    if( wheel  & _BV(PC3) ) new = 3;
+    if( wheel  & _BV(PC2) ) new ^= 1;			// convert gray to binary
+
+    diff = last - new;			// difference last - new
+    if( diff & 1 ){			// bit 0 = value (1)
+        last = new;		       	// store new as next last
+        delta += (diff & 2) - 1;	// bit 1 = direction (+/-)
+    }
+
+    /* Restore state of Port C */
+    DDRC    = ddrc; PORTC   = portc;
+    DDRD    = ddrd; PORTD   = portd;
+
+    PORTA &= ~_BV(PA0);  /* ISR Timing End */
+    sei();
+}
+// read two step encoder
+int16_t iob_delta(){
+    int16_t val;
+
+    cli();
+    val = delta;
+    delta &= 1;
+    sei();
+
+    return val >> 1;
 }
 
 void pushed(char type) {
@@ -126,13 +178,13 @@ void pushed(char type) {
            #if DEBUG
              if(gameOver) {
                  LED_OFF;
-                 init_snake(); 
+                 init_game(); 
              } else {
                  pause = !pause;
              }
            #else
              LED_OFF;
-             init_snake(); 
+             init_game(); 
            #endif
            break;
     }
@@ -177,69 +229,7 @@ void set_gameOver()
     display_string("\n\n\r\r");
 }
 
-void updateSnake()
-{
-    switch(buttonPressed) {
-        case 'W':
-            if(snake[snakeHead].x == 0) {
-                set_gameOver();
-                break;
-            }
-            snake[(snakeHead+1) % SNAKE_LENGTH_MAX].x = snake[snakeHead].x-1;
-            snake[(snakeHead+1) % SNAKE_LENGTH_MAX].y = snake[snakeHead].y;
-            snakeHead = (snakeHead+1) % SNAKE_LENGTH_MAX;
-            break;
-        case 'E':
-            if(snake[snakeHead].x > GRID_SIZE_X-2) {
-                set_gameOver();
-                break;
-            }
-            snake[(snakeHead+1) % SNAKE_LENGTH_MAX].x = snake[snakeHead].x+1;
-            snake[(snakeHead+1) % SNAKE_LENGTH_MAX].y = snake[snakeHead].y;
-            snakeHead = (snakeHead+1) % SNAKE_LENGTH_MAX;
-            break;
-        case 'S':
-            if(snake[snakeHead].y ==0) {
-                set_gameOver();
-                break;
-            }
-            snake[(snakeHead+1) % SNAKE_LENGTH_MAX].x = snake[snakeHead].x;
-            snake[(snakeHead+1) % SNAKE_LENGTH_MAX].y = snake[snakeHead].y-1;
-            snakeHead = (snakeHead+1) % SNAKE_LENGTH_MAX;
-            break;
-        case 'N':
-            if(snake[snakeHead].y > GRID_SIZE_Y-2) {
-                set_gameOver();
-                break;
-            }
-            snake[(snakeHead+1) % SNAKE_LENGTH_MAX].x = snake[snakeHead].x;
-            snake[(snakeHead+1) % SNAKE_LENGTH_MAX].y = snake[snakeHead].y+1;
-            snakeHead = (snakeHead+1) % SNAKE_LENGTH_MAX;
-            break;
-    }
-}
 
-void checkSelfCollide()
-{
-    uint8_t h = snakeHead-1;
-    if(h<0) {
-        h = SNAKE_LENGTH_MAX-1;
-    }
-
-    uint8_t i = snakeLength-1;
-    for(; i; --i) {
-        if(snake[h].x == snake[snakeHead].x && snake[h].y == snake[snakeHead].y) {
-            set_gameOver();
-            return;
-        }
-
-        if(h>0) {
-            h--;
-        } else {
-            h = SNAKE_LENGTH_MAX-1;
-        }
-    }
-}
 
 void draw_task(void)
 {
@@ -252,78 +242,29 @@ void draw_task(void)
     /* We still need a delay here for the pins to update BUT the other functions */
     /* Make it up so we don't need the extra delay                               */
     //_delay_ms(3);
-    if(!gameOver) {
-        updateSnake();
-        checkSelfCollide();
-    }
-
+    
     if(gameOver) {
         display_string("GAME OVER  \n");
         LED_ON;
         return;
     }
 
-    uint8_t h = snakeHead;
-
-    // Check if we have run into the food and if we haven't
-    // Then draw it
-    if(snake[h].x == food.x && snake[h].y == food.y) {
-        snakeLength++;
-        score++;
-        //Pick a new 'random' place on the grid
-        food.x = (food.y + 43) % (GRID_SIZE_X-1);
-        food.y = (food.x + 71) % (GRID_SIZE_Y-1);
-    } else {
-        rect.top = food.y*BLOCK_SIZE;
-        rect.bottom = (food.y+1)*BLOCK_SIZE;
-        rect.right = (food.x+1)*BLOCK_SIZE;
-        rect.left = food.x*BLOCK_SIZE;
-        fill_rectangle(rect, YELLOW);
-    }
-    
-    // Draw the snake head
-    rect.top = snake[h].y*BLOCK_SIZE;
-    rect.bottom = (snake[h].y+1)*BLOCK_SIZE;
-    rect.right = (snake[h].x+1)*BLOCK_SIZE;
-    rect.left = snake[h].x*BLOCK_SIZE;
-    fill_rectangle(rect, SNAKE_HEAD_COLOR);
-    if(h>0) {
-        h--;
-    } else {
-        h = SNAKE_LENGTH_MAX-1;
-    }
-    //Replace old head with white
-    rect.top = snake[h].y*BLOCK_SIZE;
-    rect.bottom = (snake[h].y+1)*BLOCK_SIZE;
-    rect.right = (snake[h].x+1)*BLOCK_SIZE;
-    rect.left = snake[h].x*BLOCK_SIZE;
-    fill_rectangle(rect, SNAKE_COLOR);
-
-    // An awful way to reduce h by snakeLength with a loop around
-    // On an unsigned int
-    uint8_t i = snakeLength-1; //-1 as head handled before
-    for(; i; --i) {
-        if(h>0) {
-            h--;
-        } else {
-            h = SNAKE_LENGTH_MAX-1;
-        }
-        
-    }
-
-    //Cover old snake
-    rect.top = snake[h].y*BLOCK_SIZE;
-    rect.bottom = (snake[h].y+1)*BLOCK_SIZE;
-    rect.right = (snake[h].x+1)*BLOCK_SIZE;
-    rect.left = snake[h].x*BLOCK_SIZE;
-    fill_rectangle(rect, BLACK);
-
     //Draw the outside border
-    rect.top = 0;
-    rect.bottom = (GRID_SIZE_Y)*BLOCK_SIZE;
-    rect.right = (GRID_SIZE_X)*BLOCK_SIZE;
-    rect.left = 0;
-    draw_rectangle(rect, BLUE);
+    /*rect.top = 0;
+    rect.bottom = 100;
+    rect.right = 100;
+    rect.left = 0;*/
+    
+    
+    uint16_t val = iob_delta();
+
+    if(val != 0) {
+        val *= SPEED_MULTIPLIER;
+        fill_rectangle(player, BLACK);
+        player.right += val;
+        player.left += val;
+        fill_rectangle(player, BLUE);
+    }
 
     D1_Z
     D0_H
@@ -343,9 +284,16 @@ int main(void)
     portc  = PORTC;  /* Store display configuration of Port C */
     ddrc   = DDRC;
     
-    init_snake();
+    init_game();
 
     task t;
+
+    // Make the rotor task
+    t.period = ROTOR_TIME;
+    t.elapsedTime = ROTOR_TIME;
+    t.running = 0;
+    t.TickFct = &rotor_task;
+    addTask(t);
 
     // Make the button read task
     t.period = BUTTON_TIME;
