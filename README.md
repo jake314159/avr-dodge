@@ -1,4 +1,4 @@
-AVR-snake
+AVR-doge
 ===============
 
 Compiling and installing 
@@ -19,13 +19,6 @@ make install
 ```
 
 Compiling and installing has been tested on *Ubuntu 14.04* with the *atmega644p* chip. Other platforms or chips may require some changes to the make file or source code.
-
-Example images
--------------------
-
-![Example image 1](images/1_small.jpg)
-
-![Example image 2](images/2_small.jpg)
 
 Original setup
 -------------------
