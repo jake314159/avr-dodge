@@ -43,6 +43,12 @@
 
 #define SPEED_MULTIPLIER 4
 
+#define DROP_NUMBER 6
+#define DROP_SIZE 10 
+
+#define SCREEN_WIDTH 260
+#define SCREEN_HEIGHT 320
+
 
 int16_t iob_delta(void);
 volatile int16_t delta;
@@ -51,6 +57,14 @@ volatile int16_t delta;
 void pushed(char type);
 
 rectangle player = {10,20,10,20};
+
+rectangle drop = {10,20,10,20}; //One used for all drops to save memory
+
+
+int16_t dropX[DROP_NUMBER];
+int16_t dropY[DROP_NUMBER];
+uint8_t dropTimer[DROP_NUMBER]; //0 == should be displayed
+
 
 /*
     'N' North
@@ -97,6 +111,14 @@ void init_game()
     player.bottom = 50;
     player.right = 50;
     player.left = 0;
+
+    //Draw drops
+    uint8_t i = DROP_NUMBER;
+    while(i) {
+        --i;
+        dropX[i] = 20*(i+1);
+        dropY[i] = 300;
+    }
 
     clear_screen();
 }
@@ -229,8 +251,6 @@ void set_gameOver()
     display_string("\n\n\r\r");
 }
 
-
-
 void draw_task(void)
 {
     #if DEBUG
@@ -241,7 +261,7 @@ void draw_task(void)
     PORTC   = portc;
     /* We still need a delay here for the pins to update BUT the other functions */
     /* Make it up so we don't need the extra delay                               */
-    //_delay_ms(3);
+    _delay_ms(3);
     
     if(gameOver) {
         display_string("GAME OVER  \n");
@@ -249,22 +269,46 @@ void draw_task(void)
         return;
     }
 
-    //Draw the outside border
-    /*rect.top = 0;
-    rect.bottom = 100;
-    rect.right = 100;
-    rect.left = 0;*/
-    
-    
+    //draw the player
     uint16_t val = iob_delta();
-
     if(val != 0) {
         val *= SPEED_MULTIPLIER;
         fill_rectangle(player, BLACK);
-        player.right += val;
-        player.left += val;
+        player.right -= val;
+        player.left -= val;
         fill_rectangle(player, BLUE);
     }
+
+    //Draw drops
+    uint8_t i = DROP_NUMBER;
+    while(i) {
+        --i;
+
+        if(dropTimer[i] == 0) {
+            if(dropY[i] <= 0) {
+                dropY[i] = SCREEN_HEIGHT;
+                dropTimer[i] = i*3;
+            }
+            drop.top = dropY[i]-1;
+            drop.bottom = dropY[i] + DROP_SIZE +1;
+            drop.left = dropX[i]-1;
+            drop.right = dropX[i] + DROP_SIZE +1;
+            
+            fill_rectangle(drop, BLACK);
+            drop.top -= DROP_SIZE;
+            drop.bottom -= DROP_SIZE;
+            dropY[i] -= DROP_SIZE;
+            fill_rectangle(drop, RED);
+        } else {
+            dropTimer[i]--;
+        }
+    }
+
+    drop.top = 0;
+    drop.bottom = SCREEN_HEIGHT;
+    drop.left = 0;
+    drop.right = SCREEN_WIDTH;
+    draw_rectangle(drop, YELLOW);
 
     D1_Z
     D0_H
