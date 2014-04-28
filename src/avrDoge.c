@@ -1,6 +1,6 @@
-/* Skeleton Code for COMP2215 Task 3
+/* 
 
-    EXTRA WORK
+    REGULAR WORK
 
 
         Author: Jacob Causon            
@@ -53,6 +53,7 @@ volatile int16_t delta;
 // Functions which are only for use within the program
 void pushed(char type);
 
+int16_t testVal; //A signed int for use for testing certain things
 rectangle player = {10,20,10,20};
 
 rectangle drop = {10,20,10,20}; //One used for all drops to save memory
@@ -119,6 +120,7 @@ void init_game()
     }
 
     clear_screen();
+    fill_rectangle(player, BLUE);
 }
 
 void rotor_task(void)
@@ -258,8 +260,7 @@ void draw_task(void)
 
     DDRC    = ddrc;  // Restore display configuration of Port C
     PORTC   = portc;
-    /* We still need a delay here for the pins to update BUT the other functions */
-    /* Make it up so we don't need the extra delay                               */
+
     _delay_ms(3);
     
     if(gameOver) {
@@ -273,8 +274,23 @@ void draw_task(void)
     if(val != 0) {
         val *= SPEED_MULTIPLIER;
         fill_rectangle(player, BLACK);
-        player.right -= val;
-        player.left -= val;
+        
+        if(val < PLAYER_SIZE) {
+            player.right -= val;
+            if(player.right < PLAYER_SIZE) {
+                player.right += val;
+            } else {
+                player.left -= val;
+            }
+            
+        } else {
+            player.right -= val;
+            if(player.right > LCDWIDTH) {
+                player.right += val;
+            } else {
+                player.left -= val;
+            }
+        }
         fill_rectangle(player, BLUE);
     }
 
@@ -285,6 +301,7 @@ void draw_task(void)
 
         if(dropTimer[i] == 0) {
             if(dropY[i] <= 0) {
+                dropTimer[i] = dropX[i] % 10;
                 dropY[i] = LCDHEIGHT;
                 dropX[i] = ((dropX[i]+(i*i))*41) % (LCDWIDTH-DROP_SIZE);
                 score++; //inc score for every doged thing
