@@ -116,7 +116,7 @@ void init_game()
     uint8_t i = DROP_NUMBER;
     while(i) {
         --i;
-        dropX[i] = (234*(i+1)) % (LCDWIDTH-DROP_SIZE);
+        dropX[i] = (73*(i+1)) % (LCDWIDTH-DROP_SIZE);
         dropY[i] = 1;
         dropTimer[i] = i*5;
     }
