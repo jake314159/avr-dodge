@@ -63,6 +63,8 @@ int16_t dropX[DROP_NUMBER];
 int16_t dropY[DROP_NUMBER];
 uint8_t dropTimer[DROP_NUMBER]; //0 == should be displayed
 
+//4 is 3 digits for the number and 1 for \0
+char scoreString[4] = {'0', '\0'};
 
 /*
     'N' North
@@ -241,15 +243,7 @@ void button_task(void)
 void set_gameOver()
 {
     gameOver = TRUE;
-    display_string("SCORE: ");
-
-    //4 is 3 digits for the number and 1 for \0
-    char str[4];
-    snprintf(str, 4, "%d", score);
-
-    display_string(str);
-    display_string("\n\n\r\r");
-    display_string("GAME OVER!");
+    display_string_in_place("GAME OVER", 80, 100);
 }
 
 void draw_task(void)
@@ -336,6 +330,10 @@ void draw_task(void)
     drop.left = 0;
     drop.right = LCDWIDTH;
     draw_rectangle(drop, YELLOW);
+
+    //display_char_inPlace('Z', 10, 10);
+    snprintf(scoreString, 4, "%d", score);
+    display_string_in_place(scoreString, 10, 10);
 
     D1_Z
     D0_H

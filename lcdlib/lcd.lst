@@ -1,112 +1,135 @@
-GAS LISTING /tmp/ccPWDwyV.s 			page 1
+GAS LISTING /tmp/ccIzpQRS.s 			page 1
 
 
    1               		.file	"lcd.c"
-   2               	__SREG__ = 0x3f
-   3               	__SP_H__ = 0x3e
-   4               	__SP_L__ = 0x3d
-   5               	__CCP__ = 0x34
-   6               	__tmp_reg__ = 0
-   7               	__zero_reg__ = 1
-   8               		.stabs	"/home/jake/Dropbox/Uni/year2/2215_systemsII/Lab07/1/lcdlib/",100,0,2,.Ltext0
-   9               		.stabs	"lcd.c",100,0,2,.Ltext0
-  10               		.text
-  11               	.Ltext0:
-  12               		.stabs	"gcc2_compiled.",60,0,0,0
-  13               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
-  14               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
-  15               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
-  16               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
-  17               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
-  18               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
-  19               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
-  20               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
-  21               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
-  22               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
-  23               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
-  24               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
-  25               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
-  26               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
-  27               		.stabs	"void:t(0,15)=(0,15)",128,0,0,0
-  28               		.stabs	"ili934x.h",130,0,0,0
-  29               		.stabs	"avrlcd.h",130,0,0,0
-  30               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/io.h",130,0,0,0
-  31               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/sfr_defs.h",130,0,0,0
-  32               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/inttypes.h",130,0,0,0
-  33               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stdint.h",130,0,0,0
-  34               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/stdint.h",130,0,0,0
-  35               		.stabs	"int8_t:t(7,1)=(0,10)",128,0,121,0
-  36               		.stabs	"uint8_t:t(7,2)=(0,11)",128,0,122,0
-  37               		.stabs	"int16_t:t(7,3)=(0,1)",128,0,123,0
-  38               		.stabs	"uint16_t:t(7,4)=(0,4)",128,0,124,0
-  39               		.stabs	"int32_t:t(7,5)=(0,3)",128,0,125,0
-  40               		.stabs	"uint32_t:t(7,6)=(0,5)",128,0,126,0
-  41               		.stabs	"int64_t:t(7,7)=(0,6)",128,0,128,0
-  42               		.stabs	"uint64_t:t(7,8)=(0,7)",128,0,129,0
-  43               		.stabs	"intptr_t:t(7,9)=(7,3)",128,0,142,0
-  44               		.stabs	"uintptr_t:t(7,10)=(7,4)",128,0,147,0
-  45               		.stabs	"int_least8_t:t(7,11)=(7,1)",128,0,159,0
-  46               		.stabs	"uint_least8_t:t(7,12)=(7,2)",128,0,164,0
-  47               		.stabs	"int_least16_t:t(7,13)=(7,3)",128,0,169,0
-  48               		.stabs	"uint_least16_t:t(7,14)=(7,4)",128,0,174,0
-  49               		.stabs	"int_least32_t:t(7,15)=(7,5)",128,0,179,0
-  50               		.stabs	"uint_least32_t:t(7,16)=(7,6)",128,0,184,0
-  51               		.stabs	"int_least64_t:t(7,17)=(7,7)",128,0,192,0
-  52               		.stabs	"uint_least64_t:t(7,18)=(7,8)",128,0,199,0
-  53               		.stabs	"int_fast8_t:t(7,19)=(7,1)",128,0,213,0
-  54               		.stabs	"uint_fast8_t:t(7,20)=(7,2)",128,0,218,0
-  55               		.stabs	"int_fast16_t:t(7,21)=(7,3)",128,0,223,0
-  56               		.stabs	"uint_fast16_t:t(7,22)=(7,4)",128,0,228,0
-  57               		.stabs	"int_fast32_t:t(7,23)=(7,5)",128,0,233,0
-GAS LISTING /tmp/ccPWDwyV.s 			page 2
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.stabs	"/home/jake/git/avr-doge/lcdlib/",100,0,2,.Ltext0
+   8               		.stabs	"lcd.c",100,0,2,.Ltext0
+   9               		.text
+  10               	.Ltext0:
+  11               		.stabs	"gcc2_compiled.",60,0,0,0
+  12               		.stabs	"int:t(0,1)=r(0,1);-32768;32767;",128,0,0,0
+  13               		.stabs	"char:t(0,2)=@s8;r(0,2);0;255;",128,0,0,0
+  14               		.stabs	"long int:t(0,3)=@s32;r(0,3);020000000000;017777777777;",128,0,0,0
+  15               		.stabs	"unsigned int:t(0,4)=r(0,4);0;0177777;",128,0,0,0
+  16               		.stabs	"long unsigned int:t(0,5)=@s32;r(0,5);0;037777777777;",128,0,0,0
+  17               		.stabs	"long long int:t(0,6)=@s64;r(0,6);01000000000000000000000;0777777777777777777777;",128,0,0,
+  18               		.stabs	"long long unsigned int:t(0,7)=@s64;r(0,7);0;01777777777777777777777;",128,0,0,0
+  19               		.stabs	"short int:t(0,8)=r(0,8);-32768;32767;",128,0,0,0
+  20               		.stabs	"short unsigned int:t(0,9)=r(0,9);0;0177777;",128,0,0,0
+  21               		.stabs	"signed char:t(0,10)=@s8;r(0,10);-128;127;",128,0,0,0
+  22               		.stabs	"unsigned char:t(0,11)=@s8;r(0,11);0;255;",128,0,0,0
+  23               		.stabs	"float:t(0,12)=r(0,1);4;0;",128,0,0,0
+  24               		.stabs	"double:t(0,13)=r(0,1);4;0;",128,0,0,0
+  25               		.stabs	"long double:t(0,14)=r(0,1);4;0;",128,0,0,0
+  26               		.stabs	"short _Fract:t(0,15)=r(0,1);1;0;",128,0,0,0
+  27               		.stabs	"_Fract:t(0,16)=r(0,1);2;0;",128,0,0,0
+  28               		.stabs	"long _Fract:t(0,17)=r(0,1);4;0;",128,0,0,0
+  29               		.stabs	"long long _Fract:t(0,18)=r(0,1);8;0;",128,0,0,0
+  30               		.stabs	"unsigned short _Fract:t(0,19)=r(0,1);1;0;",128,0,0,0
+  31               		.stabs	"unsigned _Fract:t(0,20)=r(0,1);2;0;",128,0,0,0
+  32               		.stabs	"unsigned long _Fract:t(0,21)=r(0,1);4;0;",128,0,0,0
+  33               		.stabs	"unsigned long long _Fract:t(0,22)=r(0,1);8;0;",128,0,0,0
+  34               		.stabs	"_Sat short _Fract:t(0,23)=r(0,1);1;0;",128,0,0,0
+  35               		.stabs	"_Sat _Fract:t(0,24)=r(0,1);2;0;",128,0,0,0
+  36               		.stabs	"_Sat long _Fract:t(0,25)=r(0,1);4;0;",128,0,0,0
+  37               		.stabs	"_Sat long long _Fract:t(0,26)=r(0,1);8;0;",128,0,0,0
+  38               		.stabs	"_Sat unsigned short _Fract:t(0,27)=r(0,1);1;0;",128,0,0,0
+  39               		.stabs	"_Sat unsigned _Fract:t(0,28)=r(0,1);2;0;",128,0,0,0
+  40               		.stabs	"_Sat unsigned long _Fract:t(0,29)=r(0,1);4;0;",128,0,0,0
+  41               		.stabs	"_Sat unsigned long long _Fract:t(0,30)=r(0,1);8;0;",128,0,0,0
+  42               		.stabs	"short _Accum:t(0,31)=r(0,1);2;0;",128,0,0,0
+  43               		.stabs	"_Accum:t(0,32)=r(0,1);4;0;",128,0,0,0
+  44               		.stabs	"long _Accum:t(0,33)=r(0,1);8;0;",128,0,0,0
+  45               		.stabs	"long long _Accum:t(0,34)=r(0,1);8;0;",128,0,0,0
+  46               		.stabs	"unsigned short _Accum:t(0,35)=r(0,1);2;0;",128,0,0,0
+  47               		.stabs	"unsigned _Accum:t(0,36)=r(0,1);4;0;",128,0,0,0
+  48               		.stabs	"unsigned long _Accum:t(0,37)=r(0,1);8;0;",128,0,0,0
+  49               		.stabs	"unsigned long long _Accum:t(0,38)=r(0,1);8;0;",128,0,0,0
+  50               		.stabs	"_Sat short _Accum:t(0,39)=r(0,1);2;0;",128,0,0,0
+  51               		.stabs	"_Sat _Accum:t(0,40)=r(0,1);4;0;",128,0,0,0
+  52               		.stabs	"_Sat long _Accum:t(0,41)=r(0,1);8;0;",128,0,0,0
+  53               		.stabs	"_Sat long long _Accum:t(0,42)=r(0,1);8;0;",128,0,0,0
+  54               		.stabs	"_Sat unsigned short _Accum:t(0,43)=r(0,1);2;0;",128,0,0,0
+  55               		.stabs	"_Sat unsigned _Accum:t(0,44)=r(0,1);4;0;",128,0,0,0
+  56               		.stabs	"_Sat unsigned long _Accum:t(0,45)=r(0,1);8;0;",128,0,0,0
+  57               		.stabs	"_Sat unsigned long long _Accum:t(0,46)=r(0,1);8;0;",128,0,0,0
+GAS LISTING /tmp/ccIzpQRS.s 			page 2
 
 
-  58               		.stabs	"uint_fast32_t:t(7,24)=(7,6)",128,0,238,0
-  59               		.stabs	"int_fast64_t:t(7,25)=(7,7)",128,0,246,0
-  60               		.stabs	"uint_fast64_t:t(7,26)=(7,8)",128,0,253,0
-  61               		.stabs	"intmax_t:t(7,27)=(7,7)",128,0,273,0
-  62               		.stabs	"uintmax_t:t(7,28)=(7,8)",128,0,278,0
-  63               		.stabn	162,0,0,0
-  64               		.stabn	162,0,0,0
-  65               		.stabs	"int_farptr_t:t(5,1)=(7,5)",128,0,77,0
-  66               		.stabs	"uint_farptr_t:t(5,2)=(7,6)",128,0,81,0
-  67               		.stabn	162,0,0,0
-  68               		.stabn	162,0,0,0
-  69               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/fuse.h",130,0,0,0
-  70               		.stabs	"__fuse_t:t(8,1)=(8,2)=s3low:(0,11),0,8;high:(0,11),8,8;extended:(0,11),16,8;;",128,0,244,0
-  71               		.stabn	162,0,0,0
-  72               		.stabn	162,0,0,0
-  73               		.stabn	162,0,0,0
-  74               		.stabn	162,0,0,0
-  75               		.stabs	"font.h",130,0,0,0
-  76               		.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/avr/pgmspace.h",130,0,0,0
-  77               		.stabs	"/usr/lib/gcc/avr/4.5.3/include/stddef.h",130,0,0,0
-  78               		.stabs	"size_t:t(11,1)=(0,4)",128,0,211,0
-  79               		.stabn	162,0,0,0
-  80               		.stabs	"prog_void:t(10,1)=(10,2)=(10,2)",128,0,217,0
-  81               		.stabs	"prog_char:t(10,3)=(10,4)=@s8;r(10,4);0;255;",128,0,218,0
-  82               		.stabs	"prog_uchar:t(10,5)=(10,6)=@s8;r(10,6);0;255;",128,0,219,0
-  83               		.stabs	"prog_int8_t:t(10,7)=(10,8)=(0,10)",128,0,221,0
-  84               		.stabs	"prog_uint8_t:t(10,9)=(10,10)=(0,11)",128,0,222,0
-  85               		.stabs	"prog_int16_t:t(10,11)=(10,12)=(0,1)",128,0,223,0
-  86               		.stabs	"prog_uint16_t:t(10,13)=(10,14)=(0,4)",128,0,224,0
-  87               		.stabs	"prog_int32_t:t(10,15)=(10,16)=(0,3)",128,0,225,0
-  88               		.stabs	"prog_uint32_t:t(10,17)=(10,18)=(0,5)",128,0,226,0
-  89               		.stabs	"prog_int64_t:t(10,19)=(10,20)=(0,6)",128,0,228,0
-  90               		.stabs	"prog_uint64_t:t(10,21)=(10,22)=(0,7)",128,0,229,0
-  91               		.stabn	162,0,0,0
-  92               		.stabn	162,0,0,0
-  93               		.stabs	"lcd.h",130,0,0,0
-  94               		.stabs	" :T(12,1)=eNorth:0,West:1,South:2,East:3,;",128,0,0,0
-  95               		.stabs	"orientation:t(12,2)=(12,1)",128,0,21,0
-  96               		.stabs	"lcd:t(12,3)=(12,4)=s14width:(7,4),0,16;height:(7,4),16,16;orient:(12,2),32,16;x:(7,4),48,1
-  97               		.stabs	"rectangle:t(12,5)=(12,6)=s8left:(7,4),0,16;right:(7,4),16,16;top:(7,4),32,16;bottom:(7,4),
+  58               		.stabs	"void:t(0,47)=(0,47)",128,0,0,0
+  59               		.stabs	"ili934x.h",130,0,0,0
+  60               		.stabs	"avrlcd.h",130,0,0,0
+  61               		.stabs	"/usr/lib/avr/include/avr/io.h",130,0,0,0
+  62               		.stabs	"/usr/lib/avr/include/avr/sfr_defs.h",130,0,0,0
+  63               		.stabs	"/usr/lib/avr/include/inttypes.h",130,0,0,0
+  64               		.stabs	"/usr/lib/gcc/avr/4.8.2/include/stdint.h",130,0,0,0
+  65               		.stabs	"/usr/lib/avr/include/stdint.h",130,0,0,0
+  66               		.stabs	"int8_t:t(7,1)=(0,10)",128,0,121,0
+  67               		.stabs	"uint8_t:t(7,2)=(0,11)",128,0,122,0
+  68               		.stabs	"int16_t:t(7,3)=(0,1)",128,0,123,0
+  69               		.stabs	"uint16_t:t(7,4)=(0,4)",128,0,124,0
+  70               		.stabs	"int32_t:t(7,5)=(0,3)",128,0,125,0
+  71               		.stabs	"uint32_t:t(7,6)=(0,5)",128,0,126,0
+  72               		.stabs	"int64_t:t(7,7)=(0,6)",128,0,128,0
+  73               		.stabs	"uint64_t:t(7,8)=(0,7)",128,0,129,0
+  74               		.stabs	"intptr_t:t(7,9)=(7,3)",128,0,142,0
+  75               		.stabs	"uintptr_t:t(7,10)=(7,4)",128,0,147,0
+  76               		.stabs	"int_least8_t:t(7,11)=(7,1)",128,0,159,0
+  77               		.stabs	"uint_least8_t:t(7,12)=(7,2)",128,0,164,0
+  78               		.stabs	"int_least16_t:t(7,13)=(7,3)",128,0,169,0
+  79               		.stabs	"uint_least16_t:t(7,14)=(7,4)",128,0,174,0
+  80               		.stabs	"int_least32_t:t(7,15)=(7,5)",128,0,179,0
+  81               		.stabs	"uint_least32_t:t(7,16)=(7,6)",128,0,184,0
+  82               		.stabs	"int_least64_t:t(7,17)=(7,7)",128,0,192,0
+  83               		.stabs	"uint_least64_t:t(7,18)=(7,8)",128,0,199,0
+  84               		.stabs	"int_fast8_t:t(7,19)=(7,1)",128,0,213,0
+  85               		.stabs	"uint_fast8_t:t(7,20)=(7,2)",128,0,218,0
+  86               		.stabs	"int_fast16_t:t(7,21)=(7,3)",128,0,223,0
+  87               		.stabs	"uint_fast16_t:t(7,22)=(7,4)",128,0,228,0
+  88               		.stabs	"int_fast32_t:t(7,23)=(7,5)",128,0,233,0
+  89               		.stabs	"uint_fast32_t:t(7,24)=(7,6)",128,0,238,0
+  90               		.stabs	"int_fast64_t:t(7,25)=(7,7)",128,0,246,0
+  91               		.stabs	"uint_fast64_t:t(7,26)=(7,8)",128,0,253,0
+  92               		.stabs	"intmax_t:t(7,27)=(7,7)",128,0,273,0
+  93               		.stabs	"uintmax_t:t(7,28)=(7,8)",128,0,278,0
+  94               		.stabn	162,0,0,0
+  95               		.stabn	162,0,0,0
+  96               		.stabs	"int_farptr_t:t(5,1)=(7,5)",128,0,77,0
+  97               		.stabs	"uint_farptr_t:t(5,2)=(7,6)",128,0,81,0
   98               		.stabn	162,0,0,0
-  99               		.stabs	"init_lcd:F(0,15)",36,0,14,init_lcd
- 100               	.global	init_lcd
- 101               		.type	init_lcd, @function
- 102               	init_lcd:
- 103               		.stabd	46,0,0
+  99               		.stabn	162,0,0,0
+ 100               		.stabs	"/usr/lib/avr/include/avr/fuse.h",130,0,0,0
+ 101               		.stabs	"__fuse_t:t(8,1)=(8,2)=s3low:(0,11),0,8;high:(0,11),8,8;extended:(0,11),16,8;;",128,0,244,0
+ 102               		.stabn	162,0,0,0
+ 103               		.stabn	162,0,0,0
+ 104               		.stabn	162,0,0,0
+ 105               		.stabn	162,0,0,0
+ 106               		.stabs	"font.h",130,0,0,0
+ 107               		.stabs	"/usr/lib/avr/include/avr/pgmspace.h",130,0,0,0
+ 108               		.stabs	"/usr/lib/gcc/avr/4.8.2/include/stddef.h",130,0,0,0
+ 109               		.stabs	"size_t:t(11,1)=(0,4)",128,0,212,0
+ 110               		.stabn	162,0,0,0
+ 111               		.stabn	162,0,0,0
+ 112               		.stabn	162,0,0,0
+ 113               		.stabs	"lcd.h",130,0,0,0
+ 114               		.stabs	" :T(12,1)=eNorth:0,West:1,South:2,East:3,;",128,0,0,0
+GAS LISTING /tmp/ccIzpQRS.s 			page 3
+
+
+ 115               		.stabs	"orientation:t(12,2)=(12,1)",128,0,21,0
+ 116               		.stabs	"lcd:t(12,3)=(12,4)=s14width:(7,4),0,16;height:(7,4),16,16;orient:(12,2),32,16;x:(7,4),48,1
+ 117               		.stabs	"rectangle:t(12,5)=(12,6)=s8left:(7,4),0,16;right:(7,4),16,16;top:(7,4),32,16;bottom:(7,4),
+ 118               		.stabn	162,0,0,0
+ 119               		.stabs	"init_lcd:F(0,47)",36,0,14,init_lcd
+ 120               	.global	init_lcd
+ 121               		.type	init_lcd, @function
+ 122               	init_lcd:
+ 123               		.stabd	46,0,0
    1:lcd.c         **** /*  Author: Steve Gunn
    2:lcd.c         ****  * Licence: This work is licensed under the Creative Commons Attribution License.
    3:lcd.c         ****  *           View this license at http://creativecommons.org/about/licenses/
@@ -118,294 +141,286 @@ GAS LISTING /tmp/ccPWDwyV.s 			page 1
    9:lcd.c         **** #include "font.h"
   10:lcd.c         **** #include "lcd.h"
   11:lcd.c         **** 
-GAS LISTING /tmp/ccPWDwyV.s 			page 3
-
-
   12:lcd.c         **** lcd display = {LCDWIDTH, LCDHEIGHT, North, 0, 0, WHITE, BLACK};
   13:lcd.c         **** 
   14:lcd.c         **** void init_lcd()
   15:lcd.c         **** {
- 104               		.stabn	68,0,15,.LM0-.LFBB1
- 105               	.LM0:
- 106               	.LFBB1:
- 107               	/* prologue: function */
- 108               	/* frame size = 0 */
- 109               	/* stack size = 0 */
- 110               	.L__stack_usage = 0
+ 124               		.stabn	68,0,15,.LM0-.LFBB1
+ 125               	.LM0:
+ 126               	.LFBB1:
+ 127               	/* prologue: function */
+ 128               	/* frame size = 0 */
+ 129               	/* stack size = 0 */
+ 130               	.L__stack_usage = 0
   16:lcd.c         **** 	/* Disable JTAG in software, so that it does not interfere with Port C  */
   17:lcd.c         **** 	/* It will be re-enabled after a power cycle if the JTAGEN fuse is set. */
   18:lcd.c         **** 	MCUCR |= (1<<JTD);
- 111               		.stabn	68,0,18,.LM1-.LFBB1
- 112               	.LM1:
- 113 0000 85B7      		in r24,85-32
- 114 0002 8068      		ori r24,lo8(-128)
- 115 0004 85BF      		out 85-32,r24
+ 131               		.stabn	68,0,18,.LM1-.LFBB1
+ 132               	.LM1:
+ 133 0000 85B7      		in r24,0x35
+ 134 0002 8068      		ori r24,lo8(-128)
+ 135 0004 85BF      		out 0x35,r24
   19:lcd.c         **** 	MCUCR |= (1<<JTD);
- 116               		.stabn	68,0,19,.LM2-.LFBB1
- 117               	.LM2:
- 118 0006 85B7      		in r24,85-32
- 119 0008 8068      		ori r24,lo8(-128)
- 120 000a 85BF      		out 85-32,r24
+ 136               		.stabn	68,0,19,.LM2-.LFBB1
+ 137               	.LM2:
+ 138 0006 85B7      		in r24,0x35
+ 139 0008 8068      		ori r24,lo8(-128)
+ 140 000a 85BF      		out 0x35,r24
   20:lcd.c         **** 	
   21:lcd.c         **** 	/* Configure ports */
   22:lcd.c         **** 	CTRL_DDR = 0x7F;
- 121               		.stabn	68,0,22,.LM3-.LFBB1
- 122               	.LM3:
- 123 000c 8FE7      		ldi r24,lo8(127)
- 124 000e 81B9      		out 33-32,r24
+ 141               		.stabn	68,0,22,.LM3-.LFBB1
+ 142               	.LM3:
+ 143 000c 8FE7      		ldi r24,lo8(127)
+ 144 000e 81B9      		out 0x1,r24
   23:lcd.c         **** 	DATA_DDR = 0xFF;
- 125               		.stabn	68,0,23,.LM4-.LFBB1
- 126               	.LM4:
- 127 0010 8FEF      		ldi r24,lo8(-1)
- 128 0012 87B9      		out 39-32,r24
+ 145               		.stabn	68,0,23,.LM4-.LFBB1
+ 146               	.LM4:
+ 147 0010 8FEF      		ldi r24,lo8(-1)
+ 148 0012 87B9      		out 0x7,r24
+GAS LISTING /tmp/ccIzpQRS.s 			page 4
+
+
   24:lcd.c         **** 	
   25:lcd.c         **** 	init_display_controller();
- 129               		.stabn	68,0,25,.LM5-.LFBB1
- 130               	.LM5:
- 131 0014 0E94 0000 		call init_display_controller
- 132               	/* epilogue start */
+ 149               		.stabn	68,0,25,.LM5-.LFBB1
+ 150               	.LM5:
+ 151 0014 0C94 0000 		jmp init_display_controller
+ 152               		.size	init_lcd, .-init_lcd
+ 153               	.Lscope1:
+ 154               		.stabs	"",36,0,0,.Lscope1-.LFBB1
+ 155               		.stabd	78,0,0
+ 156               		.stabs	"set_orientation:F(0,47)",36,0,28,set_orientation
+ 157               		.stabs	"o:P(12,2)",64,0,28,24
+ 158               	.global	set_orientation
+ 159               		.type	set_orientation, @function
+ 160               	set_orientation:
+ 161               		.stabd	46,0,0
   26:lcd.c         **** }
- 133               		.stabn	68,0,26,.LM6-.LFBB1
- 134               	.LM6:
- 135 0018 0895      		ret
- 136               		.size	init_lcd, .-init_lcd
- 137               	.Lscope1:
- 138               		.stabs	"",36,0,0,.Lscope1-.LFBB1
- 139               		.stabd	78,0,0
- 140               		.stabs	"set_orientation:F(0,15)",36,0,28,set_orientation
- 141               		.stabs	"o:P(12,2)",64,0,28,24
- 142               	.global	set_orientation
- 143               		.type	set_orientation, @function
- 144               	set_orientation:
- 145               		.stabd	46,0,0
-GAS LISTING /tmp/ccPWDwyV.s 			page 4
-
-
   27:lcd.c         **** 
   28:lcd.c         **** void set_orientation(orientation o)
   29:lcd.c         **** {
- 146               		.stabn	68,0,29,.LM7-.LFBB2
- 147               	.LM7:
- 148               	.LFBB2:
- 149               	/* prologue: function */
- 150               	/* frame size = 0 */
- 151               	/* stack size = 0 */
- 152               	.L__stack_usage = 0
+ 162               		.stabn	68,0,29,.LM6-.LFBB2
+ 163               	.LM6:
+ 164               	.LFBB2:
+ 165               	/* prologue: function */
+ 166               	/* frame size = 0 */
+ 167               	/* stack size = 0 */
+ 168               	.L__stack_usage = 0
   30:lcd.c         **** 	display.orient = o;
- 153               		.stabn	68,0,30,.LM8-.LFBB2
- 154               	.LM8:
- 155 001a 9093 0000 		sts display+4+1,r25
- 156 001e 8093 0000 		sts display+4,r24
+ 169               		.stabn	68,0,30,.LM7-.LFBB2
+ 170               	.LM7:
+ 171 0018 9093 0000 		sts display+4+1,r25
+ 172 001c 8093 0000 		sts display+4,r24
   31:lcd.c         **** 	write_cmd(MEMORY_ACCESS_CONTROL);
- 157               		.stabn	68,0,31,.LM9-.LFBB2
- 158               	.LM9:
- 159 0022 1498      		cbi 34-32,4
- 160 0024 26E3      		ldi r18,lo8(54)
- 161 0026 28B9      		out 40-32,r18
- 162 0028 1398      		cbi 34-32,3
- 163 002a 139A      		sbi 34-32,3
- 164 002c 149A      		sbi 34-32,4
+ 173               		.stabn	68,0,31,.LM8-.LFBB2
+ 174               	.LM8:
+ 175 0020 1498      		cbi 0x2,4
+ 176 0022 26E3      		ldi r18,lo8(54)
+ 177 0024 28B9      		out 0x8,r18
+ 178 0026 1398      		cbi 0x2,3
+ 179 0028 139A      		sbi 0x2,3
+ 180 002a 149A      		sbi 0x2,4
   32:lcd.c         **** 	if (o==North) { 
- 165               		.stabn	68,0,32,.LM10-.LFBB2
- 166               	.LM10:
- 167 002e 0097      		sbiw r24,0
- 168 0030 01F4      		brne .L3
+ 181               		.stabn	68,0,32,.LM9-.LFBB2
+ 182               	.LM9:
+ 183 002c 0097      		sbiw r24,0
+ 184 002e 01F4      		brne .L3
   33:lcd.c         **** 		display.width = LCDWIDTH;
- 169               		.stabn	68,0,33,.LM11-.LFBB2
- 170               	.LM11:
- 171 0032 80EF      		ldi r24,lo8(240)
- 172 0034 90E0      		ldi r25,hi8(240)
- 173 0036 9093 0000 		sts display+1,r25
- 174 003a 8093 0000 		sts display,r24
+ 185               		.stabn	68,0,33,.LM10-.LFBB2
+ 186               	.LM10:
+ 187 0030 80EF      		ldi r24,lo8(-16)
+ 188 0032 90E0      		ldi r25,0
+ 189 0034 9093 0000 		sts display+1,r25
+ 190 0038 8093 0000 		sts display,r24
   34:lcd.c         **** 		display.height = LCDHEIGHT;
- 175               		.stabn	68,0,34,.LM12-.LFBB2
- 176               	.LM12:
- 177 003e 80E4      		ldi r24,lo8(320)
- 178 0040 91E0      		ldi r25,hi8(320)
- 179 0042 9093 0000 		sts display+2+1,r25
- 180 0046 8093 0000 		sts display+2,r24
+ 191               		.stabn	68,0,34,.LM11-.LFBB2
+ 192               	.LM11:
+ 193 003c 80E4      		ldi r24,lo8(64)
+ 194 003e 91E0      		ldi r25,lo8(1)
+GAS LISTING /tmp/ccIzpQRS.s 			page 5
+
+
+ 195 0040 9093 0000 		sts display+2+1,r25
+ 196 0044 8093 0000 		sts display+2,r24
   35:lcd.c         **** 		write_data(0x48);
- 181               		.stabn	68,0,35,.LM13-.LFBB2
- 182               	.LM13:
- 183 004a 88E4      		ldi r24,lo8(72)
- 184 004c 00C0      		rjmp .L7
- 185               	.L3:
+ 197               		.stabn	68,0,35,.LM12-.LFBB2
+ 198               	.LM12:
+ 199 0048 88E4      		ldi r24,lo8(72)
+ 200 004a 00C0      		rjmp .L7
+ 201               	.L3:
   36:lcd.c         **** 	}
   37:lcd.c         **** 	else if (o==West) {
- 186               		.stabn	68,0,37,.LM14-.LFBB2
- 187               	.LM14:
- 188 004e 8130      		cpi r24,1
- 189 0050 9105      		cpc r25,__zero_reg__
- 190 0052 01F4      		brne .L5
+ 202               		.stabn	68,0,37,.LM13-.LFBB2
+ 203               	.LM13:
+ 204 004c 8130      		cpi r24,1
+ 205 004e 9105      		cpc r25,__zero_reg__
+ 206 0050 01F4      		brne .L5
   38:lcd.c         **** 		display.width = LCDHEIGHT;
-GAS LISTING /tmp/ccPWDwyV.s 			page 5
-
-
- 191               		.stabn	68,0,38,.LM15-.LFBB2
- 192               	.LM15:
- 193 0054 80E4      		ldi r24,lo8(320)
- 194 0056 91E0      		ldi r25,hi8(320)
- 195 0058 9093 0000 		sts display+1,r25
- 196 005c 8093 0000 		sts display,r24
+ 207               		.stabn	68,0,38,.LM14-.LFBB2
+ 208               	.LM14:
+ 209 0052 80E4      		ldi r24,lo8(64)
+ 210 0054 91E0      		ldi r25,lo8(1)
+ 211 0056 9093 0000 		sts display+1,r25
+ 212 005a 8093 0000 		sts display,r24
   39:lcd.c         **** 		display.height = LCDWIDTH;
- 197               		.stabn	68,0,39,.LM16-.LFBB2
- 198               	.LM16:
- 199 0060 80EF      		ldi r24,lo8(240)
- 200 0062 90E0      		ldi r25,hi8(240)
- 201 0064 9093 0000 		sts display+2+1,r25
- 202 0068 8093 0000 		sts display+2,r24
+ 213               		.stabn	68,0,39,.LM15-.LFBB2
+ 214               	.LM15:
+ 215 005e 80EF      		ldi r24,lo8(-16)
+ 216 0060 90E0      		ldi r25,0
+ 217 0062 9093 0000 		sts display+2+1,r25
+ 218 0066 8093 0000 		sts display+2,r24
   40:lcd.c         **** 		write_data(0xE8);
- 203               		.stabn	68,0,40,.LM17-.LFBB2
- 204               	.LM17:
- 205 006c 88EE      		ldi r24,lo8(-24)
- 206 006e 00C0      		rjmp .L7
- 207               	.L5:
+ 219               		.stabn	68,0,40,.LM16-.LFBB2
+ 220               	.LM16:
+ 221 006a 88EE      		ldi r24,lo8(-24)
+ 222 006c 00C0      		rjmp .L7
+ 223               	.L5:
   41:lcd.c         **** 	}
   42:lcd.c         **** 	else if (o==South) {
- 208               		.stabn	68,0,42,.LM18-.LFBB2
- 209               	.LM18:
- 210 0070 8230      		cpi r24,2
- 211 0072 9105      		cpc r25,__zero_reg__
- 212 0074 01F4      		brne .L6
+ 224               		.stabn	68,0,42,.LM17-.LFBB2
+ 225               	.LM17:
+ 226 006e 8230      		cpi r24,2
+ 227 0070 9105      		cpc r25,__zero_reg__
+ 228 0072 01F4      		brne .L6
   43:lcd.c         **** 		display.width = LCDWIDTH;
- 213               		.stabn	68,0,43,.LM19-.LFBB2
- 214               	.LM19:
- 215 0076 80EF      		ldi r24,lo8(240)
- 216 0078 90E0      		ldi r25,hi8(240)
- 217 007a 9093 0000 		sts display+1,r25
- 218 007e 8093 0000 		sts display,r24
+ 229               		.stabn	68,0,43,.LM18-.LFBB2
+ 230               	.LM18:
+ 231 0074 80EF      		ldi r24,lo8(-16)
+ 232 0076 90E0      		ldi r25,0
+ 233 0078 9093 0000 		sts display+1,r25
+ 234 007c 8093 0000 		sts display,r24
   44:lcd.c         **** 		display.height = LCDHEIGHT;
- 219               		.stabn	68,0,44,.LM20-.LFBB2
- 220               	.LM20:
- 221 0082 80E4      		ldi r24,lo8(320)
- 222 0084 91E0      		ldi r25,hi8(320)
- 223 0086 9093 0000 		sts display+2+1,r25
- 224 008a 8093 0000 		sts display+2,r24
+ 235               		.stabn	68,0,44,.LM19-.LFBB2
+ 236               	.LM19:
+ 237 0080 80E4      		ldi r24,lo8(64)
+ 238 0082 91E0      		ldi r25,lo8(1)
+ 239 0084 9093 0000 		sts display+2+1,r25
+ 240 0088 8093 0000 		sts display+2,r24
   45:lcd.c         **** 		write_data(0x88);
- 225               		.stabn	68,0,45,.LM21-.LFBB2
- 226               	.LM21:
- 227 008e 88E8      		ldi r24,lo8(-120)
- 228 0090 00C0      		rjmp .L7
- 229               	.L6:
+GAS LISTING /tmp/ccIzpQRS.s 			page 6
+
+
+ 241               		.stabn	68,0,45,.LM20-.LFBB2
+ 242               	.LM20:
+ 243 008c 88E8      		ldi r24,lo8(-120)
+ 244 008e 00C0      		rjmp .L7
+ 245               	.L6:
   46:lcd.c         **** 	}
   47:lcd.c         **** 	else if (o==East) {
- 230               		.stabn	68,0,47,.LM22-.LFBB2
- 231               	.LM22:
- 232 0092 8330      		cpi r24,3
- 233 0094 9105      		cpc r25,__zero_reg__
- 234 0096 01F4      		brne .L4
+ 246               		.stabn	68,0,47,.LM21-.LFBB2
+ 247               	.LM21:
+ 248 0090 0397      		sbiw r24,3
+ 249 0092 01F4      		brne .L4
   48:lcd.c         **** 		display.width = LCDHEIGHT;
- 235               		.stabn	68,0,48,.LM23-.LFBB2
- 236               	.LM23:
- 237 0098 80E4      		ldi r24,lo8(320)
-GAS LISTING /tmp/ccPWDwyV.s 			page 6
-
-
- 238 009a 91E0      		ldi r25,hi8(320)
- 239 009c 9093 0000 		sts display+1,r25
- 240 00a0 8093 0000 		sts display,r24
+ 250               		.stabn	68,0,48,.LM22-.LFBB2
+ 251               	.LM22:
+ 252 0094 80E4      		ldi r24,lo8(64)
+ 253 0096 91E0      		ldi r25,lo8(1)
+ 254 0098 9093 0000 		sts display+1,r25
+ 255 009c 8093 0000 		sts display,r24
   49:lcd.c         **** 		display.height = LCDWIDTH;
- 241               		.stabn	68,0,49,.LM24-.LFBB2
- 242               	.LM24:
- 243 00a4 80EF      		ldi r24,lo8(240)
- 244 00a6 90E0      		ldi r25,hi8(240)
- 245 00a8 9093 0000 		sts display+2+1,r25
- 246 00ac 8093 0000 		sts display+2,r24
+ 256               		.stabn	68,0,49,.LM23-.LFBB2
+ 257               	.LM23:
+ 258 00a0 80EF      		ldi r24,lo8(-16)
+ 259 00a2 90E0      		ldi r25,0
+ 260 00a4 9093 0000 		sts display+2+1,r25
+ 261 00a8 8093 0000 		sts display+2,r24
   50:lcd.c         **** 		write_data(0x28);
- 247               		.stabn	68,0,50,.LM25-.LFBB2
- 248               	.LM25:
- 249 00b0 88E2      		ldi r24,lo8(40)
- 250               	.L7:
- 251 00b2 88B9      		out 40-32,r24
- 252 00b4 1398      		cbi 34-32,3
- 253 00b6 139A      		sbi 34-32,3
- 254               	.L4:
+ 262               		.stabn	68,0,50,.LM24-.LFBB2
+ 263               	.LM24:
+ 264 00ac 88E2      		ldi r24,lo8(40)
+ 265               	.L7:
+ 266 00ae 88B9      		out 0x8,r24
+ 267 00b0 1398      		cbi 0x2,3
+ 268 00b2 139A      		sbi 0x2,3
+ 269               	.L4:
   51:lcd.c         **** 	}
   52:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
- 255               		.stabn	68,0,52,.LM26-.LFBB2
- 256               	.LM26:
- 257 00b8 1498      		cbi 34-32,4
- 258 00ba 8AE2      		ldi r24,lo8(42)
- 259 00bc 88B9      		out 40-32,r24
- 260 00be 1398      		cbi 34-32,3
- 261 00c0 139A      		sbi 34-32,3
- 262 00c2 149A      		sbi 34-32,4
+ 270               		.stabn	68,0,52,.LM25-.LFBB2
+ 271               	.LM25:
+ 272 00b4 1498      		cbi 0x2,4
+ 273 00b6 8AE2      		ldi r24,lo8(42)
+ 274 00b8 88B9      		out 0x8,r24
+ 275 00ba 1398      		cbi 0x2,3
+ 276 00bc 139A      		sbi 0x2,3
+ 277 00be 149A      		sbi 0x2,4
   53:lcd.c         **** 	write_data16(0);
- 263               		.stabn	68,0,53,.LM27-.LFBB2
- 264               	.LM27:
- 265 00c4 18B8      		out 40-32,__zero_reg__
- 266 00c6 1398      		cbi 34-32,3
- 267 00c8 139A      		sbi 34-32,3
- 268 00ca 18B8      		out 40-32,__zero_reg__
- 269 00cc 1398      		cbi 34-32,3
- 270 00ce 139A      		sbi 34-32,3
+ 278               		.stabn	68,0,53,.LM26-.LFBB2
+ 279               	.LM26:
+ 280 00c0 18B8      		out 0x8,__zero_reg__
+ 281 00c2 1398      		cbi 0x2,3
+ 282 00c4 139A      		sbi 0x2,3
+ 283 00c6 18B8      		out 0x8,__zero_reg__
+ 284 00c8 1398      		cbi 0x2,3
+ 285 00ca 139A      		sbi 0x2,3
   54:lcd.c         **** 	write_data16(display.width-1);
- 271               		.stabn	68,0,54,.LM28-.LFBB2
- 272               	.LM28:
- 273 00d0 8091 0000 		lds r24,display
- 274 00d4 9091 0000 		lds r25,display+1
- 275 00d8 0197      		sbiw r24,1
- 276 00da 98B9      		out 40-32,r25
- 277 00dc 1398      		cbi 34-32,3
- 278 00de 139A      		sbi 34-32,3
- 279 00e0 8091 0000 		lds r24,display
- 280 00e4 8150      		subi r24,lo8(-(-1))
- 281 00e6 88B9      		out 40-32,r24
- 282 00e8 1398      		cbi 34-32,3
- 283 00ea 139A      		sbi 34-32,3
+ 286               		.stabn	68,0,54,.LM27-.LFBB2
+ 287               	.LM27:
+ 288 00cc 8091 0000 		lds r24,display
+GAS LISTING /tmp/ccIzpQRS.s 			page 7
+
+
+ 289 00d0 9091 0000 		lds r25,display+1
+ 290 00d4 0197      		sbiw r24,1
+ 291 00d6 98B9      		out 0x8,r25
+ 292 00d8 1398      		cbi 0x2,3
+ 293 00da 139A      		sbi 0x2,3
+ 294 00dc 8091 0000 		lds r24,display
+ 295 00e0 8150      		subi r24,lo8(-(-1))
+ 296 00e2 88B9      		out 0x8,r24
+ 297 00e4 1398      		cbi 0x2,3
+ 298 00e6 139A      		sbi 0x2,3
   55:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
- 284               		.stabn	68,0,55,.LM29-.LFBB2
- 285               	.LM29:
- 286 00ec 1498      		cbi 34-32,4
- 287 00ee 8BE2      		ldi r24,lo8(43)
-GAS LISTING /tmp/ccPWDwyV.s 			page 7
-
-
- 288 00f0 88B9      		out 40-32,r24
- 289 00f2 1398      		cbi 34-32,3
- 290 00f4 139A      		sbi 34-32,3
- 291 00f6 149A      		sbi 34-32,4
+ 299               		.stabn	68,0,55,.LM28-.LFBB2
+ 300               	.LM28:
+ 301 00e8 1498      		cbi 0x2,4
+ 302 00ea 8BE2      		ldi r24,lo8(43)
+ 303 00ec 88B9      		out 0x8,r24
+ 304 00ee 1398      		cbi 0x2,3
+ 305 00f0 139A      		sbi 0x2,3
+ 306 00f2 149A      		sbi 0x2,4
   56:lcd.c         **** 	write_data16(0);
- 292               		.stabn	68,0,56,.LM30-.LFBB2
- 293               	.LM30:
- 294 00f8 18B8      		out 40-32,__zero_reg__
- 295 00fa 1398      		cbi 34-32,3
- 296 00fc 139A      		sbi 34-32,3
- 297 00fe 18B8      		out 40-32,__zero_reg__
- 298 0100 1398      		cbi 34-32,3
- 299 0102 139A      		sbi 34-32,3
+ 307               		.stabn	68,0,56,.LM29-.LFBB2
+ 308               	.LM29:
+ 309 00f4 18B8      		out 0x8,__zero_reg__
+ 310 00f6 1398      		cbi 0x2,3
+ 311 00f8 139A      		sbi 0x2,3
+ 312 00fa 18B8      		out 0x8,__zero_reg__
+ 313 00fc 1398      		cbi 0x2,3
+ 314 00fe 139A      		sbi 0x2,3
   57:lcd.c         **** 	write_data16(display.height-1);
- 300               		.stabn	68,0,57,.LM31-.LFBB2
- 301               	.LM31:
- 302 0104 8091 0000 		lds r24,display+2
- 303 0108 9091 0000 		lds r25,display+2+1
- 304 010c 0197      		sbiw r24,1
- 305 010e 98B9      		out 40-32,r25
- 306 0110 1398      		cbi 34-32,3
- 307 0112 139A      		sbi 34-32,3
- 308 0114 8091 0000 		lds r24,display+2
- 309 0118 8150      		subi r24,lo8(-(-1))
- 310 011a 88B9      		out 40-32,r24
- 311 011c 1398      		cbi 34-32,3
- 312 011e 139A      		sbi 34-32,3
- 313               	/* epilogue start */
+ 315               		.stabn	68,0,57,.LM30-.LFBB2
+ 316               	.LM30:
+ 317 0100 8091 0000 		lds r24,display+2
+ 318 0104 9091 0000 		lds r25,display+2+1
+ 319 0108 0197      		sbiw r24,1
+ 320 010a 98B9      		out 0x8,r25
+ 321 010c 1398      		cbi 0x2,3
+ 322 010e 139A      		sbi 0x2,3
+ 323 0110 8091 0000 		lds r24,display+2
+ 324 0114 8150      		subi r24,lo8(-(-1))
+ 325 0116 88B9      		out 0x8,r24
+ 326 0118 1398      		cbi 0x2,3
+ 327 011a 139A      		sbi 0x2,3
+ 328 011c 0895      		ret
+ 329               		.size	set_orientation, .-set_orientation
+ 330               	.Lscope2:
+ 331               		.stabs	"",36,0,0,.Lscope2-.LFBB2
+ 332               		.stabd	78,0,0
+ 333               		.stabs	"fill_rectangle:F(0,47)",36,0,72,fill_rectangle
+ 334               		.stabs	"r:p(12,5)",160,0,72,1
+ 335               	.global	fill_rectangle
+ 336               		.type	fill_rectangle, @function
+ 337               	fill_rectangle:
+ 338               		.stabd	46,0,0
   58:lcd.c         **** }
- 314               		.stabn	68,0,58,.LM32-.LFBB2
- 315               	.LM32:
- 316 0120 0895      		ret
- 317               		.size	set_orientation, .-set_orientation
- 318               	.Lscope2:
- 319               		.stabs	"",36,0,0,.Lscope2-.LFBB2
- 320               		.stabd	78,0,0
- 321               		.stabs	"fill_rectangle:F(0,15)",36,0,72,fill_rectangle
- 322               		.stabs	"r:p(12,5)",160,0,72,1
- 323               	.global	fill_rectangle
- 324               		.type	fill_rectangle, @function
- 325               	fill_rectangle:
- 326               		.stabd	46,0,0
   59:lcd.c         **** 
   60:lcd.c         **** void draw_rectangle(rectangle r, uint16_t col) 
   61:lcd.c         **** {
+GAS LISTING /tmp/ccIzpQRS.s 			page 8
+
+
   62:lcd.c         ****     rectangle rec = {r.left, r.right, r.top, r.top+1};
   63:lcd.c         ****     fill_rectangle(rec, col);
   64:lcd.c         ****     rectangle rec2 = {r.left, r.right, r.bottom-1, r.bottom};
@@ -418,1188 +433,1598 @@ GAS LISTING /tmp/ccPWDwyV.s 			page 1
   71:lcd.c         **** 
   72:lcd.c         **** void fill_rectangle(rectangle r, uint16_t col)
   73:lcd.c         **** {
-GAS LISTING /tmp/ccPWDwyV.s 			page 8
-
-
- 327               		.stabn	68,0,73,.LM33-.LFBB3
- 328               	.LM33:
- 329               	.LFBB3:
- 330 0122 0F93      		push r16
- 331 0124 1F93      		push r17
- 332 0126 DF93      		push r29
- 333 0128 CF93      		push r28
- 334 012a CDB7      		in r28,__SP_L__
- 335 012c DEB7      		in r29,__SP_H__
- 336 012e 2897      		sbiw r28,8
- 337 0130 0FB6      		in __tmp_reg__,__SREG__
- 338 0132 F894      		cli
- 339 0134 DEBF      		out __SP_H__,r29
- 340 0136 0FBE      		out __SREG__,__tmp_reg__
- 341 0138 CDBF      		out __SP_L__,r28
- 342               	/* prologue: function */
- 343               	/* frame size = 8 */
- 344               	/* stack size = 12 */
- 345               	.L__stack_usage = 12
- 346 013a E22F      		mov r30,r18
- 347 013c 2983      		std Y+1,r18
- 348 013e 232F      		mov r18,r19
- 349 0140 3A83      		std Y+2,r19
- 350 0142 4B83      		std Y+3,r20
- 351 0144 5C83      		std Y+4,r21
- 352 0146 6D83      		std Y+5,r22
- 353 0148 7E83      		std Y+6,r23
- 354 014a 8F83      		std Y+7,r24
- 355 014c 9887      		std Y+8,r25
+ 339               		.stabn	68,0,73,.LM31-.LFBB3
+ 340               	.LM31:
+ 341               	.LFBB3:
+ 342 011e 0F93      		push r16
+ 343 0120 1F93      		push r17
+ 344 0122 CF93      		push r28
+ 345 0124 DF93      		push r29
+ 346 0126 CDB7      		in r28,__SP_L__
+ 347 0128 DEB7      		in r29,__SP_H__
+ 348 012a 2897      		sbiw r28,8
+ 349 012c 0FB6      		in __tmp_reg__,__SREG__
+ 350 012e F894      		cli
+ 351 0130 DEBF      		out __SP_H__,r29
+ 352 0132 0FBE      		out __SREG__,__tmp_reg__
+ 353 0134 CDBF      		out __SP_L__,r28
+ 354               	/* prologue: function */
+ 355               	/* frame size = 8 */
+ 356               	/* stack size = 12 */
+ 357               	.L__stack_usage = 12
+ 358 0136 2983      		std Y+1,r18
+ 359 0138 3A83      		std Y+2,r19
+ 360 013a 4B83      		std Y+3,r20
+ 361 013c 5C83      		std Y+4,r21
+ 362 013e E62F      		mov r30,r22
+ 363 0140 6D83      		std Y+5,r22
+ 364 0142 F72F      		mov r31,r23
+ 365 0144 7E83      		std Y+6,r23
+ 366 0146 8F83      		std Y+7,r24
+ 367 0148 9887      		std Y+8,r25
+ 368 014a 2981      		ldd r18,Y+1
+ 369 014c 3A81      		ldd r19,Y+2
+ 370 014e 4B81      		ldd r20,Y+3
+ 371 0150 5C81      		ldd r21,Y+4
+ 372 0152 BF01      		movw r22,r30
+ 373 0154 EF81      		ldd r30,Y+7
+ 374 0156 F885      		ldd r31,Y+8
   74:lcd.c         **** 	uint16_t x, y;
   75:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
+ 375               		.stabn	68,0,75,.LM32-.LFBB3
+ 376               	.LM32:
+ 377 0158 1498      		cbi 0x2,4
+ 378 015a 8AE2      		ldi r24,lo8(42)
+ 379 015c 88B9      		out 0x8,r24
+ 380 015e 1398      		cbi 0x2,3
+ 381 0160 139A      		sbi 0x2,3
+GAS LISTING /tmp/ccIzpQRS.s 			page 9
+
+
+ 382 0162 149A      		sbi 0x2,4
   76:lcd.c         **** 	write_data16(r.left);
+ 383               		.stabn	68,0,76,.LM33-.LFBB3
+ 384               	.LM33:
+ 385 0164 38B9      		out 0x8,r19
+ 386 0166 1398      		cbi 0x2,3
+ 387 0168 139A      		sbi 0x2,3
+ 388 016a 28B9      		out 0x8,r18
+ 389 016c 1398      		cbi 0x2,3
+ 390 016e 139A      		sbi 0x2,3
   77:lcd.c         **** 	write_data16(r.right);
+ 391               		.stabn	68,0,77,.LM34-.LFBB3
+ 392               	.LM34:
+ 393 0170 58B9      		out 0x8,r21
+ 394 0172 1398      		cbi 0x2,3
+ 395 0174 139A      		sbi 0x2,3
+ 396 0176 48B9      		out 0x8,r20
+ 397 0178 1398      		cbi 0x2,3
+ 398 017a 139A      		sbi 0x2,3
   78:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
+ 399               		.stabn	68,0,78,.LM35-.LFBB3
+ 400               	.LM35:
+ 401 017c 1498      		cbi 0x2,4
+ 402 017e 8BE2      		ldi r24,lo8(43)
+ 403 0180 88B9      		out 0x8,r24
+ 404 0182 1398      		cbi 0x2,3
+ 405 0184 139A      		sbi 0x2,3
+ 406 0186 149A      		sbi 0x2,4
   79:lcd.c         **** 	write_data16(r.top);
+ 407               		.stabn	68,0,79,.LM36-.LFBB3
+ 408               	.LM36:
+ 409 0188 78B9      		out 0x8,r23
+ 410 018a 1398      		cbi 0x2,3
+ 411 018c 139A      		sbi 0x2,3
+ 412 018e 68B9      		out 0x8,r22
+ 413 0190 1398      		cbi 0x2,3
+ 414 0192 139A      		sbi 0x2,3
   80:lcd.c         **** 	write_data16(r.bottom);
+ 415               		.stabn	68,0,80,.LM37-.LFBB3
+ 416               	.LM37:
+ 417 0194 F8B9      		out 0x8,r31
+ 418 0196 1398      		cbi 0x2,3
+ 419 0198 139A      		sbi 0x2,3
+ 420 019a E8B9      		out 0x8,r30
+ 421 019c 1398      		cbi 0x2,3
+ 422 019e 139A      		sbi 0x2,3
   81:lcd.c         **** 	write_cmd(MEMORY_WRITE);
+ 423               		.stabn	68,0,81,.LM38-.LFBB3
+ 424               	.LM38:
+ 425 01a0 1498      		cbi 0x2,4
+ 426 01a2 8CE2      		ldi r24,lo8(44)
+ 427 01a4 88B9      		out 0x8,r24
+ 428 01a6 1398      		cbi 0x2,3
+ 429 01a8 139A      		sbi 0x2,3
+ 430 01aa 149A      		sbi 0x2,4
+ 431               	.L10:
   82:lcd.c         **** 	for(x=r.left; x<=r.right; x++)
- 356               		.stabn	68,0,82,.LM34-.LFBB3
- 357               	.LM34:
- 358 014e 8E2F      		mov r24,r30
- 359 0150 EB81      		ldd r30,Y+3
- 360 0152 FC81      		ldd r31,Y+4
- 361 0154 A62F      		mov r26,r22
- 362 0156 B72F      		mov r27,r23
- 363 0158 4F81      		ldd r20,Y+7
- 364 015a 5885      		ldd r21,Y+8
-  75:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
- 365               		.stabn	68,0,75,.LM35-.LFBB3
- 366               	.LM35:
- 367 015c 1498      		cbi 34-32,4
- 368 015e 9AE2      		ldi r25,lo8(42)
- 369 0160 98B9      		out 40-32,r25
- 370 0162 1398      		cbi 34-32,3
- 371 0164 139A      		sbi 34-32,3
- 372 0166 149A      		sbi 34-32,4
-  76:lcd.c         **** 	write_data16(r.left);
-GAS LISTING /tmp/ccPWDwyV.s 			page 9
+GAS LISTING /tmp/ccIzpQRS.s 			page 10
 
 
- 373               		.stabn	68,0,76,.LM36-.LFBB3
- 374               	.LM36:
- 375 0168 28B9      		out 40-32,r18
- 376 016a 1398      		cbi 34-32,3
- 377 016c 139A      		sbi 34-32,3
- 378 016e 88B9      		out 40-32,r24
- 379 0170 1398      		cbi 34-32,3
- 380 0172 139A      		sbi 34-32,3
-  77:lcd.c         **** 	write_data16(r.right);
- 381               		.stabn	68,0,77,.LM37-.LFBB3
- 382               	.LM37:
- 383 0174 F8B9      		out 40-32,r31
- 384 0176 1398      		cbi 34-32,3
- 385 0178 139A      		sbi 34-32,3
- 386 017a E8B9      		out 40-32,r30
- 387 017c 1398      		cbi 34-32,3
- 388 017e 139A      		sbi 34-32,3
-  78:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
- 389               		.stabn	68,0,78,.LM38-.LFBB3
- 390               	.LM38:
- 391 0180 1498      		cbi 34-32,4
- 392 0182 9BE2      		ldi r25,lo8(43)
- 393 0184 98B9      		out 40-32,r25
- 394 0186 1398      		cbi 34-32,3
- 395 0188 139A      		sbi 34-32,3
- 396 018a 149A      		sbi 34-32,4
-  79:lcd.c         **** 	write_data16(r.top);
- 397               		.stabn	68,0,79,.LM39-.LFBB3
- 398               	.LM39:
- 399 018c 78B9      		out 40-32,r23
- 400 018e 1398      		cbi 34-32,3
- 401 0190 139A      		sbi 34-32,3
- 402 0192 68B9      		out 40-32,r22
- 403 0194 1398      		cbi 34-32,3
- 404 0196 139A      		sbi 34-32,3
-  80:lcd.c         **** 	write_data16(r.bottom);
- 405               		.stabn	68,0,80,.LM40-.LFBB3
- 406               	.LM40:
- 407 0198 58B9      		out 40-32,r21
- 408 019a 1398      		cbi 34-32,3
- 409 019c 139A      		sbi 34-32,3
- 410 019e 48B9      		out 40-32,r20
- 411 01a0 1398      		cbi 34-32,3
- 412 01a2 139A      		sbi 34-32,3
-  81:lcd.c         **** 	write_cmd(MEMORY_WRITE);
- 413               		.stabn	68,0,81,.LM41-.LFBB3
- 414               	.LM41:
- 415 01a4 1498      		cbi 34-32,4
- 416 01a6 9CE2      		ldi r25,lo8(44)
- 417 01a8 98B9      		out 40-32,r25
- 418 01aa 1398      		cbi 34-32,3
- 419 01ac 139A      		sbi 34-32,3
- 420 01ae 149A      		sbi 34-32,4
- 421               		.stabn	68,0,82,.LM42-.LFBB3
- 422               	.LM42:
- 423 01b0 922F      		mov r25,r18
- 424 01b2 00C0      		rjmp .L9
-GAS LISTING /tmp/ccPWDwyV.s 			page 10
-
-
- 425               	.L10:
+ 432               		.stabn	68,0,82,.LM39-.LFBB3
+ 433               	.LM39:
+ 434 01ac 4217      		cp r20,r18
+ 435 01ae 5307      		cpc r21,r19
+ 436 01b0 00F0      		brlo .L9
+ 437               		.stabn	68,0,82,.LM40-.LFBB3
+ 438               	.LM40:
+ 439 01b2 CB01      		movw r24,r22
+ 440               	.L13:
   83:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
+ 441               		.stabn	68,0,83,.LM41-.LFBB3
+ 442               	.LM41:
+ 443 01b4 E817      		cp r30,r24
+ 444 01b6 F907      		cpc r31,r25
+ 445 01b8 00F0      		brlo .L14
   84:lcd.c         **** 			write_data16(col);
- 426               		.stabn	68,0,84,.LM43-.LFBB3
- 427               	.LM43:
- 428 01b4 18B9      		out 40-32,r17
- 429 01b6 1398      		cbi 34-32,3
- 430 01b8 139A      		sbi 34-32,3
- 431 01ba 08B9      		out 40-32,r16
- 432 01bc 1398      		cbi 34-32,3
- 433 01be 139A      		sbi 34-32,3
+ 446               		.stabn	68,0,84,.LM42-.LFBB3
+ 447               	.LM42:
+ 448 01ba 18B9      		out 0x8,r17
+ 449 01bc 1398      		cbi 0x2,3
+ 450 01be 139A      		sbi 0x2,3
+ 451 01c0 08B9      		out 0x8,r16
+ 452 01c2 1398      		cbi 0x2,3
+ 453 01c4 139A      		sbi 0x2,3
   83:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
- 434               		.stabn	68,0,83,.LM44-.LFBB3
- 435               	.LM44:
- 436 01c0 2F5F      		subi r18,lo8(-(1))
- 437 01c2 3F4F      		sbci r19,hi8(-(1))
- 438               	.L12:
-  83:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
- 439               		.stabn	68,0,83,.LM45-.LFBB3
- 440               	.LM45:
- 441 01c4 4217      		cp r20,r18
- 442 01c6 5307      		cpc r21,r19
- 443 01c8 00F4      		brsh .L10
+ 454               		.stabn	68,0,83,.LM43-.LFBB3
+ 455               	.LM43:
+ 456 01c6 0196      		adiw r24,1
+ 457 01c8 00C0      		rjmp .L13
+ 458               	.L14:
   82:lcd.c         **** 	for(x=r.left; x<=r.right; x++)
- 444               		.stabn	68,0,82,.LM46-.LFBB3
- 445               	.LM46:
- 446 01ca 0196      		adiw r24,1
- 447               	.L9:
-  82:lcd.c         **** 	for(x=r.left; x<=r.right; x++)
- 448               		.stabn	68,0,82,.LM47-.LFBB3
- 449               	.LM47:
- 450 01cc E817      		cp r30,r24
- 451 01ce F907      		cpc r31,r25
- 452 01d0 00F0      		brlo .L8
- 453 01d2 2A2F      		mov r18,r26
- 454 01d4 3B2F      		mov r19,r27
- 455 01d6 00C0      		rjmp .L12
- 456               	.L8:
- 457               	/* epilogue start */
+ 459               		.stabn	68,0,82,.LM44-.LFBB3
+ 460               	.LM44:
+ 461 01ca 2F5F      		subi r18,-1
+ 462 01cc 3F4F      		sbci r19,-1
+ 463 01ce 00C0      		rjmp .L10
+ 464               	.L9:
+ 465               	/* epilogue start */
   85:lcd.c         **** }
- 458               		.stabn	68,0,85,.LM48-.LFBB3
- 459               	.LM48:
- 460 01d8 2896      		adiw r28,8
- 461 01da 0FB6      		in __tmp_reg__,__SREG__
- 462 01dc F894      		cli
- 463 01de DEBF      		out __SP_H__,r29
- 464 01e0 0FBE      		out __SREG__,__tmp_reg__
- 465 01e2 CDBF      		out __SP_L__,r28
- 466 01e4 CF91      		pop r28
- 467 01e6 DF91      		pop r29
- 468 01e8 1F91      		pop r17
- 469 01ea 0F91      		pop r16
- 470 01ec 0895      		ret
- 471               		.size	fill_rectangle, .-fill_rectangle
- 472               		.stabs	"x:r(7,4)",64,0,74,24
- 473               		.stabs	"y:r(7,4)",64,0,74,18
- 474               		.stabn	192,0,0,.LFBB3-.LFBB3
-GAS LISTING /tmp/ccPWDwyV.s 			page 11
+ 466               		.stabn	68,0,85,.LM45-.LFBB3
+ 467               	.LM45:
+ 468 01d0 2896      		adiw r28,8
+ 469 01d2 0FB6      		in __tmp_reg__,__SREG__
+ 470 01d4 F894      		cli
+ 471 01d6 DEBF      		out __SP_H__,r29
+ 472 01d8 0FBE      		out __SREG__,__tmp_reg__
+ 473 01da CDBF      		out __SP_L__,r28
+ 474 01dc DF91      		pop r29
+ 475 01de CF91      		pop r28
+ 476 01e0 1F91      		pop r17
+ 477 01e2 0F91      		pop r16
+ 478 01e4 0895      		ret
+ 479               		.size	fill_rectangle, .-fill_rectangle
+ 480               		.stabs	"x:r(7,4)",64,0,74,18
+ 481               		.stabn	192,0,0,.LFBB3-.LFBB3
+ 482               		.stabn	224,0,0,.Lscope3-.LFBB3
+ 483               	.Lscope3:
+GAS LISTING /tmp/ccIzpQRS.s 			page 11
 
 
- 475               		.stabn	224,0,0,.Lscope3-.LFBB3
- 476               	.Lscope3:
- 477               		.stabs	"",36,0,0,.Lscope3-.LFBB3
- 478               		.stabd	78,0,0
- 479               		.stabs	"draw_rectangle:F(0,15)",36,0,60,draw_rectangle
- 480               		.stabs	"r:p(12,5)",160,0,60,33
- 481               		.stabs	"col:P(7,4)",64,0,60,14
- 482               	.global	draw_rectangle
- 483               		.type	draw_rectangle, @function
- 484               	draw_rectangle:
- 485               		.stabd	46,0,0
+ 484               		.stabs	"",36,0,0,.Lscope3-.LFBB3
+ 485               		.stabd	78,0,0
+ 486               		.stabs	"draw_rectangle:F(0,47)",36,0,60,draw_rectangle
+ 487               		.stabs	"r:p(12,5)",160,0,60,33
+ 488               		.stabs	"col:P(7,4)",64,0,60,6
+ 489               	.global	draw_rectangle
+ 490               		.type	draw_rectangle, @function
+ 491               	draw_rectangle:
+ 492               		.stabd	46,0,0
   61:lcd.c         **** {
- 486               		.stabn	68,0,61,.LM49-.LFBB4
- 487               	.LM49:
- 488               	.LFBB4:
- 489 01ee 6F92      		push r6
- 490 01f0 7F92      		push r7
- 491 01f2 8F92      		push r8
- 492 01f4 9F92      		push r9
- 493 01f6 AF92      		push r10
- 494 01f8 BF92      		push r11
- 495 01fa CF92      		push r12
- 496 01fc DF92      		push r13
- 497 01fe EF92      		push r14
- 498 0200 FF92      		push r15
- 499 0202 0F93      		push r16
- 500 0204 1F93      		push r17
- 501 0206 DF93      		push r29
- 502 0208 CF93      		push r28
- 503 020a CDB7      		in r28,__SP_L__
- 504 020c DEB7      		in r29,__SP_H__
- 505 020e A897      		sbiw r28,40
- 506 0210 0FB6      		in __tmp_reg__,__SREG__
- 507 0212 F894      		cli
- 508 0214 DEBF      		out __SP_H__,r29
- 509 0216 0FBE      		out __SREG__,__tmp_reg__
- 510 0218 CDBF      		out __SP_L__,r28
- 511               	/* prologue: function */
- 512               	/* frame size = 40 */
- 513               	/* stack size = 54 */
- 514               	.L__stack_usage = 54
- 515 021a 29A3      		std Y+33,r18
- 516 021c 3AA3      		std Y+34,r19
- 517 021e 4BA3      		std Y+35,r20
- 518 0220 5CA3      		std Y+36,r21
- 519 0222 6DA3      		std Y+37,r22
- 520 0224 7EA3      		std Y+38,r23
- 521 0226 8FA3      		std Y+39,r24
- 522 0228 98A7      		std Y+40,r25
-  61:lcd.c         **** {
- 523               		.stabn	68,0,61,.LM50-.LFBB4
- 524               	.LM50:
- 525 022a C9A0      		ldd r12,Y+33
- 526 022c DAA0      		ldd r13,Y+34
- 527 022e ABA0      		ldd r10,Y+35
- 528 0230 BCA0      		ldd r11,Y+36
- 529 0232 8DA0      		ldd r8,Y+37
-GAS LISTING /tmp/ccPWDwyV.s 			page 12
-
-
- 530 0234 9EA0      		ldd r9,Y+38
- 531 0236 6FA0      		ldd r6,Y+39
- 532 0238 78A4      		ldd r7,Y+40
+ 493               		.stabn	68,0,61,.LM46-.LFBB4
+ 494               	.LM46:
+ 495               	.LFBB4:
+ 496 01e6 6F92      		push r6
+ 497 01e8 7F92      		push r7
+ 498 01ea 8F92      		push r8
+ 499 01ec 9F92      		push r9
+ 500 01ee AF92      		push r10
+ 501 01f0 BF92      		push r11
+ 502 01f2 CF92      		push r12
+ 503 01f4 DF92      		push r13
+ 504 01f6 EF92      		push r14
+ 505 01f8 FF92      		push r15
+ 506 01fa 0F93      		push r16
+ 507 01fc 1F93      		push r17
+ 508 01fe CF93      		push r28
+ 509 0200 DF93      		push r29
+ 510 0202 CDB7      		in r28,__SP_L__
+ 511 0204 DEB7      		in r29,__SP_H__
+ 512 0206 A897      		sbiw r28,40
+ 513 0208 0FB6      		in __tmp_reg__,__SREG__
+ 514 020a F894      		cli
+ 515 020c DEBF      		out __SP_H__,r29
+ 516 020e 0FBE      		out __SREG__,__tmp_reg__
+ 517 0210 CDBF      		out __SP_L__,r28
+ 518               	/* prologue: function */
+ 519               	/* frame size = 40 */
+ 520               	/* stack size = 54 */
+ 521               	.L__stack_usage = 54
+ 522 0212 29A3      		std Y+33,r18
+ 523 0214 3AA3      		std Y+34,r19
+ 524 0216 4BA3      		std Y+35,r20
+ 525 0218 5CA3      		std Y+36,r21
+ 526 021a 6DA3      		std Y+37,r22
+ 527 021c 7EA3      		std Y+38,r23
+ 528 021e 8FA3      		std Y+39,r24
+ 529 0220 98A7      		std Y+40,r25
+ 530 0222 89A0      		ldd r8,Y+33
+ 531 0224 9AA0      		ldd r9,Y+34
+ 532 0226 ABA0      		ldd r10,Y+35
+ 533 0228 BCA0      		ldd r11,Y+36
+ 534 022a CDA0      		ldd r12,Y+37
+ 535 022c DEA0      		ldd r13,Y+38
+ 536 022e EFA0      		ldd r14,Y+39
+ 537 0230 F8A4      		ldd r15,Y+40
   62:lcd.c         ****     rectangle rec = {r.left, r.right, r.top, r.top+1};
- 533               		.stabn	68,0,62,.LM51-.LFBB4
- 534               	.LM51:
- 535 023a 2C2D      		mov r18,r12
- 536 023c DA82      		std Y+2,r13
- 537 023e C982      		std Y+1,r12
- 538 0240 4A2D      		mov r20,r10
- 539 0242 BC82      		std Y+4,r11
- 540 0244 AB82      		std Y+3,r10
- 541 0246 682D      		mov r22,r8
- 542 0248 9E82      		std Y+6,r9
- 543 024a 8D82      		std Y+5,r8
- 544 024c C401      		movw r24,r8
- 545 024e 0196      		adiw r24,1
- 546 0250 9887      		std Y+8,r25
- 547 0252 8F83      		std Y+7,r24
+ 538               		.stabn	68,0,62,.LM47-.LFBB4
+GAS LISTING /tmp/ccIzpQRS.s 			page 12
+
+
+ 539               	.LM47:
+ 540 0232 282D      		mov r18,r8
+ 541 0234 9A8E      		std Y+26,r9
+ 542 0236 898E      		std Y+25,r8
+ 543 0238 4A2D      		mov r20,r10
+ 544 023a BC8E      		std Y+28,r11
+ 545 023c AB8E      		std Y+27,r10
+ 546 023e 6C2D      		mov r22,r12
+ 547 0240 DE8E      		std Y+30,r13
+ 548 0242 CD8E      		std Y+29,r12
+ 549 0244 C601      		movw r24,r12
+ 550 0246 0196      		adiw r24,1
+ 551 0248 98A3      		std Y+32,r25
+ 552 024a 8F8F      		std Y+31,r24
   63:lcd.c         ****     fill_rectangle(rec, col);
- 548               		.stabn	68,0,63,.LM52-.LFBB4
- 549               	.LM52:
- 550 0254 3A81      		ldd r19,Y+2
- 551 0256 5C81      		ldd r21,Y+4
- 552 0258 7E81      		ldd r23,Y+6
- 553 025a 9885      		ldd r25,Y+8
- 554 025c 0E94 0000 		call fill_rectangle
+ 553               		.stabn	68,0,63,.LM48-.LFBB4
+ 554               	.LM48:
+ 555 024c 3A8D      		ldd r19,Y+26
+ 556 024e 5C8D      		ldd r21,Y+28
+ 557 0250 7E8D      		ldd r23,Y+30
+ 558 0252 98A1      		ldd r25,Y+32
+ 559 0254 0E94 0000 		call fill_rectangle
   64:lcd.c         ****     rectangle rec2 = {r.left, r.right, r.bottom-1, r.bottom};
- 555               		.stabn	68,0,64,.LM53-.LFBB4
- 556               	.LM53:
- 557 0260 2C2D      		mov r18,r12
- 558 0262 DA86      		std Y+10,r13
- 559 0264 C986      		std Y+9,r12
- 560 0266 4A2D      		mov r20,r10
- 561 0268 BC86      		std Y+12,r11
- 562 026a AB86      		std Y+11,r10
- 563 026c C301      		movw r24,r6
- 564 026e 0197      		sbiw r24,1
- 565 0270 682F      		mov r22,r24
- 566 0272 9E87      		std Y+14,r25
- 567 0274 8D87      		std Y+13,r24
- 568 0276 788A      		std Y+16,r7
- 569 0278 6F86      		std Y+15,r6
+ 560               		.stabn	68,0,64,.LM49-.LFBB4
+ 561               	.LM49:
+ 562 0258 282D      		mov r18,r8
+ 563 025a 9A8A      		std Y+18,r9
+ 564 025c 898A      		std Y+17,r8
+ 565 025e 4A2D      		mov r20,r10
+ 566 0260 BC8A      		std Y+20,r11
+ 567 0262 AB8A      		std Y+19,r10
+ 568 0264 C701      		movw r24,r14
+ 569 0266 0197      		sbiw r24,1
+ 570 0268 682F      		mov r22,r24
+ 571 026a 9E8B      		std Y+22,r25
+ 572 026c 8D8B      		std Y+21,r24
+ 573 026e F88E      		std Y+24,r15
+ 574 0270 EF8A      		std Y+23,r14
   65:lcd.c         ****     fill_rectangle(rec2, col);
- 570               		.stabn	68,0,65,.LM54-.LFBB4
- 571               	.LM54:
- 572 027a 3A85      		ldd r19,Y+10
- 573 027c 5C85      		ldd r21,Y+12
- 574 027e 7E85      		ldd r23,Y+14
- 575 0280 862D      		mov r24,r6
- 576 0282 9889      		ldd r25,Y+16
- 577 0284 0E94 0000 		call fill_rectangle
+ 575               		.stabn	68,0,65,.LM50-.LFBB4
+ 576               	.LM50:
+ 577 0272 3A89      		ldd r19,Y+18
+ 578 0274 5C89      		ldd r21,Y+20
+ 579 0276 7E89      		ldd r23,Y+22
+ 580 0278 8E2D      		mov r24,r14
+ 581 027a 988D      		ldd r25,Y+24
+ 582 027c 0E94 0000 		call fill_rectangle
   66:lcd.c         ****     rectangle rec3 = {r.left, r.left+1, r.top, r.bottom};
- 578               		.stabn	68,0,66,.LM55-.LFBB4
- 579               	.LM55:
- 580 0288 2C2D      		mov r18,r12
- 581 028a DA8A      		std Y+18,r13
-GAS LISTING /tmp/ccPWDwyV.s 			page 13
+ 583               		.stabn	68,0,66,.LM51-.LFBB4
+ 584               	.LM51:
+ 585 0280 282D      		mov r18,r8
+ 586 0282 9A86      		std Y+10,r9
+ 587 0284 8986      		std Y+9,r8
+ 588 0286 8FEF      		ldi r24,-1
+ 589 0288 881A      		sub r8,r24
+ 590 028a 980A      		sbc r9,r24
+ 591 028c 482D      		mov r20,r8
+GAS LISTING /tmp/ccIzpQRS.s 			page 13
 
 
- 582 028c C98A      		std Y+17,r12
- 583 028e 0894      		sec
- 584 0290 C11C      		adc r12,__zero_reg__
- 585 0292 D11C      		adc r13,__zero_reg__
- 586 0294 4C2D      		mov r20,r12
- 587 0296 DC8A      		std Y+20,r13
- 588 0298 CB8A      		std Y+19,r12
- 589 029a 682D      		mov r22,r8
- 590 029c 9E8A      		std Y+22,r9
- 591 029e 8D8A      		std Y+21,r8
- 592 02a0 788E      		std Y+24,r7
- 593 02a2 6F8A      		std Y+23,r6
+ 592 028e 9C86      		std Y+12,r9
+ 593 0290 8B86      		std Y+11,r8
+ 594 0292 6C2D      		mov r22,r12
+ 595 0294 DE86      		std Y+14,r13
+ 596 0296 CD86      		std Y+13,r12
+ 597 0298 F88A      		std Y+16,r15
+ 598 029a EF86      		std Y+15,r14
   67:lcd.c         ****     fill_rectangle(rec3, col);
- 594               		.stabn	68,0,67,.LM56-.LFBB4
- 595               	.LM56:
- 596 02a4 3A89      		ldd r19,Y+18
- 597 02a6 5C89      		ldd r21,Y+20
- 598 02a8 7E89      		ldd r23,Y+22
- 599 02aa 862D      		mov r24,r6
- 600 02ac 988D      		ldd r25,Y+24
- 601 02ae 0E94 0000 		call fill_rectangle
+ 599               		.stabn	68,0,67,.LM52-.LFBB4
+ 600               	.LM52:
+ 601 029c 3A85      		ldd r19,Y+10
+ 602 029e 5C85      		ldd r21,Y+12
+ 603 02a0 7E85      		ldd r23,Y+14
+ 604 02a2 8E2D      		mov r24,r14
+ 605 02a4 9889      		ldd r25,Y+16
+ 606 02a6 0E94 0000 		call fill_rectangle
   68:lcd.c         ****     rectangle rec4 = {r.right-1, r.right, r.top, r.bottom};
- 602               		.stabn	68,0,68,.LM57-.LFBB4
- 603               	.LM57:
- 604 02b2 C501      		movw r24,r10
- 605 02b4 0197      		sbiw r24,1
- 606 02b6 282F      		mov r18,r24
- 607 02b8 9A8F      		std Y+26,r25
- 608 02ba 898F      		std Y+25,r24
- 609 02bc 4A2D      		mov r20,r10
- 610 02be BC8E      		std Y+28,r11
- 611 02c0 AB8E      		std Y+27,r10
- 612 02c2 682D      		mov r22,r8
- 613 02c4 9E8E      		std Y+30,r9
- 614 02c6 8D8E      		std Y+29,r8
- 615 02c8 78A2      		std Y+32,r7
- 616 02ca 6F8E      		std Y+31,r6
+ 607               		.stabn	68,0,68,.LM53-.LFBB4
+ 608               	.LM53:
+ 609 02aa C501      		movw r24,r10
+ 610 02ac 0197      		sbiw r24,1
+ 611 02ae 282F      		mov r18,r24
+ 612 02b0 9A83      		std Y+2,r25
+ 613 02b2 8983      		std Y+1,r24
+ 614 02b4 4A2D      		mov r20,r10
+ 615 02b6 BC82      		std Y+4,r11
+ 616 02b8 AB82      		std Y+3,r10
+ 617 02ba 6C2D      		mov r22,r12
+ 618 02bc DE82      		std Y+6,r13
+ 619 02be CD82      		std Y+5,r12
+ 620 02c0 F886      		std Y+8,r15
+ 621 02c2 EF82      		std Y+7,r14
   69:lcd.c         ****     fill_rectangle(rec4, col);
- 617               		.stabn	68,0,69,.LM58-.LFBB4
- 618               	.LM58:
- 619 02cc 3A8D      		ldd r19,Y+26
- 620 02ce 5C8D      		ldd r21,Y+28
- 621 02d0 7E8D      		ldd r23,Y+30
- 622 02d2 862D      		mov r24,r6
- 623 02d4 98A1      		ldd r25,Y+32
- 624 02d6 0E94 0000 		call fill_rectangle
- 625               	/* epilogue start */
+ 622               		.stabn	68,0,69,.LM54-.LFBB4
+ 623               	.LM54:
+ 624 02c4 3A81      		ldd r19,Y+2
+ 625 02c6 5C81      		ldd r21,Y+4
+ 626 02c8 7E81      		ldd r23,Y+6
+ 627 02ca 8E2D      		mov r24,r14
+ 628 02cc 9885      		ldd r25,Y+8
+ 629 02ce 0E94 0000 		call fill_rectangle
+ 630               	/* epilogue start */
   70:lcd.c         **** }
- 626               		.stabn	68,0,70,.LM59-.LFBB4
- 627               	.LM59:
- 628 02da A896      		adiw r28,40
- 629 02dc 0FB6      		in __tmp_reg__,__SREG__
- 630 02de F894      		cli
- 631 02e0 DEBF      		out __SP_H__,r29
- 632 02e2 0FBE      		out __SREG__,__tmp_reg__
- 633 02e4 CDBF      		out __SP_L__,r28
- 634 02e6 CF91      		pop r28
-GAS LISTING /tmp/ccPWDwyV.s 			page 14
+ 631               		.stabn	68,0,70,.LM55-.LFBB4
+ 632               	.LM55:
+ 633 02d2 A896      		adiw r28,40
+ 634 02d4 0FB6      		in __tmp_reg__,__SREG__
+ 635 02d6 F894      		cli
+ 636 02d8 DEBF      		out __SP_H__,r29
+ 637 02da 0FBE      		out __SREG__,__tmp_reg__
+ 638 02dc CDBF      		out __SP_L__,r28
+ 639 02de DF91      		pop r29
+ 640 02e0 CF91      		pop r28
+ 641 02e2 1F91      		pop r17
+ 642 02e4 0F91      		pop r16
+ 643 02e6 FF90      		pop r15
+ 644 02e8 EF90      		pop r14
+GAS LISTING /tmp/ccIzpQRS.s 			page 14
 
 
- 635 02e8 DF91      		pop r29
- 636 02ea 1F91      		pop r17
- 637 02ec 0F91      		pop r16
- 638 02ee FF90      		pop r15
- 639 02f0 EF90      		pop r14
- 640 02f2 DF90      		pop r13
- 641 02f4 CF90      		pop r12
- 642 02f6 BF90      		pop r11
- 643 02f8 AF90      		pop r10
- 644 02fa 9F90      		pop r9
- 645 02fc 8F90      		pop r8
- 646 02fe 7F90      		pop r7
- 647 0300 6F90      		pop r6
- 648 0302 0895      		ret
- 649               		.size	draw_rectangle, .-draw_rectangle
- 650               		.stabs	"rec:(12,5)",128,0,62,1
- 651               		.stabs	"rec2:(12,5)",128,0,64,9
- 652               		.stabs	"rec3:(12,5)",128,0,66,17
- 653               		.stabs	"rec4:(12,5)",128,0,68,25
- 654               		.stabn	192,0,0,.LFBB4-.LFBB4
- 655               		.stabn	224,0,0,.Lscope4-.LFBB4
- 656               	.Lscope4:
- 657               		.stabs	"",36,0,0,.Lscope4-.LFBB4
- 658               		.stabd	78,0,0
- 659               		.stabs	"fill_rectangle_indexed:F(0,15)",36,0,87,fill_rectangle_indexed
- 660               		.stabs	"r:p(12,5)",160,0,87,1
- 661               		.stabs	"col:P(0,16)=*(7,4)",64,0,87,30
- 662               	.global	fill_rectangle_indexed
- 663               		.type	fill_rectangle_indexed, @function
- 664               	fill_rectangle_indexed:
- 665               		.stabd	46,0,0
+ 645 02ea DF90      		pop r13
+ 646 02ec CF90      		pop r12
+ 647 02ee BF90      		pop r11
+ 648 02f0 AF90      		pop r10
+ 649 02f2 9F90      		pop r9
+ 650 02f4 8F90      		pop r8
+ 651 02f6 7F90      		pop r7
+ 652 02f8 6F90      		pop r6
+ 653 02fa 0895      		ret
+ 654               		.size	draw_rectangle, .-draw_rectangle
+ 655               		.stabs	"rec:(12,5)",128,0,62,25
+ 656               		.stabs	"rec2:(12,5)",128,0,64,17
+ 657               		.stabs	"rec3:(12,5)",128,0,66,9
+ 658               		.stabs	"rec4:(12,5)",128,0,68,1
+ 659               		.stabn	192,0,0,.LFBB4-.LFBB4
+ 660               		.stabn	224,0,0,.Lscope4-.LFBB4
+ 661               	.Lscope4:
+ 662               		.stabs	"",36,0,0,.Lscope4-.LFBB4
+ 663               		.stabd	78,0,0
+ 664               		.stabs	"fill_rectangle_indexed:F(0,47)",36,0,87,fill_rectangle_indexed
+ 665               		.stabs	"r:p(12,5)",160,0,87,1
+ 666               	.global	fill_rectangle_indexed
+ 667               		.type	fill_rectangle_indexed, @function
+ 668               	fill_rectangle_indexed:
+ 669               		.stabd	46,0,0
   86:lcd.c         **** 
   87:lcd.c         **** void fill_rectangle_indexed(rectangle r, uint16_t* col)
   88:lcd.c         **** {
- 666               		.stabn	68,0,88,.LM60-.LFBB5
- 667               	.LM60:
- 668               	.LFBB5:
- 669 0304 0F93      		push r16
- 670 0306 1F93      		push r17
- 671 0308 DF93      		push r29
- 672 030a CF93      		push r28
- 673 030c CDB7      		in r28,__SP_L__
- 674 030e DEB7      		in r29,__SP_H__
- 675 0310 2897      		sbiw r28,8
- 676 0312 0FB6      		in __tmp_reg__,__SREG__
- 677 0314 F894      		cli
- 678 0316 DEBF      		out __SP_H__,r29
- 679 0318 0FBE      		out __SREG__,__tmp_reg__
- 680 031a CDBF      		out __SP_L__,r28
- 681               	/* prologue: function */
- 682               	/* frame size = 8 */
- 683               	/* stack size = 12 */
- 684               	.L__stack_usage = 12
- 685 031c A22F      		mov r26,r18
- 686 031e 2983      		std Y+1,r18
- 687 0320 232F      		mov r18,r19
- 688 0322 3A83      		std Y+2,r19
-GAS LISTING /tmp/ccPWDwyV.s 			page 15
+ 670               		.stabn	68,0,88,.LM56-.LFBB5
+ 671               	.LM56:
+ 672               	.LFBB5:
+ 673 02fc 0F93      		push r16
+ 674 02fe 1F93      		push r17
+ 675 0300 CF93      		push r28
+ 676 0302 DF93      		push r29
+ 677 0304 CDB7      		in r28,__SP_L__
+ 678 0306 DEB7      		in r29,__SP_H__
+ 679 0308 2897      		sbiw r28,8
+ 680 030a 0FB6      		in __tmp_reg__,__SREG__
+ 681 030c F894      		cli
+ 682 030e DEBF      		out __SP_H__,r29
+ 683 0310 0FBE      		out __SREG__,__tmp_reg__
+ 684 0312 CDBF      		out __SP_L__,r28
+ 685               	/* prologue: function */
+ 686               	/* frame size = 8 */
+ 687               	/* stack size = 12 */
+ 688               	.L__stack_usage = 12
+ 689 0314 2983      		std Y+1,r18
+ 690 0316 3A83      		std Y+2,r19
+ 691 0318 4B83      		std Y+3,r20
+ 692 031a 5C83      		std Y+4,r21
+ 693 031c E62F      		mov r30,r22
+ 694 031e 6D83      		std Y+5,r22
+ 695 0320 F72F      		mov r31,r23
+ 696 0322 7E83      		std Y+6,r23
+ 697 0324 8F83      		std Y+7,r24
+ 698 0326 9887      		std Y+8,r25
+GAS LISTING /tmp/ccIzpQRS.s 			page 15
 
 
- 689 0324 4B83      		std Y+3,r20
- 690 0326 5C83      		std Y+4,r21
- 691 0328 6D83      		std Y+5,r22
- 692 032a 7E83      		std Y+6,r23
- 693 032c 8F83      		std Y+7,r24
- 694 032e 9887      		std Y+8,r25
- 695 0330 F801      		movw r30,r16
+ 699 0328 2981      		ldd r18,Y+1
+ 700 032a 3A81      		ldd r19,Y+2
+ 701 032c 4B81      		ldd r20,Y+3
+ 702 032e 5C81      		ldd r21,Y+4
+ 703 0330 BF01      		movw r22,r30
+ 704 0332 AF81      		ldd r26,Y+7
+ 705 0334 B885      		ldd r27,Y+8
   89:lcd.c         **** 	uint16_t x, y;
   90:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
+ 706               		.stabn	68,0,90,.LM57-.LFBB5
+ 707               	.LM57:
+ 708 0336 1498      		cbi 0x2,4
+ 709 0338 8AE2      		ldi r24,lo8(42)
+ 710 033a 88B9      		out 0x8,r24
+ 711 033c 1398      		cbi 0x2,3
+ 712 033e 139A      		sbi 0x2,3
+ 713 0340 149A      		sbi 0x2,4
   91:lcd.c         **** 	write_data16(r.left);
+ 714               		.stabn	68,0,91,.LM58-.LFBB5
+ 715               	.LM58:
+ 716 0342 38B9      		out 0x8,r19
+ 717 0344 1398      		cbi 0x2,3
+ 718 0346 139A      		sbi 0x2,3
+ 719 0348 28B9      		out 0x8,r18
+ 720 034a 1398      		cbi 0x2,3
+ 721 034c 139A      		sbi 0x2,3
   92:lcd.c         **** 	write_data16(r.right);
+ 722               		.stabn	68,0,92,.LM59-.LFBB5
+ 723               	.LM59:
+ 724 034e 58B9      		out 0x8,r21
+ 725 0350 1398      		cbi 0x2,3
+ 726 0352 139A      		sbi 0x2,3
+ 727 0354 48B9      		out 0x8,r20
+ 728 0356 1398      		cbi 0x2,3
+ 729 0358 139A      		sbi 0x2,3
   93:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
+ 730               		.stabn	68,0,93,.LM60-.LFBB5
+ 731               	.LM60:
+ 732 035a 1498      		cbi 0x2,4
+ 733 035c 8BE2      		ldi r24,lo8(43)
+ 734 035e 88B9      		out 0x8,r24
+ 735 0360 1398      		cbi 0x2,3
+ 736 0362 139A      		sbi 0x2,3
+ 737 0364 149A      		sbi 0x2,4
   94:lcd.c         **** 	write_data16(r.top);
+ 738               		.stabn	68,0,94,.LM61-.LFBB5
+ 739               	.LM61:
+ 740 0366 78B9      		out 0x8,r23
+ 741 0368 1398      		cbi 0x2,3
+ 742 036a 139A      		sbi 0x2,3
+ 743 036c 68B9      		out 0x8,r22
+ 744 036e 1398      		cbi 0x2,3
+ 745 0370 139A      		sbi 0x2,3
   95:lcd.c         **** 	write_data16(r.bottom);
+ 746               		.stabn	68,0,95,.LM62-.LFBB5
+ 747               	.LM62:
+ 748 0372 B8B9      		out 0x8,r27
+GAS LISTING /tmp/ccIzpQRS.s 			page 16
+
+
+ 749 0374 1398      		cbi 0x2,3
+ 750 0376 139A      		sbi 0x2,3
+ 751 0378 A8B9      		out 0x8,r26
+ 752 037a 1398      		cbi 0x2,3
+ 753 037c 139A      		sbi 0x2,3
   96:lcd.c         **** 	write_cmd(MEMORY_WRITE);
+ 754               		.stabn	68,0,96,.LM63-.LFBB5
+ 755               	.LM63:
+ 756 037e 1498      		cbi 0x2,4
+ 757 0380 8CE2      		ldi r24,lo8(44)
+ 758 0382 88B9      		out 0x8,r24
+ 759 0384 1398      		cbi 0x2,3
+ 760 0386 139A      		sbi 0x2,3
+ 761 0388 149A      		sbi 0x2,4
+ 762               	.L17:
   97:lcd.c         **** 	for(x=r.left; x<=r.right; x++)
- 696               		.stabn	68,0,97,.LM61-.LFBB5
- 697               	.LM61:
- 698 0332 8A2F      		mov r24,r26
- 699 0334 AB81      		ldd r26,Y+3
- 700 0336 BC81      		ldd r27,Y+4
- 701 0338 162F      		mov r17,r22
- 702 033a 072F      		mov r16,r23
- 703 033c 4F81      		ldd r20,Y+7
- 704 033e 5885      		ldd r21,Y+8
-  90:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
- 705               		.stabn	68,0,90,.LM62-.LFBB5
- 706               	.LM62:
- 707 0340 1498      		cbi 34-32,4
- 708 0342 9AE2      		ldi r25,lo8(42)
- 709 0344 98B9      		out 40-32,r25
- 710 0346 1398      		cbi 34-32,3
- 711 0348 139A      		sbi 34-32,3
- 712 034a 149A      		sbi 34-32,4
-  91:lcd.c         **** 	write_data16(r.left);
- 713               		.stabn	68,0,91,.LM63-.LFBB5
- 714               	.LM63:
- 715 034c 28B9      		out 40-32,r18
- 716 034e 1398      		cbi 34-32,3
- 717 0350 139A      		sbi 34-32,3
- 718 0352 88B9      		out 40-32,r24
- 719 0354 1398      		cbi 34-32,3
- 720 0356 139A      		sbi 34-32,3
-  92:lcd.c         **** 	write_data16(r.right);
- 721               		.stabn	68,0,92,.LM64-.LFBB5
- 722               	.LM64:
- 723 0358 B8B9      		out 40-32,r27
- 724 035a 1398      		cbi 34-32,3
- 725 035c 139A      		sbi 34-32,3
- 726 035e A8B9      		out 40-32,r26
- 727 0360 1398      		cbi 34-32,3
- 728 0362 139A      		sbi 34-32,3
-  93:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
- 729               		.stabn	68,0,93,.LM65-.LFBB5
- 730               	.LM65:
- 731 0364 1498      		cbi 34-32,4
- 732 0366 9BE2      		ldi r25,lo8(43)
-GAS LISTING /tmp/ccPWDwyV.s 			page 16
-
-
- 733 0368 98B9      		out 40-32,r25
- 734 036a 1398      		cbi 34-32,3
- 735 036c 139A      		sbi 34-32,3
- 736 036e 149A      		sbi 34-32,4
-  94:lcd.c         **** 	write_data16(r.top);
- 737               		.stabn	68,0,94,.LM66-.LFBB5
- 738               	.LM66:
- 739 0370 78B9      		out 40-32,r23
- 740 0372 1398      		cbi 34-32,3
- 741 0374 139A      		sbi 34-32,3
- 742 0376 68B9      		out 40-32,r22
- 743 0378 1398      		cbi 34-32,3
- 744 037a 139A      		sbi 34-32,3
-  95:lcd.c         **** 	write_data16(r.bottom);
- 745               		.stabn	68,0,95,.LM67-.LFBB5
- 746               	.LM67:
- 747 037c 58B9      		out 40-32,r21
- 748 037e 1398      		cbi 34-32,3
- 749 0380 139A      		sbi 34-32,3
- 750 0382 48B9      		out 40-32,r20
- 751 0384 1398      		cbi 34-32,3
- 752 0386 139A      		sbi 34-32,3
-  96:lcd.c         **** 	write_cmd(MEMORY_WRITE);
- 753               		.stabn	68,0,96,.LM68-.LFBB5
- 754               	.LM68:
- 755 0388 1498      		cbi 34-32,4
- 756 038a 9CE2      		ldi r25,lo8(44)
- 757 038c 98B9      		out 40-32,r25
- 758 038e 1398      		cbi 34-32,3
- 759 0390 139A      		sbi 34-32,3
- 760 0392 149A      		sbi 34-32,4
- 761               		.stabn	68,0,97,.LM69-.LFBB5
- 762               	.LM69:
- 763 0394 922F      		mov r25,r18
- 764 0396 00C0      		rjmp .L15
- 765               	.L16:
+ 763               		.stabn	68,0,97,.LM64-.LFBB5
+ 764               	.LM64:
+ 765 038a 4217      		cp r20,r18
+ 766 038c 5307      		cpc r21,r19
+ 767 038e 00F0      		brlo .L16
+ 768 0390 F801      		movw r30,r16
+ 769               		.stabn	68,0,97,.LM65-.LFBB5
+ 770               	.LM65:
+ 771 0392 CB01      		movw r24,r22
+ 772               	.L20:
+ 773 0394 8F01      		movw r16,r30
   98:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
+ 774               		.stabn	68,0,98,.LM66-.LFBB5
+ 775               	.LM66:
+ 776 0396 A817      		cp r26,r24
+ 777 0398 B907      		cpc r27,r25
+ 778 039a 00F0      		brlo .L21
   99:lcd.c         **** 			write_data16(*col++);
- 766               		.stabn	68,0,99,.LM70-.LFBB5
- 767               	.LM70:
- 768 0398 6181      		ldd r22,Z+1
- 769 039a 68B9      		out 40-32,r22
- 770 039c 1398      		cbi 34-32,3
- 771 039e 139A      		sbi 34-32,3
- 772 03a0 6281      		ldd r22,Z+2
- 773 03a2 68B9      		out 40-32,r22
-  87:lcd.c         **** void fill_rectangle_indexed(rectangle r, uint16_t* col)
- 774               		.stabn	68,0,87,.LM71-.LFBB5
- 775               	.LM71:
- 776 03a4 3496      		adiw r30,4
- 777               		.stabn	68,0,99,.LM72-.LFBB5
- 778               	.LM72:
- 779 03a6 1398      		cbi 34-32,3
- 780 03a8 139A      		sbi 34-32,3
+ 779               		.stabn	68,0,99,.LM67-.LFBB5
+ 780               	.LM67:
+ 781 039c 1181      		ldd r17,Z+1
+ 782 039e 18B9      		out 0x8,r17
+ 783 03a0 1398      		cbi 0x2,3
+ 784 03a2 139A      		sbi 0x2,3
+ 785 03a4 1281      		ldd r17,Z+2
+ 786 03a6 18B9      		out 0x8,r17
+ 787 03a8 1398      		cbi 0x2,3
+ 788 03aa 139A      		sbi 0x2,3
   98:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
- 781               		.stabn	68,0,98,.LM73-.LFBB5
- 782               	.LM73:
-GAS LISTING /tmp/ccPWDwyV.s 			page 17
+ 789               		.stabn	68,0,98,.LM68-.LFBB5
+ 790               	.LM68:
+ 791 03ac 0196      		adiw r24,1
+ 792 03ae 3496      		adiw r30,4
+ 793 03b0 00C0      		rjmp .L20
+ 794               	.L21:
+  97:lcd.c         **** 	for(x=r.left; x<=r.right; x++)
+ 795               		.stabn	68,0,97,.LM69-.LFBB5
+ 796               	.LM69:
+ 797 03b2 2F5F      		subi r18,-1
+ 798 03b4 3F4F      		sbci r19,-1
+ 799 03b6 00C0      		rjmp .L17
+GAS LISTING /tmp/ccIzpQRS.s 			page 17
 
 
- 783 03aa 2F5F      		subi r18,lo8(-(1))
- 784 03ac 3F4F      		sbci r19,hi8(-(1))
- 785               	.L18:
-  98:lcd.c         **** 		for(y=r.top; y<=r.bottom; y++)
- 786               		.stabn	68,0,98,.LM74-.LFBB5
- 787               	.LM74:
- 788 03ae 4217      		cp r20,r18
- 789 03b0 5307      		cpc r21,r19
- 790 03b2 00F4      		brsh .L16
-  97:lcd.c         **** 	for(x=r.left; x<=r.right; x++)
- 791               		.stabn	68,0,97,.LM75-.LFBB5
- 792               	.LM75:
- 793 03b4 0196      		adiw r24,1
- 794               	.L15:
-  97:lcd.c         **** 	for(x=r.left; x<=r.right; x++)
- 795               		.stabn	68,0,97,.LM76-.LFBB5
- 796               	.LM76:
- 797 03b6 A817      		cp r26,r24
- 798 03b8 B907      		cpc r27,r25
- 799 03ba 00F0      		brlo .L14
- 800 03bc B801      		movw r22,r16
- 801 03be 272F      		mov r18,r23
- 802 03c0 302F      		mov r19,r16
- 803 03c2 00C0      		rjmp .L18
- 804               	.L14:
- 805               	/* epilogue start */
+ 800               	.L16:
+ 801               	/* epilogue start */
  100:lcd.c         **** }
- 806               		.stabn	68,0,100,.LM77-.LFBB5
- 807               	.LM77:
- 808 03c4 2896      		adiw r28,8
- 809 03c6 0FB6      		in __tmp_reg__,__SREG__
- 810 03c8 F894      		cli
- 811 03ca DEBF      		out __SP_H__,r29
- 812 03cc 0FBE      		out __SREG__,__tmp_reg__
- 813 03ce CDBF      		out __SP_L__,r28
- 814 03d0 CF91      		pop r28
- 815 03d2 DF91      		pop r29
- 816 03d4 1F91      		pop r17
- 817 03d6 0F91      		pop r16
- 818 03d8 0895      		ret
- 819               		.size	fill_rectangle_indexed, .-fill_rectangle_indexed
- 820               		.stabs	"x:r(7,4)",64,0,89,24
- 821               		.stabs	"y:r(7,4)",64,0,89,18
- 822               		.stabn	192,0,0,.LFBB5-.LFBB5
- 823               		.stabn	224,0,0,.Lscope5-.LFBB5
- 824               	.Lscope5:
- 825               		.stabs	"",36,0,0,.Lscope5-.LFBB5
- 826               		.stabd	78,0,0
- 827               		.stabs	"clear_screen:F(0,15)",36,0,102,clear_screen
- 828               	.global	clear_screen
- 829               		.type	clear_screen, @function
- 830               	clear_screen:
- 831               		.stabd	46,0,0
+ 802               		.stabn	68,0,100,.LM70-.LFBB5
+ 803               	.LM70:
+ 804 03b8 2896      		adiw r28,8
+ 805 03ba 0FB6      		in __tmp_reg__,__SREG__
+ 806 03bc F894      		cli
+ 807 03be DEBF      		out __SP_H__,r29
+ 808 03c0 0FBE      		out __SREG__,__tmp_reg__
+ 809 03c2 CDBF      		out __SP_L__,r28
+ 810 03c4 DF91      		pop r29
+ 811 03c6 CF91      		pop r28
+ 812 03c8 1F91      		pop r17
+ 813 03ca 0F91      		pop r16
+ 814 03cc 0895      		ret
+ 815               		.size	fill_rectangle_indexed, .-fill_rectangle_indexed
+ 816               		.stabs	"x:r(7,4)",64,0,89,18
+ 817               		.stabn	192,0,0,.LFBB5-.LFBB5
+ 818               		.stabn	224,0,0,.Lscope5-.LFBB5
+ 819               	.Lscope5:
+ 820               		.stabs	"",36,0,0,.Lscope5-.LFBB5
+ 821               		.stabd	78,0,0
+ 822               		.stabs	"clear_screen:F(0,47)",36,0,102,clear_screen
+ 823               	.global	clear_screen
+ 824               		.type	clear_screen, @function
+ 825               	clear_screen:
+ 826               		.stabd	46,0,0
  101:lcd.c         **** 
  102:lcd.c         **** void clear_screen()
  103:lcd.c         **** {
- 832               		.stabn	68,0,103,.LM78-.LFBB6
-GAS LISTING /tmp/ccPWDwyV.s 			page 18
-
-
- 833               	.LM78:
- 834               	.LFBB6:
- 835 03da 0F93      		push r16
- 836 03dc 1F93      		push r17
- 837 03de DF93      		push r29
- 838 03e0 CF93      		push r28
- 839 03e2 CDB7      		in r28,__SP_L__
- 840 03e4 DEB7      		in r29,__SP_H__
- 841 03e6 2897      		sbiw r28,8
- 842 03e8 0FB6      		in __tmp_reg__,__SREG__
- 843 03ea F894      		cli
- 844 03ec DEBF      		out __SP_H__,r29
- 845 03ee 0FBE      		out __SREG__,__tmp_reg__
- 846 03f0 CDBF      		out __SP_L__,r28
- 847               	/* prologue: function */
- 848               	/* frame size = 8 */
- 849               	/* stack size = 12 */
- 850               	.L__stack_usage = 12
+ 827               		.stabn	68,0,103,.LM71-.LFBB6
+ 828               	.LM71:
+ 829               	.LFBB6:
+ 830 03ce 0F93      		push r16
+ 831 03d0 1F93      		push r17
+ 832 03d2 CF93      		push r28
+ 833 03d4 DF93      		push r29
+ 834 03d6 CDB7      		in r28,__SP_L__
+ 835 03d8 DEB7      		in r29,__SP_H__
+ 836 03da 2897      		sbiw r28,8
+ 837 03dc 0FB6      		in __tmp_reg__,__SREG__
+ 838 03de F894      		cli
+ 839 03e0 DEBF      		out __SP_H__,r29
+ 840 03e2 0FBE      		out __SREG__,__tmp_reg__
+ 841 03e4 CDBF      		out __SP_L__,r28
+ 842               	/* prologue: function */
+ 843               	/* frame size = 8 */
+ 844               	/* stack size = 12 */
+ 845               	.L__stack_usage = 12
  104:lcd.c         **** 	display.x = 0;
- 851               		.stabn	68,0,104,.LM79-.LFBB6
- 852               	.LM79:
- 853 03f2 1092 0000 		sts display+6+1,__zero_reg__
- 854 03f6 1092 0000 		sts display+6,__zero_reg__
+ 846               		.stabn	68,0,104,.LM72-.LFBB6
+ 847               	.LM72:
+ 848 03e6 1092 0000 		sts display+6+1,__zero_reg__
+ 849 03ea 1092 0000 		sts display+6,__zero_reg__
  105:lcd.c         **** 	display.y = 0;
- 855               		.stabn	68,0,105,.LM80-.LFBB6
- 856               	.LM80:
- 857 03fa 1092 0000 		sts display+8+1,__zero_reg__
- 858 03fe 1092 0000 		sts display+8,__zero_reg__
+ 850               		.stabn	68,0,105,.LM73-.LFBB6
+GAS LISTING /tmp/ccIzpQRS.s 			page 18
+
+
+ 851               	.LM73:
+ 852 03ee 1092 0000 		sts display+8+1,__zero_reg__
+ 853 03f2 1092 0000 		sts display+8,__zero_reg__
  106:lcd.c         **** 	rectangle r = {0, display.width-1, 0, display.height-1};
- 859               		.stabn	68,0,106,.LM81-.LFBB6
- 860               	.LM81:
- 861 0402 E0E0      		ldi r30,lo8(display)
- 862 0404 F0E0      		ldi r31,hi8(display)
- 863 0406 2081      		ld r18,Z
- 864 0408 3181      		ldd r19,Z+1
- 865 040a 2150      		subi r18,lo8(-(-1))
- 866 040c 3040      		sbci r19,hi8(-(-1))
- 867 040e 8281      		ldd r24,Z+2
- 868 0410 9381      		ldd r25,Z+3
- 869 0412 0197      		sbiw r24,1
- 870 0414 1A82      		std Y+2,__zero_reg__
- 871 0416 1982      		std Y+1,__zero_reg__
- 872 0418 422F      		mov r20,r18
- 873 041a 3C83      		std Y+4,r19
- 874 041c 2B83      		std Y+3,r18
- 875 041e 1E82      		std Y+6,__zero_reg__
- 876 0420 1D82      		std Y+5,__zero_reg__
- 877 0422 9887      		std Y+8,r25
- 878 0424 8F83      		std Y+7,r24
+ 854               		.stabn	68,0,106,.LM74-.LFBB6
+ 855               	.LM74:
+ 856 03f6 1A82      		std Y+2,__zero_reg__
+ 857 03f8 1982      		std Y+1,__zero_reg__
+ 858 03fa 8091 0000 		lds r24,display
+ 859 03fe 9091 0000 		lds r25,display+1
+ 860 0402 0197      		sbiw r24,1
+ 861 0404 482F      		mov r20,r24
+ 862 0406 9C83      		std Y+4,r25
+ 863 0408 8B83      		std Y+3,r24
+ 864 040a 1E82      		std Y+6,__zero_reg__
+ 865 040c 1D82      		std Y+5,__zero_reg__
+ 866 040e 8091 0000 		lds r24,display+2
+ 867 0412 9091 0000 		lds r25,display+2+1
+ 868 0416 0197      		sbiw r24,1
+ 869 0418 9887      		std Y+8,r25
+ 870 041a 8F83      		std Y+7,r24
  107:lcd.c         **** 	fill_rectangle(r, display.background);
- 879               		.stabn	68,0,107,.LM82-.LFBB6
- 880               	.LM82:
- 881 0426 0485      		ldd r16,Z+12
- 882 0428 1585      		ldd r17,Z+13
- 883 042a 20E0      		ldi r18,lo8(0)
- 884 042c 3A81      		ldd r19,Y+2
- 885 042e 5C81      		ldd r21,Y+4
-GAS LISTING /tmp/ccPWDwyV.s 			page 19
-
-
- 886 0430 60E0      		ldi r22,lo8(0)
- 887 0432 7E81      		ldd r23,Y+6
- 888 0434 9885      		ldd r25,Y+8
- 889 0436 0E94 0000 		call fill_rectangle
- 890               	/* epilogue start */
+ 871               		.stabn	68,0,107,.LM75-.LFBB6
+ 872               	.LM75:
+ 873 041c 0091 0000 		lds r16,display+12
+ 874 0420 1091 0000 		lds r17,display+12+1
+ 875 0424 20E0      		ldi r18,0
+ 876 0426 3A81      		ldd r19,Y+2
+ 877 0428 5C81      		ldd r21,Y+4
+ 878 042a 60E0      		ldi r22,0
+ 879 042c 7E81      		ldd r23,Y+6
+ 880 042e 9885      		ldd r25,Y+8
+ 881 0430 0E94 0000 		call fill_rectangle
+ 882               	/* epilogue start */
  108:lcd.c         **** }
- 891               		.stabn	68,0,108,.LM83-.LFBB6
- 892               	.LM83:
- 893 043a 2896      		adiw r28,8
- 894 043c 0FB6      		in __tmp_reg__,__SREG__
- 895 043e F894      		cli
- 896 0440 DEBF      		out __SP_H__,r29
- 897 0442 0FBE      		out __SREG__,__tmp_reg__
- 898 0444 CDBF      		out __SP_L__,r28
- 899 0446 CF91      		pop r28
- 900 0448 DF91      		pop r29
- 901 044a 1F91      		pop r17
- 902 044c 0F91      		pop r16
- 903 044e 0895      		ret
- 904               		.size	clear_screen, .-clear_screen
- 905               		.stabs	"r:(12,5)",128,0,106,1
- 906               		.stabn	192,0,0,.LFBB6-.LFBB6
- 907               		.stabn	224,0,0,.Lscope6-.LFBB6
- 908               	.Lscope6:
- 909               		.stabs	"",36,0,0,.Lscope6-.LFBB6
- 910               		.stabd	78,0,0
- 911               		.stabs	"display_char:F(0,15)",36,0,110,display_char
- 912               		.stabs	"c:P(0,2)",64,0,110,24
- 913               	.global	display_char
- 914               		.type	display_char, @function
- 915               	display_char:
- 916               		.stabd	46,0,0
+ 883               		.stabn	68,0,108,.LM76-.LFBB6
+ 884               	.LM76:
+ 885 0434 2896      		adiw r28,8
+ 886 0436 0FB6      		in __tmp_reg__,__SREG__
+ 887 0438 F894      		cli
+ 888 043a DEBF      		out __SP_H__,r29
+ 889 043c 0FBE      		out __SREG__,__tmp_reg__
+ 890 043e CDBF      		out __SP_L__,r28
+ 891 0440 DF91      		pop r29
+ 892 0442 CF91      		pop r28
+ 893 0444 1F91      		pop r17
+ 894 0446 0F91      		pop r16
+ 895 0448 0895      		ret
+ 896               		.size	clear_screen, .-clear_screen
+ 897               		.stabs	"r:(12,5)",128,0,106,1
+ 898               		.stabn	192,0,0,.LFBB6-.LFBB6
+ 899               		.stabn	224,0,0,.Lscope6-.LFBB6
+ 900               	.Lscope6:
+ 901               		.stabs	"",36,0,0,.Lscope6-.LFBB6
+ 902               		.stabd	78,0,0
+ 903               		.stabs	"display_char:F(0,47)",36,0,110,display_char
+ 904               		.stabs	"c:P(0,2)",64,0,110,24
+GAS LISTING /tmp/ccIzpQRS.s 			page 19
+
+
+ 905               	.global	display_char
+ 906               		.type	display_char, @function
+ 907               	display_char:
+ 908               		.stabd	46,0,0
  109:lcd.c         **** 
  110:lcd.c         **** void display_char(char c)
  111:lcd.c         **** {
- 917               		.stabn	68,0,111,.LM84-.LFBB7
- 918               	.LM84:
- 919               	.LFBB7:
- 920 0450 EF92      		push r14
- 921 0452 FF92      		push r15
- 922 0454 0F93      		push r16
- 923 0456 1F93      		push r17
- 924 0458 CF93      		push r28
- 925 045a DF93      		push r29
- 926               	/* prologue: function */
- 927               	/* frame size = 0 */
- 928               	/* stack size = 6 */
- 929               	.L__stack_usage = 6
+ 909               		.stabn	68,0,111,.LM77-.LFBB7
+ 910               	.LM77:
+ 911               	.LFBB7:
+ 912 044a AF92      		push r10
+ 913 044c BF92      		push r11
+ 914 044e CF92      		push r12
+ 915 0450 DF92      		push r13
+ 916 0452 EF92      		push r14
+ 917 0454 FF92      		push r15
+ 918 0456 0F93      		push r16
+ 919 0458 1F93      		push r17
+ 920 045a CF93      		push r28
+ 921 045c DF93      		push r29
+ 922               	/* prologue: function */
+ 923               	/* frame size = 0 */
+ 924               	/* stack size = 10 */
+ 925               	.L__stack_usage = 10
  112:lcd.c         **** 	uint16_t x, y;
  113:lcd.c         **** 	PGM_P fdata; 
  114:lcd.c         **** 	uint8_t bits, mask;
  115:lcd.c         **** 	uint16_t sc=display.x, ec=display.x + 4, sp=display.y, ep=display.y + 7;
- 930               		.stabn	68,0,115,.LM85-.LFBB7
- 931               	.LM85:
- 932 045c 2091 0000 		lds r18,display+6
- 933 0460 3091 0000 		lds r19,display+6+1
- 934 0464 D901      		movw r26,r18
-GAS LISTING /tmp/ccPWDwyV.s 			page 20
-
-
- 935 0466 1496      		adiw r26,4
- 936 0468 4091 0000 		lds r20,display+8
- 937 046c 5091 0000 		lds r21,display+8+1
+ 926               		.stabn	68,0,115,.LM78-.LFBB7
+ 927               	.LM78:
+ 928 045e 6091 0000 		lds r22,display+6
+ 929 0462 7091 0000 		lds r23,display+6+1
+ 930 0466 2091 0000 		lds r18,display+8
+ 931 046a 3091 0000 		lds r19,display+8+1
+ 932 046e 8901      		movw r16,r18
  116:lcd.c         **** 
  117:lcd.c         **** 	/*   ::: MODIFIED :::  [KPZ-05.01.2014] */
  118:lcd.c         **** 	/* Carriage return starts a new line, or if the end of the
  119:lcd.c         ****            display has been reached, clears the display.
  120:lcd.c         **** 	 */
- 121:lcd.c         **** 	if (c == '\r') { 
- 938               		.stabn	68,0,121,.LM86-.LFBB7
- 939               	.LM86:
- 940 0470 8D30      		cpi r24,lo8(13)
- 941 0472 01F4      		brne .L21
+ 121:lcd.c         **** 	if (c == '\n') { 
+ 933               		.stabn	68,0,121,.LM79-.LFBB7
+ 934               	.LM79:
+ 935 0470 8A30      		cpi r24,lo8(10)
+ 936 0472 01F4      		brne .L24
  122:lcd.c         **** 	    display.x=0; display.y+=8;
- 942               		.stabn	68,0,122,.LM87-.LFBB7
- 943               	.LM87:
- 944 0474 1092 0000 		sts display+6+1,__zero_reg__
- 945 0478 1092 0000 		sts display+6,__zero_reg__
- 946 047c 485F      		subi r20,lo8(-(8))
- 947 047e 5F4F      		sbci r21,hi8(-(8))
- 948 0480 5093 0000 		sts display+8+1,r21
- 949 0484 4093 0000 		sts display+8,r20
+ 937               		.stabn	68,0,122,.LM80-.LFBB7
+ 938               	.LM80:
+ 939 0474 1092 0000 		sts display+6+1,__zero_reg__
+ 940 0478 1092 0000 		sts display+6,__zero_reg__
+ 941 047c 285F      		subi r18,-8
+ 942 047e 3F4F      		sbci r19,-1
+ 943 0480 3093 0000 		sts display+8+1,r19
+ 944 0484 2093 0000 		sts display+8,r18
  123:lcd.c         **** 	    if (display.y >= display.height) { clear_screen(); }
- 950               		.stabn	68,0,123,.LM88-.LFBB7
- 951               	.LM88:
- 952 0488 8091 0000 		lds r24,display+2
- 953 048c 9091 0000 		lds r25,display+2+1
- 954 0490 4817      		cp r20,r24
- 955 0492 5907      		cpc r21,r25
- 956 0494 00F4      		brsh .+2
- 957 0496 00C0      		rjmp .L20
- 958               		.stabn	68,0,123,.LM89-.LFBB7
- 959               	.LM89:
- 960 0498 0E94 0000 		call clear_screen
- 961 049c 00C0      		rjmp .L20
- 962               	.L21:
+ 945               		.stabn	68,0,123,.LM81-.LFBB7
+ 946               	.LM81:
+GAS LISTING /tmp/ccIzpQRS.s 			page 20
+
+
+ 947 0488 8091 0000 		lds r24,display+2
+ 948 048c 9091 0000 		lds r25,display+2+1
+ 949 0490 2817      		cp r18,r24
+ 950 0492 3907      		cpc r19,r25
+ 951 0494 00F4      		brsh .+2
+ 952 0496 00C0      		rjmp .L23
+ 953               	/* epilogue start */
  124:lcd.c         **** 	    return;
  125:lcd.c         **** 	}
  126:lcd.c         **** 
  127:lcd.c         **** 	if (c < 32 || c > 126) return;
- 963               		.stabn	68,0,127,.LM90-.LFBB7
- 964               	.LM90:
- 965 049e 982F      		mov r25,r24
- 966 04a0 9052      		subi r25,lo8(-(-32))
- 967 04a2 9F35      		cpi r25,lo8(95)
- 968 04a4 00F0      		brlo .+2
- 969 04a6 00C0      		rjmp .L20
- 115:lcd.c         **** 	uint16_t sc=display.x, ec=display.x + 4, sp=display.y, ep=display.y + 7;
- 970               		.stabn	68,0,115,.LM91-.LFBB7
- 971               	.LM91:
- 972 04a8 BA01      		movw r22,r20
- 973 04aa 695F      		subi r22,lo8(-(7))
- 974 04ac 7F4F      		sbci r23,hi8(-(7))
  128:lcd.c         **** 	fdata = (c - ' ')*5 + font5x7;
- 975               		.stabn	68,0,128,.LM92-.LFBB7
- 976               	.LM92:
- 977 04ae 95E0      		ldi r25,lo8(5)
-GAS LISTING /tmp/ccPWDwyV.s 			page 21
-
-
- 978 04b0 899F      		mul r24,r25
- 979 04b2 C001      		movw r24,r0
- 980 04b4 1124      		clr r1
- 981 04b6 8050      		subi r24,lo8(-(font5x7-160))
- 982 04b8 9040      		sbci r25,hi8(-(font5x7-160))
  129:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
- 983               		.stabn	68,0,129,.LM93-.LFBB7
- 984               	.LM93:
- 985 04ba 1498      		cbi 34-32,4
- 986 04bc EBE2      		ldi r30,lo8(43)
- 987 04be E8B9      		out 40-32,r30
- 988 04c0 1398      		cbi 34-32,3
- 989 04c2 139A      		sbi 34-32,3
- 990 04c4 149A      		sbi 34-32,4
  130:lcd.c         **** 	write_data16(sp);
- 991               		.stabn	68,0,130,.LM94-.LFBB7
- 992               	.LM94:
- 993 04c6 58B9      		out 40-32,r21
- 994 04c8 1398      		cbi 34-32,3
- 995 04ca 139A      		sbi 34-32,3
- 996 04cc 48B9      		out 40-32,r20
- 997 04ce 1398      		cbi 34-32,3
- 998 04d0 139A      		sbi 34-32,3
  131:lcd.c         **** 	write_data16(ep);
- 999               		.stabn	68,0,131,.LM95-.LFBB7
- 1000               	.LM95:
- 1001 04d2 78B9      		out 40-32,r23
- 1002 04d4 1398      		cbi 34-32,3
- 1003 04d6 139A      		sbi 34-32,3
- 1004 04d8 68B9      		out 40-32,r22
- 1005 04da 1398      		cbi 34-32,3
- 1006 04dc 139A      		sbi 34-32,3
  132:lcd.c         **** 	for(x=sc; x<=ec; x++) {
  133:lcd.c         **** 		write_cmd(COLUMN_ADDRESS_SET);
- 1007               		.stabn	68,0,133,.LM96-.LFBB7
- 1008               	.LM96:
- 1009 04de 0AE2      		ldi r16,lo8(42)
  134:lcd.c         **** 		write_data16(x);
  135:lcd.c         **** 		write_data16(x);
  136:lcd.c         **** 		write_cmd(MEMORY_WRITE);
- 1010               		.stabn	68,0,136,.LM97-.LFBB7
- 1011               	.LM97:
- 1012 04e0 1CE2      		ldi r17,lo8(44)
- 132:lcd.c         **** 	for(x=sc; x<=ec; x++) {
- 1013               		.stabn	68,0,132,.LM98-.LFBB7
- 1014               	.LM98:
- 1015 04e2 00C0      		rjmp .L23
- 1016               	.L30:
- 133:lcd.c         **** 		write_cmd(COLUMN_ADDRESS_SET);
- 1017               		.stabn	68,0,133,.LM99-.LFBB7
- 1018               	.LM99:
- 1019 04e4 1498      		cbi 34-32,4
- 1020 04e6 08B9      		out 40-32,r16
- 1021 04e8 1398      		cbi 34-32,3
- 1022 04ea 139A      		sbi 34-32,3
- 1023 04ec 149A      		sbi 34-32,4
- 134:lcd.c         **** 		write_data16(x);
-GAS LISTING /tmp/ccPWDwyV.s 			page 22
-
-
- 1024               		.stabn	68,0,134,.LM100-.LFBB7
- 1025               	.LM100:
- 1026 04ee 38B9      		out 40-32,r19
- 1027 04f0 1398      		cbi 34-32,3
- 1028 04f2 139A      		sbi 34-32,3
- 1029 04f4 28B9      		out 40-32,r18
- 1030 04f6 1398      		cbi 34-32,3
- 1031 04f8 139A      		sbi 34-32,3
- 135:lcd.c         **** 		write_data16(x);
- 1032               		.stabn	68,0,135,.LM101-.LFBB7
- 1033               	.LM101:
- 1034 04fa 38B9      		out 40-32,r19
- 1035 04fc 1398      		cbi 34-32,3
- 1036 04fe 139A      		sbi 34-32,3
- 1037 0500 28B9      		out 40-32,r18
- 1038 0502 1398      		cbi 34-32,3
- 1039 0504 139A      		sbi 34-32,3
- 1040               		.stabn	68,0,136,.LM102-.LFBB7
- 1041               	.LM102:
- 1042 0506 1498      		cbi 34-32,4
- 1043 0508 18B9      		out 40-32,r17
- 1044 050a 1398      		cbi 34-32,3
- 1045 050c 139A      		sbi 34-32,3
- 1046 050e 149A      		sbi 34-32,4
- 1047 0510 FC01      		movw r30,r24
- 1048               	.LBB2:
  137:lcd.c         **** 		bits = pgm_read_byte(fdata++);
- 1049               		.stabn	68,0,137,.LM103-.LFBB7
- 1050               	.LM103:
- 1051 0512 0196      		adiw r24,1
- 1052               	/* #APP */
- 1053               	 ;  137 "lcd.c" 1
- 1054 0514 E491      		lpm r30, Z
- 1055               		
- 1056               	 ;  0 "" 2
- 1057               	/* #NOAPP */
- 1058               	.LBE2:
  138:lcd.c         **** 		for(y=sp, mask=0x01; y<=ep; y++, mask<<=1)
- 1059               		.stabn	68,0,138,.LM104-.LFBB7
- 1060               	.LM104:
- 1061 0516 EA01      		movw r28,r20
- 1062 0518 F1E0      		ldi r31,lo8(1)
- 1063 051a 00C0      		rjmp .L24
- 1064               	.L29:
  139:lcd.c         **** 			write_data16((bits & mask) ? display.foreground : display.background);
- 1065               		.stabn	68,0,139,.LM105-.LFBB7
- 1066               	.LM105:
- 1067 051c FF2E      		mov r15,r31
- 1068 051e FE22      		and r15,r30
- 1069 0520 01F0      		breq .L25
- 1070               		.stabn	68,0,139,.LM106-.LFBB7
- 1071               	.LM106:
- 1072 0522 E090 0000 		lds r14,display+11
- 1073 0526 00C0      		rjmp .L26
- 1074               	.L25:
- 1075               		.stabn	68,0,139,.LM107-.LFBB7
- 1076               	.LM107:
-GAS LISTING /tmp/ccPWDwyV.s 			page 23
-
-
- 1077 0528 E090 0000 		lds r14,display+13
- 1078               	.L26:
- 1079               		.stabn	68,0,139,.LM108-.LFBB7
- 1080               	.LM108:
- 1081 052c E8B8      		out 40-32,r14
- 1082 052e 1398      		cbi 34-32,3
- 1083 0530 139A      		sbi 34-32,3
- 1084 0532 FF20      		tst r15
- 1085 0534 01F0      		breq .L27
- 1086               		.stabn	68,0,139,.LM109-.LFBB7
- 1087               	.LM109:
- 1088 0536 F090 0000 		lds r15,display+10
- 1089 053a 00C0      		rjmp .L28
- 1090               	.L27:
- 1091               		.stabn	68,0,139,.LM110-.LFBB7
- 1092               	.LM110:
- 1093 053c F090 0000 		lds r15,display+12
- 1094               	.L28:
- 1095               		.stabn	68,0,139,.LM111-.LFBB7
- 1096               	.LM111:
- 1097 0540 F8B8      		out 40-32,r15
- 1098 0542 1398      		cbi 34-32,3
- 1099 0544 139A      		sbi 34-32,3
- 138:lcd.c         **** 		for(y=sp, mask=0x01; y<=ep; y++, mask<<=1)
- 1100               		.stabn	68,0,138,.LM112-.LFBB7
- 1101               	.LM112:
- 1102 0546 2196      		adiw r28,1
- 1103 0548 FF0F      		lsl r31
- 1104               	.L24:
- 138:lcd.c         **** 		for(y=sp, mask=0x01; y<=ep; y++, mask<<=1)
- 1105               		.stabn	68,0,138,.LM113-.LFBB7
- 1106               	.LM113:
- 1107 054a 6C17      		cp r22,r28
- 1108 054c 7D07      		cpc r23,r29
- 1109 054e 00F4      		brsh .L29
- 132:lcd.c         **** 	for(x=sc; x<=ec; x++) {
- 1110               		.stabn	68,0,132,.LM114-.LFBB7
- 1111               	.LM114:
- 1112 0550 2F5F      		subi r18,lo8(-(1))
- 1113 0552 3F4F      		sbci r19,hi8(-(1))
- 1114               	.L23:
- 132:lcd.c         **** 	for(x=sc; x<=ec; x++) {
- 1115               		.stabn	68,0,132,.LM115-.LFBB7
- 1116               	.LM115:
- 1117 0554 A217      		cp r26,r18
- 1118 0556 B307      		cpc r27,r19
- 1119 0558 00F4      		brsh .L30
  140:lcd.c         **** 	}
  141:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
- 1120               		.stabn	68,0,141,.LM116-.LFBB7
- 1121               	.LM116:
- 1122 055a 1498      		cbi 34-32,4
- 1123 055c 8AE2      		ldi r24,lo8(42)
- 1124 055e 88B9      		out 40-32,r24
- 1125 0560 1398      		cbi 34-32,3
- 1126 0562 139A      		sbi 34-32,3
- 1127 0564 149A      		sbi 34-32,4
-GAS LISTING /tmp/ccPWDwyV.s 			page 24
-
-
  142:lcd.c         **** 	write_data16(x);
- 1128               		.stabn	68,0,142,.LM117-.LFBB7
- 1129               	.LM117:
- 1130 0566 38B9      		out 40-32,r19
- 1131 0568 1398      		cbi 34-32,3
- 1132 056a 139A      		sbi 34-32,3
- 1133 056c 28B9      		out 40-32,r18
- 1134 056e 1398      		cbi 34-32,3
- 1135 0570 139A      		sbi 34-32,3
  143:lcd.c         **** 	write_data16(x);
- 1136               		.stabn	68,0,143,.LM118-.LFBB7
- 1137               	.LM118:
- 1138 0572 38B9      		out 40-32,r19
- 1139 0574 1398      		cbi 34-32,3
- 1140 0576 139A      		sbi 34-32,3
- 1141 0578 28B9      		out 40-32,r18
- 1142 057a 1398      		cbi 34-32,3
- 1143 057c 139A      		sbi 34-32,3
  144:lcd.c         **** 	write_cmd(MEMORY_WRITE);
- 1144               		.stabn	68,0,144,.LM119-.LFBB7
- 1145               	.LM119:
- 1146 057e 1498      		cbi 34-32,4
- 1147 0580 8CE2      		ldi r24,lo8(44)
- 1148 0582 88B9      		out 40-32,r24
- 1149 0584 1398      		cbi 34-32,3
- 1150 0586 139A      		sbi 34-32,3
- 1151 0588 149A      		sbi 34-32,4
  145:lcd.c         **** 	for(y=sp; y<=ep; y++)
- 1152               		.stabn	68,0,145,.LM120-.LFBB7
- 1153               	.LM120:
- 1154 058a 00C0      		rjmp .L31
- 1155               	.L32:
  146:lcd.c         **** 		write_data16(display.background);
- 1156               		.stabn	68,0,146,.LM121-.LFBB7
- 1157               	.LM121:
- 1158 058c 8091 0000 		lds r24,display+13
- 1159 0590 88B9      		out 40-32,r24
- 1160 0592 1398      		cbi 34-32,3
- 1161 0594 139A      		sbi 34-32,3
- 1162 0596 8091 0000 		lds r24,display+12
- 1163 059a 88B9      		out 40-32,r24
- 1164 059c 1398      		cbi 34-32,3
- 1165 059e 139A      		sbi 34-32,3
- 145:lcd.c         **** 	for(y=sp; y<=ep; y++)
- 1166               		.stabn	68,0,145,.LM122-.LFBB7
- 1167               	.LM122:
- 1168 05a0 4F5F      		subi r20,lo8(-(1))
- 1169 05a2 5F4F      		sbci r21,hi8(-(1))
- 1170               	.L31:
- 145:lcd.c         **** 	for(y=sp; y<=ep; y++)
- 1171               		.stabn	68,0,145,.LM123-.LFBB7
- 1172               	.LM123:
- 1173 05a4 6417      		cp r22,r20
- 1174 05a6 7507      		cpc r23,r21
- 1175 05a8 00F4      		brsh .L32
  147:lcd.c         **** 
  148:lcd.c         **** 	display.x += 6;
-GAS LISTING /tmp/ccPWDwyV.s 			page 25
-
-
- 1176               		.stabn	68,0,148,.LM124-.LFBB7
- 1177               	.LM124:
- 1178 05aa 8091 0000 		lds r24,display+6
- 1179 05ae 9091 0000 		lds r25,display+6+1
- 1180 05b2 0696      		adiw r24,6
- 1181 05b4 9093 0000 		sts display+6+1,r25
- 1182 05b8 8093 0000 		sts display+6,r24
  149:lcd.c         **** 	if (display.x >= display.width) { display.x=0; display.y+=8; }
- 1183               		.stabn	68,0,149,.LM125-.LFBB7
- 1184               	.LM125:
- 1185 05bc 2091 0000 		lds r18,display
- 1186 05c0 3091 0000 		lds r19,display+1
- 1187 05c4 8217      		cp r24,r18
- 1188 05c6 9307      		cpc r25,r19
- 1189 05c8 00F0      		brlo .L20
- 1190               		.stabn	68,0,149,.LM126-.LFBB7
- 1191               	.LM126:
- 1192 05ca 1092 0000 		sts display+6+1,__zero_reg__
- 1193 05ce 1092 0000 		sts display+6,__zero_reg__
- 1194 05d2 8091 0000 		lds r24,display+8
- 1195 05d6 9091 0000 		lds r25,display+8+1
- 1196 05da 0896      		adiw r24,8
- 1197 05dc E0E0      		ldi r30,lo8(display)
- 1198 05de F0E0      		ldi r31,hi8(display)
- 1199 05e0 9187      		std Z+9,r25
- 1200 05e2 8087      		std Z+8,r24
- 1201               	.L20:
- 1202               	/* epilogue start */
  150:lcd.c         **** 
  151:lcd.c         **** }
- 1203               		.stabn	68,0,151,.LM127-.LFBB7
- 1204               	.LM127:
- 1205 05e4 DF91      		pop r29
- 1206 05e6 CF91      		pop r28
- 1207 05e8 1F91      		pop r17
- 1208 05ea 0F91      		pop r16
- 1209 05ec FF90      		pop r15
- 1210 05ee EF90      		pop r14
- 1211 05f0 0895      		ret
- 1212               		.size	display_char, .-display_char
- 1213               		.stabs	"x:r(7,4)",64,0,112,18
- 1214               		.stabs	"fdata:r(0,17)=*(0,18)=k(10,3)",64,0,113,24
- 1215               		.stabs	"mask:r(7,2)",64,0,114,31
- 1216               		.stabs	"sc:r(7,4)",64,0,115,18
- 1217               		.stabs	"ec:r(7,4)",64,0,115,26
- 1218               		.stabs	"sp:r(7,4)",64,0,115,20
- 1219               		.stabs	"ep:r(7,4)",64,0,115,22
- 1220               		.stabn	192,0,0,.LFBB7-.LFBB7
- 1221               		.stabs	"__addr16:r(7,4)",64,0,137,30
- 1222               		.stabs	"__result:r(7,2)",64,0,137,30
- 1223               		.stabn	192,0,0,.LBB2-.LFBB7
- 1224               		.stabn	224,0,0,.LBE2-.LFBB7
- 1225               		.stabn	224,0,0,.Lscope7-.LFBB7
- 1226               	.Lscope7:
- 1227               		.stabs	"",36,0,0,.Lscope7-.LFBB7
- 1228               		.stabd	78,0,0
- 1229               		.stabs	"display_string:F(0,15)",36,0,153,display_string
-GAS LISTING /tmp/ccPWDwyV.s 			page 26
+ 954               		.stabn	68,0,151,.LM82-.LFBB7
+ 955               	.LM82:
+ 956 0498 DF91      		pop r29
+ 957 049a CF91      		pop r28
+ 958 049c 1F91      		pop r17
+ 959 049e 0F91      		pop r16
+ 960 04a0 FF90      		pop r15
+ 961 04a2 EF90      		pop r14
+ 962 04a4 DF90      		pop r13
+ 963 04a6 CF90      		pop r12
+ 964 04a8 BF90      		pop r11
+ 965 04aa AF90      		pop r10
+ 123:lcd.c         **** 	    if (display.y >= display.height) { clear_screen(); }
+ 966               		.stabn	68,0,123,.LM83-.LFBB7
+ 967               	.LM83:
+ 968 04ac 0C94 0000 		jmp clear_screen
+ 969               	.L24:
+ 127:lcd.c         **** 	if (c < 32 || c > 126) return;
+ 970               		.stabn	68,0,127,.LM84-.LFBB7
+ 971               	.LM84:
+ 972 04b0 90EE      		ldi r25,lo8(-32)
+ 973 04b2 980F      		add r25,r24
+GAS LISTING /tmp/ccIzpQRS.s 			page 21
 
 
- 1230               		.stabs	"str:P(0,19)=*(0,2)",64,0,153,28
- 1231               	.global	display_string
- 1232               		.type	display_string, @function
- 1233               	display_string:
- 1234               		.stabd	46,0,0
+ 974 04b4 9F35      		cpi r25,lo8(95)
+ 975 04b6 00F0      		brlo .+2
+ 976 04b8 00C0      		rjmp .L23
+ 115:lcd.c         **** 	uint16_t sc=display.x, ec=display.x + 4, sp=display.y, ep=display.y + 7;
+ 977               		.stabn	68,0,115,.LM85-.LFBB7
+ 978               	.LM85:
+ 979 04ba D901      		movw r26,r18
+ 980 04bc 1796      		adiw r26,7
+ 128:lcd.c         **** 	fdata = (c - ' ')*5 + font5x7;
+ 981               		.stabn	68,0,128,.LM86-.LFBB7
+ 982               	.LM86:
+ 983 04be 90E0      		ldi r25,0
+ 984 04c0 8097      		sbiw r24,32
+ 985 04c2 E5E0      		ldi r30,lo8(5)
+ 986 04c4 E89F      		mul r30,r24
+ 987 04c6 A001      		movw r20,r0
+ 988 04c8 E99F      		mul r30,r25
+ 989 04ca 500D      		add r21,r0
+ 990 04cc 1124      		clr __zero_reg__
+ 991 04ce 4050      		subi r20,lo8(-(font5x7))
+ 992 04d0 5040      		sbci r21,hi8(-(font5x7))
+ 129:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
+ 993               		.stabn	68,0,129,.LM87-.LFBB7
+ 994               	.LM87:
+ 995 04d2 1498      		cbi 0x2,4
+ 996 04d4 8BE2      		ldi r24,lo8(43)
+ 997 04d6 88B9      		out 0x8,r24
+ 998 04d8 1398      		cbi 0x2,3
+ 999 04da 139A      		sbi 0x2,3
+ 1000 04dc 149A      		sbi 0x2,4
+ 130:lcd.c         **** 	write_data16(sp);
+ 1001               		.stabn	68,0,130,.LM88-.LFBB7
+ 1002               	.LM88:
+ 1003 04de 38B9      		out 0x8,r19
+ 1004 04e0 1398      		cbi 0x2,3
+ 1005 04e2 139A      		sbi 0x2,3
+ 1006 04e4 28B9      		out 0x8,r18
+ 1007 04e6 1398      		cbi 0x2,3
+ 1008 04e8 139A      		sbi 0x2,3
+ 131:lcd.c         **** 	write_data16(ep);
+ 1009               		.stabn	68,0,131,.LM89-.LFBB7
+ 1010               	.LM89:
+ 1011 04ea B8B9      		out 0x8,r27
+ 1012 04ec 1398      		cbi 0x2,3
+ 1013 04ee 139A      		sbi 0x2,3
+ 1014 04f0 A8B9      		out 0x8,r26
+ 1015 04f2 1398      		cbi 0x2,3
+ 1016 04f4 139A      		sbi 0x2,3
+ 132:lcd.c         **** 	for(x=sc; x<=ec; x++) {
+ 1017               		.stabn	68,0,132,.LM90-.LFBB7
+ 1018               	.LM90:
+ 1019 04f6 CB01      		movw r24,r22
+ 115:lcd.c         **** 	uint16_t sc=display.x, ec=display.x + 4, sp=display.y, ep=display.y + 7;
+ 1020               		.stabn	68,0,115,.LM91-.LFBB7
+ 1021               	.LM91:
+ 1022 04f8 7B01      		movw r14,r22
+ 1023 04fa E4E0      		ldi r30,4
+GAS LISTING /tmp/ccIzpQRS.s 			page 22
+
+
+ 1024 04fc EE0E      		add r14,r30
+ 1025 04fe F11C      		adc r15,__zero_reg__
+ 133:lcd.c         **** 		write_cmd(COLUMN_ADDRESS_SET);
+ 1026               		.stabn	68,0,133,.LM92-.LFBB7
+ 1027               	.LM92:
+ 1028 0500 EAE2      		ldi r30,lo8(42)
+ 1029 0502 BE2E      		mov r11,r30
+ 136:lcd.c         **** 		write_cmd(MEMORY_WRITE);
+ 1030               		.stabn	68,0,136,.LM93-.LFBB7
+ 1031               	.LM93:
+ 1032 0504 FCE2      		ldi r31,lo8(44)
+ 1033 0506 AF2E      		mov r10,r31
+ 1034 0508 461B      		sub r20,r22
+ 1035 050a 570B      		sbc r21,r23
+ 1036               	.L28:
+ 133:lcd.c         **** 		write_cmd(COLUMN_ADDRESS_SET);
+ 1037               		.stabn	68,0,133,.LM94-.LFBB7
+ 1038               	.LM94:
+ 1039 050c 1498      		cbi 0x2,4
+ 132:lcd.c         **** 	for(x=sc; x<=ec; x++) {
+ 1040               		.stabn	68,0,132,.LM95-.LFBB7
+ 1041               	.LM95:
+ 1042 050e E816      		cp r14,r24
+ 1043 0510 F906      		cpc r15,r25
+ 1044 0512 00F0      		brlo .L38
+ 133:lcd.c         **** 		write_cmd(COLUMN_ADDRESS_SET);
+ 1045               		.stabn	68,0,133,.LM96-.LFBB7
+ 1046               	.LM96:
+ 1047 0514 B8B8      		out 0x8,r11
+ 1048 0516 1398      		cbi 0x2,3
+ 1049 0518 139A      		sbi 0x2,3
+ 1050 051a 149A      		sbi 0x2,4
+ 134:lcd.c         **** 		write_data16(x);
+ 1051               		.stabn	68,0,134,.LM97-.LFBB7
+ 1052               	.LM97:
+ 1053 051c 98B9      		out 0x8,r25
+ 1054 051e 1398      		cbi 0x2,3
+ 1055 0520 139A      		sbi 0x2,3
+ 1056 0522 88B9      		out 0x8,r24
+ 1057 0524 1398      		cbi 0x2,3
+ 1058 0526 139A      		sbi 0x2,3
+ 135:lcd.c         **** 		write_data16(x);
+ 1059               		.stabn	68,0,135,.LM98-.LFBB7
+ 1060               	.LM98:
+ 1061 0528 98B9      		out 0x8,r25
+ 1062 052a 1398      		cbi 0x2,3
+ 1063 052c 139A      		sbi 0x2,3
+ 1064 052e 88B9      		out 0x8,r24
+ 1065 0530 1398      		cbi 0x2,3
+ 1066 0532 139A      		sbi 0x2,3
+ 136:lcd.c         **** 		write_cmd(MEMORY_WRITE);
+ 1067               		.stabn	68,0,136,.LM99-.LFBB7
+ 1068               	.LM99:
+ 1069 0534 1498      		cbi 0x2,4
+ 1070 0536 A8B8      		out 0x8,r10
+ 1071 0538 1398      		cbi 0x2,3
+ 1072 053a 139A      		sbi 0x2,3
+GAS LISTING /tmp/ccIzpQRS.s 			page 23
+
+
+ 1073 053c 149A      		sbi 0x2,4
+ 1074 053e FA01      		movw r30,r20
+ 1075 0540 E80F      		add r30,r24
+ 1076 0542 F91F      		adc r31,r25
+ 1077               	.LBB2:
+ 137:lcd.c         **** 		bits = pgm_read_byte(fdata++);
+ 1078               		.stabn	68,0,137,.LM100-.LFBB7
+ 1079               	.LM100:
+ 1080               	/* #APP */
+ 1081               	 ;  137 "lcd.c" 1
+ 1082 0544 E491      		lpm r30, Z
+ 1083               		
+ 1084               	 ;  0 "" 2
+ 1085               	/* #NOAPP */
+ 1086               	.LBE2:
+ 138:lcd.c         **** 		for(y=sp, mask=0x01; y<=ep; y++, mask<<=1)
+ 1087               		.stabn	68,0,138,.LM101-.LFBB7
+ 1088               	.LM101:
+ 1089 0546 E901      		movw r28,r18
+ 1090 0548 F1E0      		ldi r31,lo8(1)
+ 1091               	.L29:
+ 138:lcd.c         **** 		for(y=sp, mask=0x01; y<=ep; y++, mask<<=1)
+ 1092               		.stabn	68,0,138,.LM102-.LFBB7
+ 1093               	.LM102:
+ 1094 054a AC17      		cp r26,r28
+ 1095 054c BD07      		cpc r27,r29
+ 1096 054e 00F0      		brlo .L39
+ 139:lcd.c         **** 			write_data16((bits & mask) ? display.foreground : display.background);
+ 1097               		.stabn	68,0,139,.LM103-.LFBB7
+ 1098               	.LM103:
+ 1099 0550 DF2E      		mov r13,r31
+ 1100 0552 DE22      		and r13,r30
+ 1101 0554 01F0      		breq .L30
+ 139:lcd.c         **** 			write_data16((bits & mask) ? display.foreground : display.background);
+ 1102               		.stabn	68,0,139,.LM104-.LFBB7
+ 1103               	.LM104:
+ 1104 0556 C090 0000 		lds r12,display+11
+ 1105 055a 00C0      		rjmp .L31
+ 1106               	.L30:
+ 139:lcd.c         **** 			write_data16((bits & mask) ? display.foreground : display.background);
+ 1107               		.stabn	68,0,139,.LM105-.LFBB7
+ 1108               	.LM105:
+ 1109 055c C090 0000 		lds r12,display+13
+ 1110               	.L31:
+ 139:lcd.c         **** 			write_data16((bits & mask) ? display.foreground : display.background);
+ 1111               		.stabn	68,0,139,.LM106-.LFBB7
+ 1112               	.LM106:
+ 1113 0560 C8B8      		out 0x8,r12
+ 1114 0562 1398      		cbi 0x2,3
+ 1115 0564 139A      		sbi 0x2,3
+ 1116 0566 DD20      		tst r13
+ 1117 0568 01F0      		breq .L32
+ 139:lcd.c         **** 			write_data16((bits & mask) ? display.foreground : display.background);
+ 1118               		.stabn	68,0,139,.LM107-.LFBB7
+ 1119               	.LM107:
+ 1120 056a D090 0000 		lds r13,display+10
+ 1121 056e 00C0      		rjmp .L33
+GAS LISTING /tmp/ccIzpQRS.s 			page 24
+
+
+ 1122               	.L32:
+ 139:lcd.c         **** 			write_data16((bits & mask) ? display.foreground : display.background);
+ 1123               		.stabn	68,0,139,.LM108-.LFBB7
+ 1124               	.LM108:
+ 1125 0570 D090 0000 		lds r13,display+12
+ 1126               	.L33:
+ 139:lcd.c         **** 			write_data16((bits & mask) ? display.foreground : display.background);
+ 1127               		.stabn	68,0,139,.LM109-.LFBB7
+ 1128               	.LM109:
+ 1129 0574 D8B8      		out 0x8,r13
+ 1130 0576 1398      		cbi 0x2,3
+ 1131 0578 139A      		sbi 0x2,3
+ 138:lcd.c         **** 		for(y=sp, mask=0x01; y<=ep; y++, mask<<=1)
+ 1132               		.stabn	68,0,138,.LM110-.LFBB7
+ 1133               	.LM110:
+ 1134 057a 2196      		adiw r28,1
+ 1135 057c FF0F      		lsl r31
+ 1136 057e 00C0      		rjmp .L29
+ 1137               	.L39:
+ 132:lcd.c         **** 	for(x=sc; x<=ec; x++) {
+ 1138               		.stabn	68,0,132,.LM111-.LFBB7
+ 1139               	.LM111:
+ 1140 0580 0196      		adiw r24,1
+ 1141 0582 00C0      		rjmp .L28
+ 1142               	.L38:
+ 141:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
+ 1143               		.stabn	68,0,141,.LM112-.LFBB7
+ 1144               	.LM112:
+ 1145 0584 4AE2      		ldi r20,lo8(42)
+ 1146 0586 48B9      		out 0x8,r20
+ 1147 0588 1398      		cbi 0x2,3
+ 1148 058a 139A      		sbi 0x2,3
+ 1149 058c 149A      		sbi 0x2,4
+ 142:lcd.c         **** 	write_data16(x);
+ 1150               		.stabn	68,0,142,.LM113-.LFBB7
+ 1151               	.LM113:
+ 1152 058e 98B9      		out 0x8,r25
+ 1153 0590 1398      		cbi 0x2,3
+ 1154 0592 139A      		sbi 0x2,3
+ 1155 0594 88B9      		out 0x8,r24
+ 1156 0596 1398      		cbi 0x2,3
+ 1157 0598 139A      		sbi 0x2,3
+ 143:lcd.c         **** 	write_data16(x);
+ 1158               		.stabn	68,0,143,.LM114-.LFBB7
+ 1159               	.LM114:
+ 1160 059a 98B9      		out 0x8,r25
+ 1161 059c 1398      		cbi 0x2,3
+ 1162 059e 139A      		sbi 0x2,3
+ 1163 05a0 88B9      		out 0x8,r24
+ 1164 05a2 1398      		cbi 0x2,3
+ 1165 05a4 139A      		sbi 0x2,3
+ 144:lcd.c         **** 	write_cmd(MEMORY_WRITE);
+ 1166               		.stabn	68,0,144,.LM115-.LFBB7
+ 1167               	.LM115:
+ 1168 05a6 1498      		cbi 0x2,4
+ 1169 05a8 8CE2      		ldi r24,lo8(44)
+ 1170 05aa 88B9      		out 0x8,r24
+GAS LISTING /tmp/ccIzpQRS.s 			page 25
+
+
+ 1171 05ac 1398      		cbi 0x2,3
+ 1172 05ae 139A      		sbi 0x2,3
+ 1173 05b0 149A      		sbi 0x2,4
+ 1174               	.L36:
+ 145:lcd.c         **** 	for(y=sp; y<=ep; y++)
+ 1175               		.stabn	68,0,145,.LM116-.LFBB7
+ 1176               	.LM116:
+ 1177 05b2 A217      		cp r26,r18
+ 1178 05b4 B307      		cpc r27,r19
+ 1179 05b6 00F0      		brlo .L40
+ 146:lcd.c         **** 		write_data16(display.background);
+ 1180               		.stabn	68,0,146,.LM117-.LFBB7
+ 1181               	.LM117:
+ 1182 05b8 8091 0000 		lds r24,display+13
+ 1183 05bc 88B9      		out 0x8,r24
+ 1184 05be 1398      		cbi 0x2,3
+ 1185 05c0 139A      		sbi 0x2,3
+ 1186 05c2 8091 0000 		lds r24,display+12
+ 1187 05c6 88B9      		out 0x8,r24
+ 1188 05c8 1398      		cbi 0x2,3
+ 1189 05ca 139A      		sbi 0x2,3
+ 145:lcd.c         **** 	for(y=sp; y<=ep; y++)
+ 1190               		.stabn	68,0,145,.LM118-.LFBB7
+ 1191               	.LM118:
+ 1192 05cc 2F5F      		subi r18,-1
+ 1193 05ce 3F4F      		sbci r19,-1
+ 1194 05d0 00C0      		rjmp .L36
+ 1195               	.L40:
+ 148:lcd.c         **** 	display.x += 6;
+ 1196               		.stabn	68,0,148,.LM119-.LFBB7
+ 1197               	.LM119:
+ 1198 05d2 6A5F      		subi r22,-6
+ 1199 05d4 7F4F      		sbci r23,-1
+ 1200 05d6 7093 0000 		sts display+6+1,r23
+ 1201 05da 6093 0000 		sts display+6,r22
+ 149:lcd.c         **** 	if (display.x >= display.width) { display.x=0; display.y+=8; }
+ 1202               		.stabn	68,0,149,.LM120-.LFBB7
+ 1203               	.LM120:
+ 1204 05de 8091 0000 		lds r24,display
+ 1205 05e2 9091 0000 		lds r25,display+1
+ 1206 05e6 6817      		cp r22,r24
+ 1207 05e8 7907      		cpc r23,r25
+ 1208 05ea 00F0      		brlo .L23
+ 149:lcd.c         **** 	if (display.x >= display.width) { display.x=0; display.y+=8; }
+ 1209               		.stabn	68,0,149,.LM121-.LFBB7
+ 1210               	.LM121:
+ 1211 05ec 1092 0000 		sts display+6+1,__zero_reg__
+ 1212 05f0 1092 0000 		sts display+6,__zero_reg__
+ 1213 05f4 085F      		subi r16,-8
+ 1214 05f6 1F4F      		sbci r17,-1
+ 1215 05f8 1093 0000 		sts display+8+1,r17
+ 1216 05fc 0093 0000 		sts display+8,r16
+ 1217               	.L23:
+ 1218               	/* epilogue start */
+ 1219               		.stabn	68,0,151,.LM122-.LFBB7
+ 1220               	.LM122:
+ 1221 0600 DF91      		pop r29
+GAS LISTING /tmp/ccIzpQRS.s 			page 26
+
+
+ 1222 0602 CF91      		pop r28
+ 1223 0604 1F91      		pop r17
+ 1224 0606 0F91      		pop r16
+ 1225 0608 FF90      		pop r15
+ 1226 060a EF90      		pop r14
+ 1227 060c DF90      		pop r13
+ 1228 060e CF90      		pop r12
+ 1229 0610 BF90      		pop r11
+ 1230 0612 AF90      		pop r10
+ 1231 0614 0895      		ret
+ 1232               		.size	display_char, .-display_char
+ 1233               		.stabs	"bits:r(7,2)",64,0,114,30
+ 1234               		.stabs	"mask:r(7,2)",64,0,114,31
+ 1235               		.stabs	"ep:r(7,4)",64,0,115,26
+ 1236               		.stabn	192,0,0,.LFBB7-.LFBB7
+ 1237               		.stabn	224,0,0,.Lscope7-.LFBB7
+ 1238               	.Lscope7:
+ 1239               		.stabs	"",36,0,0,.Lscope7-.LFBB7
+ 1240               		.stabd	78,0,0
+ 1241               		.stabs	"display_char_inPlace:F(0,47)",36,0,153,display_char_inPlace
+ 1242               		.stabs	"c:P(0,2)",64,0,153,24
+ 1243               		.stabs	"displayy:P(7,4)",64,0,153,20
+ 1244               	.global	display_char_inPlace
+ 1245               		.type	display_char_inPlace, @function
+ 1246               	display_char_inPlace:
+ 1247               		.stabd	46,0,0
  152:lcd.c         **** 
- 153:lcd.c         **** void display_string(char *str)
+ 153:lcd.c         **** void display_char_inPlace(char c, uint16_t displayx, uint16_t displayy)
  154:lcd.c         **** {
- 1235               		.stabn	68,0,154,.LM128-.LFBB8
- 1236               	.LM128:
- 1237               	.LFBB8:
- 1238 05f2 1F93      		push r17
- 1239 05f4 CF93      		push r28
- 1240 05f6 DF93      		push r29
- 1241               	/* prologue: function */
- 1242               	/* frame size = 0 */
- 1243               	/* stack size = 3 */
- 1244               	.L__stack_usage = 3
- 1245 05f8 EC01      		movw r28,r24
- 155:lcd.c         **** 	uint8_t i;
- 156:lcd.c         **** 	for(i=0; str[i]; i++) 
- 1246               		.stabn	68,0,156,.LM129-.LFBB8
- 1247               	.LM129:
- 1248 05fa 10E0      		ldi r17,lo8(0)
- 1249 05fc 00C0      		rjmp .L34
- 1250               	.L35:
- 157:lcd.c         **** 		display_char(str[i]);
- 1251               		.stabn	68,0,157,.LM130-.LFBB8
- 1252               	.LM130:
- 1253 05fe 0E94 0000 		call display_char
- 156:lcd.c         **** 	for(i=0; str[i]; i++) 
- 1254               		.stabn	68,0,156,.LM131-.LFBB8
- 1255               	.LM131:
- 1256 0602 1F5F      		subi r17,lo8(-(1))
- 1257               	.L34:
- 156:lcd.c         **** 	for(i=0; str[i]; i++) 
- 1258               		.stabn	68,0,156,.LM132-.LFBB8
- 1259               	.LM132:
- 1260 0604 FE01      		movw r30,r28
- 1261 0606 E10F      		add r30,r17
- 1262 0608 F11D      		adc r31,__zero_reg__
- 1263 060a 8081      		ld r24,Z
- 1264 060c 8823      		tst r24
- 1265 060e 01F4      		brne .L35
- 1266               	/* epilogue start */
- 158:lcd.c         **** }
- 1267               		.stabn	68,0,158,.LM133-.LFBB8
- 1268               	.LM133:
- 1269 0610 DF91      		pop r29
- 1270 0612 CF91      		pop r28
- 1271 0614 1F91      		pop r17
- 1272 0616 0895      		ret
- 1273               		.size	display_string, .-display_string
- 1274               		.stabs	"i:r(7,2)",64,0,155,17
- 1275               		.stabn	192,0,0,.LFBB8-.LFBB8
- 1276               		.stabn	224,0,0,.Lscope8-.LFBB8
- 1277               	.Lscope8:
-GAS LISTING /tmp/ccPWDwyV.s 			page 27
+ 1248               		.stabn	68,0,154,.LM123-.LFBB8
+ 1249               	.LM123:
+ 1250               	.LFBB8:
+ 1251 0616 EF92      		push r14
+ 1252 0618 FF92      		push r15
+ 1253 061a 0F93      		push r16
+ 1254 061c 1F93      		push r17
+ 1255 061e CF93      		push r28
+ 1256 0620 DF93      		push r29
+ 1257               	/* prologue: function */
+ 1258               	/* frame size = 0 */
+ 1259               	/* stack size = 6 */
+ 1260               	.L__stack_usage = 6
+ 155:lcd.c         **** 	uint16_t x, y;
+ 156:lcd.c         **** 	PGM_P fdata; 
+ 157:lcd.c         **** 	uint8_t bits, mask;
+ 158:lcd.c         **** 	//uint16_t sc=display.x, ec=display.x + 4, sp=display.y, ep=display.y + 7;
+ 159:lcd.c         ****     uint16_t sc=displayx, ec=displayx + 4, sp=displayy, ep=displayy + 7;
+ 160:lcd.c         **** 
+ 161:lcd.c         **** 	if (c < 32 || c > 126) return;
+ 1261               		.stabn	68,0,161,.LM124-.LFBB8
+ 1262               	.LM124:
+ 1263 0622 90EE      		ldi r25,lo8(-32)
+ 1264 0624 980F      		add r25,r24
+ 1265 0626 9F35      		cpi r25,lo8(95)
+ 1266 0628 00F0      		brlo .+2
+ 1267 062a 00C0      		rjmp .L41
+ 159:lcd.c         ****     uint16_t sc=displayx, ec=displayx + 4, sp=displayy, ep=displayy + 7;
+GAS LISTING /tmp/ccIzpQRS.s 			page 27
 
 
- 1278               		.stabs	"",36,0,0,.Lscope8-.LFBB8
- 1279               		.stabd	78,0,0
- 1280               	.global	display
- 1281               		.data
- 1282               		.type	display, @object
- 1283               		.size	display, 14
- 1284               	display:
- 1285 0000 F000      		.word	240
- 1286 0002 4001      		.word	320
- 1287 0004 0000      		.word	0
- 1288 0006 0000      		.word	0
- 1289 0008 0000      		.word	0
- 1290 000a FFFF      		.word	-1
- 1291 000c 0000      		.word	0
- 1292               		.stabs	"display:G(12,3)",32,0,12,0
- 1293               		.text
- 1294               		.stabs	"",100,0,0,.Letext0
- 1295               	.Letext0:
- 1296               	.global __do_copy_data
-GAS LISTING /tmp/ccPWDwyV.s 			page 28
+ 1268               		.stabn	68,0,159,.LM125-.LFBB8
+ 1269               	.LM125:
+ 1270 062c DA01      		movw r26,r20
+ 1271 062e 1796      		adiw r26,7
+ 162:lcd.c         **** 	fdata = (c - ' ')*5 + font5x7;
+ 1272               		.stabn	68,0,162,.LM126-.LFBB8
+ 1273               	.LM126:
+ 1274 0630 90E0      		ldi r25,0
+ 1275 0632 8097      		sbiw r24,32
+ 1276 0634 E5E0      		ldi r30,lo8(5)
+ 1277 0636 E89F      		mul r30,r24
+ 1278 0638 9001      		movw r18,r0
+ 1279 063a E99F      		mul r30,r25
+ 1280 063c 300D      		add r19,r0
+ 1281 063e 1124      		clr __zero_reg__
+ 1282 0640 2050      		subi r18,lo8(-(font5x7))
+ 1283 0642 3040      		sbci r19,hi8(-(font5x7))
+ 163:lcd.c         **** 	write_cmd(PAGE_ADDRESS_SET);
+ 1284               		.stabn	68,0,163,.LM127-.LFBB8
+ 1285               	.LM127:
+ 1286 0644 1498      		cbi 0x2,4
+ 1287 0646 8BE2      		ldi r24,lo8(43)
+ 1288 0648 88B9      		out 0x8,r24
+ 1289 064a 1398      		cbi 0x2,3
+ 1290 064c 139A      		sbi 0x2,3
+ 1291 064e 149A      		sbi 0x2,4
+ 164:lcd.c         **** 	write_data16(sp);
+ 1292               		.stabn	68,0,164,.LM128-.LFBB8
+ 1293               	.LM128:
+ 1294 0650 58B9      		out 0x8,r21
+ 1295 0652 1398      		cbi 0x2,3
+ 1296 0654 139A      		sbi 0x2,3
+ 1297 0656 48B9      		out 0x8,r20
+ 1298 0658 1398      		cbi 0x2,3
+ 1299 065a 139A      		sbi 0x2,3
+ 165:lcd.c         **** 	write_data16(ep);
+ 1300               		.stabn	68,0,165,.LM129-.LFBB8
+ 1301               	.LM129:
+ 1302 065c B8B9      		out 0x8,r27
+ 1303 065e 1398      		cbi 0x2,3
+ 1304 0660 139A      		sbi 0x2,3
+ 1305 0662 A8B9      		out 0x8,r26
+ 1306 0664 1398      		cbi 0x2,3
+ 1307 0666 139A      		sbi 0x2,3
+ 166:lcd.c         **** 	for(x=sc; x<=ec; x++) {
+ 1308               		.stabn	68,0,166,.LM130-.LFBB8
+ 1309               	.LM130:
+ 1310 0668 CB01      		movw r24,r22
+ 159:lcd.c         ****     uint16_t sc=displayx, ec=displayx + 4, sp=displayy, ep=displayy + 7;
+ 1311               		.stabn	68,0,159,.LM131-.LFBB8
+ 1312               	.LM131:
+ 1313 066a EB01      		movw r28,r22
+ 1314 066c 2496      		adiw r28,4
+ 167:lcd.c         **** 		write_cmd(COLUMN_ADDRESS_SET);
+ 1315               		.stabn	68,0,167,.LM132-.LFBB8
+ 1316               	.LM132:
+ 1317 066e 1AE2      		ldi r17,lo8(42)
+GAS LISTING /tmp/ccIzpQRS.s 			page 28
+
+
+ 1318 0670 F12E      		mov r15,r17
+ 168:lcd.c         **** 		write_data16(x);
+ 169:lcd.c         **** 		write_data16(x);
+ 170:lcd.c         **** 		write_cmd(MEMORY_WRITE);
+ 1319               		.stabn	68,0,170,.LM133-.LFBB8
+ 1320               	.LM133:
+ 1321 0672 0CE2      		ldi r16,lo8(44)
+ 1322 0674 E02E      		mov r14,r16
+ 1323 0676 261B      		sub r18,r22
+ 1324 0678 370B      		sbc r19,r23
+ 1325               	.L43:
+ 167:lcd.c         **** 		write_cmd(COLUMN_ADDRESS_SET);
+ 1326               		.stabn	68,0,167,.LM134-.LFBB8
+ 1327               	.LM134:
+ 1328 067a 1498      		cbi 0x2,4
+ 166:lcd.c         **** 	for(x=sc; x<=ec; x++) {
+ 1329               		.stabn	68,0,166,.LM135-.LFBB8
+ 1330               	.LM135:
+ 1331 067c C817      		cp r28,r24
+ 1332 067e D907      		cpc r29,r25
+ 1333 0680 00F0      		brlo .L54
+ 167:lcd.c         **** 		write_cmd(COLUMN_ADDRESS_SET);
+ 1334               		.stabn	68,0,167,.LM136-.LFBB8
+ 1335               	.LM136:
+ 1336 0682 F8B8      		out 0x8,r15
+ 1337 0684 1398      		cbi 0x2,3
+ 1338 0686 139A      		sbi 0x2,3
+ 1339 0688 149A      		sbi 0x2,4
+ 168:lcd.c         **** 		write_data16(x);
+ 1340               		.stabn	68,0,168,.LM137-.LFBB8
+ 1341               	.LM137:
+ 1342 068a 98B9      		out 0x8,r25
+ 1343 068c 1398      		cbi 0x2,3
+ 1344 068e 139A      		sbi 0x2,3
+ 1345 0690 88B9      		out 0x8,r24
+ 1346 0692 1398      		cbi 0x2,3
+ 1347 0694 139A      		sbi 0x2,3
+ 169:lcd.c         **** 		write_data16(x);
+ 1348               		.stabn	68,0,169,.LM138-.LFBB8
+ 1349               	.LM138:
+ 1350 0696 98B9      		out 0x8,r25
+ 1351 0698 1398      		cbi 0x2,3
+ 1352 069a 139A      		sbi 0x2,3
+ 1353 069c 88B9      		out 0x8,r24
+ 1354 069e 1398      		cbi 0x2,3
+ 1355 06a0 139A      		sbi 0x2,3
+ 1356               		.stabn	68,0,170,.LM139-.LFBB8
+ 1357               	.LM139:
+ 1358 06a2 1498      		cbi 0x2,4
+ 1359 06a4 E8B8      		out 0x8,r14
+ 1360 06a6 1398      		cbi 0x2,3
+ 1361 06a8 139A      		sbi 0x2,3
+ 1362 06aa 149A      		sbi 0x2,4
+ 1363 06ac F901      		movw r30,r18
+ 1364 06ae E80F      		add r30,r24
+ 1365 06b0 F91F      		adc r31,r25
+ 1366               	.LBB3:
+GAS LISTING /tmp/ccIzpQRS.s 			page 29
+
+
+ 171:lcd.c         **** 		bits = pgm_read_byte(fdata++);
+ 1367               		.stabn	68,0,171,.LM140-.LFBB8
+ 1368               	.LM140:
+ 1369               	/* #APP */
+ 1370               	 ;  171 "lcd.c" 1
+ 1371 06b2 E491      		lpm r30, Z
+ 1372               		
+ 1373               	 ;  0 "" 2
+ 1374               	/* #NOAPP */
+ 1375               	.LBE3:
+ 172:lcd.c         **** 		for(y=sp, mask=0x01; y<=ep; y++, mask<<=1)
+ 1376               		.stabn	68,0,172,.LM141-.LFBB8
+ 1377               	.LM141:
+ 1378 06b4 BA01      		movw r22,r20
+ 1379 06b6 F1E0      		ldi r31,lo8(1)
+ 1380               	.L44:
+ 1381               		.stabn	68,0,172,.LM142-.LFBB8
+ 1382               	.LM142:
+ 1383 06b8 A617      		cp r26,r22
+ 1384 06ba B707      		cpc r27,r23
+ 1385 06bc 00F0      		brlo .L55
+ 173:lcd.c         **** 			write_data16((bits & mask) ? display.foreground : display.background);
+ 1386               		.stabn	68,0,173,.LM143-.LFBB8
+ 1387               	.LM143:
+ 1388 06be 1F2F      		mov r17,r31
+ 1389 06c0 1E23      		and r17,r30
+ 1390 06c2 01F0      		breq .L45
+ 1391               		.stabn	68,0,173,.LM144-.LFBB8
+ 1392               	.LM144:
+ 1393 06c4 0091 0000 		lds r16,display+11
+ 1394 06c8 00C0      		rjmp .L46
+ 1395               	.L45:
+ 1396               		.stabn	68,0,173,.LM145-.LFBB8
+ 1397               	.LM145:
+ 1398 06ca 0091 0000 		lds r16,display+13
+ 1399               	.L46:
+ 1400               		.stabn	68,0,173,.LM146-.LFBB8
+ 1401               	.LM146:
+ 1402 06ce 08B9      		out 0x8,r16
+ 1403 06d0 1398      		cbi 0x2,3
+ 1404 06d2 139A      		sbi 0x2,3
+ 1405 06d4 1123      		tst r17
+ 1406 06d6 01F0      		breq .L47
+ 1407               		.stabn	68,0,173,.LM147-.LFBB8
+ 1408               	.LM147:
+ 1409 06d8 1091 0000 		lds r17,display+10
+ 1410 06dc 00C0      		rjmp .L48
+ 1411               	.L47:
+ 1412               		.stabn	68,0,173,.LM148-.LFBB8
+ 1413               	.LM148:
+ 1414 06de 1091 0000 		lds r17,display+12
+ 1415               	.L48:
+ 1416               		.stabn	68,0,173,.LM149-.LFBB8
+ 1417               	.LM149:
+ 1418 06e2 18B9      		out 0x8,r17
+ 1419 06e4 1398      		cbi 0x2,3
+ 1420 06e6 139A      		sbi 0x2,3
+GAS LISTING /tmp/ccIzpQRS.s 			page 30
+
+
+ 172:lcd.c         **** 		for(y=sp, mask=0x01; y<=ep; y++, mask<<=1)
+ 1421               		.stabn	68,0,172,.LM150-.LFBB8
+ 1422               	.LM150:
+ 1423 06e8 6F5F      		subi r22,-1
+ 1424 06ea 7F4F      		sbci r23,-1
+ 1425 06ec FF0F      		lsl r31
+ 1426 06ee 00C0      		rjmp .L44
+ 1427               	.L55:
+ 166:lcd.c         **** 	for(x=sc; x<=ec; x++) {
+ 1428               		.stabn	68,0,166,.LM151-.LFBB8
+ 1429               	.LM151:
+ 1430 06f0 0196      		adiw r24,1
+ 1431 06f2 00C0      		rjmp .L43
+ 1432               	.L54:
+ 174:lcd.c         **** 	}
+ 175:lcd.c         **** 	write_cmd(COLUMN_ADDRESS_SET);
+ 1433               		.stabn	68,0,175,.LM152-.LFBB8
+ 1434               	.LM152:
+ 1435 06f4 2AE2      		ldi r18,lo8(42)
+ 1436 06f6 28B9      		out 0x8,r18
+ 1437 06f8 1398      		cbi 0x2,3
+ 1438 06fa 139A      		sbi 0x2,3
+ 1439 06fc 149A      		sbi 0x2,4
+ 176:lcd.c         **** 	write_data16(x);
+ 1440               		.stabn	68,0,176,.LM153-.LFBB8
+ 1441               	.LM153:
+ 1442 06fe 98B9      		out 0x8,r25
+ 1443 0700 1398      		cbi 0x2,3
+ 1444 0702 139A      		sbi 0x2,3
+ 1445 0704 88B9      		out 0x8,r24
+ 1446 0706 1398      		cbi 0x2,3
+ 1447 0708 139A      		sbi 0x2,3
+ 177:lcd.c         **** 	write_data16(x);
+ 1448               		.stabn	68,0,177,.LM154-.LFBB8
+ 1449               	.LM154:
+ 1450 070a 98B9      		out 0x8,r25
+ 1451 070c 1398      		cbi 0x2,3
+ 1452 070e 139A      		sbi 0x2,3
+ 1453 0710 88B9      		out 0x8,r24
+ 1454 0712 1398      		cbi 0x2,3
+ 1455 0714 139A      		sbi 0x2,3
+ 178:lcd.c         **** 	write_cmd(MEMORY_WRITE);
+ 1456               		.stabn	68,0,178,.LM155-.LFBB8
+ 1457               	.LM155:
+ 1458 0716 1498      		cbi 0x2,4
+ 1459 0718 8CE2      		ldi r24,lo8(44)
+ 1460 071a 88B9      		out 0x8,r24
+ 1461 071c 1398      		cbi 0x2,3
+ 1462 071e 139A      		sbi 0x2,3
+ 1463 0720 149A      		sbi 0x2,4
+ 1464               	.L51:
+ 179:lcd.c         **** 	for(y=sp; y<=ep; y++)
+ 1465               		.stabn	68,0,179,.LM156-.LFBB8
+ 1466               	.LM156:
+ 1467 0722 A417      		cp r26,r20
+ 1468 0724 B507      		cpc r27,r21
+ 1469 0726 00F0      		brlo .L41
+GAS LISTING /tmp/ccIzpQRS.s 			page 31
+
+
+ 180:lcd.c         **** 		write_data16(display.background);
+ 1470               		.stabn	68,0,180,.LM157-.LFBB8
+ 1471               	.LM157:
+ 1472 0728 8091 0000 		lds r24,display+13
+ 1473 072c 88B9      		out 0x8,r24
+ 1474 072e 1398      		cbi 0x2,3
+ 1475 0730 139A      		sbi 0x2,3
+ 1476 0732 8091 0000 		lds r24,display+12
+ 1477 0736 88B9      		out 0x8,r24
+ 1478 0738 1398      		cbi 0x2,3
+ 1479 073a 139A      		sbi 0x2,3
+ 179:lcd.c         **** 	for(y=sp; y<=ep; y++)
+ 1480               		.stabn	68,0,179,.LM158-.LFBB8
+ 1481               	.LM158:
+ 1482 073c 4F5F      		subi r20,-1
+ 1483 073e 5F4F      		sbci r21,-1
+ 1484 0740 00C0      		rjmp .L51
+ 1485               	.L41:
+ 1486               	/* epilogue start */
+ 181:lcd.c         **** 
+ 182:lcd.c         ****     }
+ 1487               		.stabn	68,0,182,.LM159-.LFBB8
+ 1488               	.LM159:
+ 1489 0742 DF91      		pop r29
+ 1490 0744 CF91      		pop r28
+ 1491 0746 1F91      		pop r17
+ 1492 0748 0F91      		pop r16
+ 1493 074a FF90      		pop r15
+ 1494 074c EF90      		pop r14
+ 1495 074e 0895      		ret
+ 1496               		.size	display_char_inPlace, .-display_char_inPlace
+ 1497               		.stabs	"bits:r(7,2)",64,0,157,30
+ 1498               		.stabs	"mask:r(7,2)",64,0,157,31
+ 1499               		.stabs	"ep:r(7,4)",64,0,159,26
+ 1500               		.stabn	192,0,0,.LFBB8-.LFBB8
+ 1501               		.stabn	224,0,0,.Lscope8-.LFBB8
+ 1502               	.Lscope8:
+ 1503               		.stabs	"",36,0,0,.Lscope8-.LFBB8
+ 1504               		.stabd	78,0,0
+ 1505               		.stabs	"display_string:F(0,47)",36,0,184,display_string
+ 1506               		.stabs	"str:P(0,48)=*(0,2)",64,0,184,28
+ 1507               	.global	display_string
+ 1508               		.type	display_string, @function
+ 1509               	display_string:
+ 1510               		.stabd	46,0,0
+ 183:lcd.c         **** 
+ 184:lcd.c         **** void display_string(char *str)
+ 185:lcd.c         **** {
+ 1511               		.stabn	68,0,185,.LM160-.LFBB9
+ 1512               	.LM160:
+ 1513               	.LFBB9:
+ 1514 0750 1F93      		push r17
+ 1515 0752 CF93      		push r28
+ 1516 0754 DF93      		push r29
+ 1517               	/* prologue: function */
+ 1518               	/* frame size = 0 */
+ 1519               	/* stack size = 3 */
+GAS LISTING /tmp/ccIzpQRS.s 			page 32
+
+
+ 1520               	.L__stack_usage = 3
+ 1521 0756 EC01      		movw r28,r24
+ 186:lcd.c         **** 	uint8_t i;
+ 187:lcd.c         **** 	for(i=0; str[i]; i++) 
+ 1522               		.stabn	68,0,187,.LM161-.LFBB9
+ 1523               	.LM161:
+ 1524 0758 10E0      		ldi r17,0
+ 1525               	.L57:
+ 1526               		.stabn	68,0,187,.LM162-.LFBB9
+ 1527               	.LM162:
+ 1528 075a FE01      		movw r30,r28
+ 1529 075c E10F      		add r30,r17
+ 1530 075e F11D      		adc r31,__zero_reg__
+ 1531 0760 8081      		ld r24,Z
+ 1532 0762 8823      		tst r24
+ 1533 0764 01F0      		breq .L59
+ 188:lcd.c         **** 		display_char(str[i]);
+ 1534               		.stabn	68,0,188,.LM163-.LFBB9
+ 1535               	.LM163:
+ 1536 0766 0E94 0000 		call display_char
+ 187:lcd.c         **** 	for(i=0; str[i]; i++) 
+ 1537               		.stabn	68,0,187,.LM164-.LFBB9
+ 1538               	.LM164:
+ 1539 076a 1F5F      		subi r17,lo8(-(1))
+ 1540 076c 00C0      		rjmp .L57
+ 1541               	.L59:
+ 1542               	/* epilogue start */
+ 189:lcd.c         **** }
+ 1543               		.stabn	68,0,189,.LM165-.LFBB9
+ 1544               	.LM165:
+ 1545 076e DF91      		pop r29
+ 1546 0770 CF91      		pop r28
+ 1547 0772 1F91      		pop r17
+ 1548 0774 0895      		ret
+ 1549               		.size	display_string, .-display_string
+ 1550               		.stabs	"i:r(7,2)",64,0,186,17
+ 1551               		.stabn	192,0,0,.LFBB9-.LFBB9
+ 1552               		.stabn	224,0,0,.Lscope9-.LFBB9
+ 1553               	.Lscope9:
+ 1554               		.stabs	"",36,0,0,.Lscope9-.LFBB9
+ 1555               		.stabd	78,0,0
+ 1556               		.stabs	"display_string_in_place:F(0,47)",36,0,191,display_string_in_place
+ 1557               		.stabs	"str:P(0,48)",64,0,191,28
+ 1558               		.stabs	"displayx:P(7,4)",64,0,191,16
+ 1559               		.stabs	"displayy:P(7,4)",64,0,191,14
+ 1560               	.global	display_string_in_place
+ 1561               		.type	display_string_in_place, @function
+ 1562               	display_string_in_place:
+ 1563               		.stabd	46,0,0
+ 190:lcd.c         **** 
+ 191:lcd.c         **** void display_string_in_place(char *str, uint16_t displayx, uint16_t displayy)
+ 192:lcd.c         **** {
+ 1564               		.stabn	68,0,192,.LM166-.LFBB10
+ 1565               	.LM166:
+ 1566               	.LFBB10:
+ 1567 0776 DF92      		push r13
+ 1568 0778 EF92      		push r14
+GAS LISTING /tmp/ccIzpQRS.s 			page 33
+
+
+ 1569 077a FF92      		push r15
+ 1570 077c 0F93      		push r16
+ 1571 077e 1F93      		push r17
+ 1572 0780 CF93      		push r28
+ 1573 0782 DF93      		push r29
+ 1574               	/* prologue: function */
+ 1575               	/* frame size = 0 */
+ 1576               	/* stack size = 7 */
+ 1577               	.L__stack_usage = 7
+ 1578 0784 EC01      		movw r28,r24
+ 1579 0786 8B01      		movw r16,r22
+ 1580 0788 7A01      		movw r14,r20
+ 193:lcd.c         **** 	uint8_t i;
+ 194:lcd.c         **** 	for(i=0; str[i]; i++) 
+ 1581               		.stabn	68,0,194,.LM167-.LFBB10
+ 1582               	.LM167:
+ 1583 078a D12C      		mov r13,__zero_reg__
+ 1584               	.L61:
+ 1585               		.stabn	68,0,194,.LM168-.LFBB10
+ 1586               	.LM168:
+ 1587 078c FE01      		movw r30,r28
+ 1588 078e ED0D      		add r30,r13
+ 1589 0790 F11D      		adc r31,__zero_reg__
+ 1590 0792 8081      		ld r24,Z
+ 1591 0794 8823      		tst r24
+ 1592 0796 01F0      		breq .L63
+ 195:lcd.c         **** 		display_char_inPlace(str[i], displayx+(i*6), displayy);
+ 1593               		.stabn	68,0,195,.LM169-.LFBB10
+ 1594               	.LM169:
+ 1595 0798 B801      		movw r22,r16
+ 1596 079a 96E0      		ldi r25,lo8(6)
+ 1597 079c D99E      		mul r13,r25
+ 1598 079e 600D      		add r22,r0
+ 1599 07a0 711D      		adc r23,r1
+ 1600 07a2 1124      		clr __zero_reg__
+ 1601 07a4 A701      		movw r20,r14
+ 1602 07a6 0E94 0000 		call display_char_inPlace
+ 194:lcd.c         **** 	for(i=0; str[i]; i++) 
+ 1603               		.stabn	68,0,194,.LM170-.LFBB10
+ 1604               	.LM170:
+ 1605 07aa D394      		inc r13
+ 1606 07ac 00C0      		rjmp .L61
+ 1607               	.L63:
+ 1608               	/* epilogue start */
+ 196:lcd.c         **** }
+ 1609               		.stabn	68,0,196,.LM171-.LFBB10
+ 1610               	.LM171:
+ 1611 07ae DF91      		pop r29
+ 1612 07b0 CF91      		pop r28
+ 1613 07b2 1F91      		pop r17
+ 1614 07b4 0F91      		pop r16
+ 1615 07b6 FF90      		pop r15
+ 1616 07b8 EF90      		pop r14
+ 1617 07ba DF90      		pop r13
+ 1618 07bc 0895      		ret
+ 1619               		.size	display_string_in_place, .-display_string_in_place
+ 1620               		.stabs	"i:r(7,2)",64,0,193,13
+GAS LISTING /tmp/ccIzpQRS.s 			page 34
+
+
+ 1621               		.stabn	192,0,0,.LFBB10-.LFBB10
+ 1622               		.stabn	224,0,0,.Lscope10-.LFBB10
+ 1623               	.Lscope10:
+ 1624               		.stabs	"",36,0,0,.Lscope10-.LFBB10
+ 1625               		.stabd	78,0,0
+ 1626               	.global	display
+ 1627               		.data
+ 1628               		.type	display, @object
+ 1629               		.size	display, 14
+ 1630               	display:
+ 1631 0000 F000      		.word	240
+ 1632 0002 4001      		.word	320
+ 1633 0004 0000      		.word	0
+ 1634 0006 0000      		.word	0
+ 1635 0008 0000      		.word	0
+ 1636 000a FFFF      		.word	-1
+ 1637 000c 0000      		.word	0
+ 1638               		.stabs	"display:G(12,3)",32,0,12,0
+ 1639               		.text
+ 1640               		.stabs	"",100,0,0,.Letext0
+ 1641               	.Letext0:
+ 1642               		.ident	"GCC: (GNU) 4.8.2"
+ 1643               	.global __do_copy_data
+GAS LISTING /tmp/ccIzpQRS.s 			page 35
 
 
 DEFINED SYMBOLS
-                            *ABS*:00000000 lcd.c
-     /tmp/ccPWDwyV.s:2      *ABS*:0000003f __SREG__
-     /tmp/ccPWDwyV.s:3      *ABS*:0000003e __SP_H__
-     /tmp/ccPWDwyV.s:4      *ABS*:0000003d __SP_L__
-     /tmp/ccPWDwyV.s:5      *ABS*:00000034 __CCP__
-     /tmp/ccPWDwyV.s:6      *ABS*:00000000 __tmp_reg__
-     /tmp/ccPWDwyV.s:7      *ABS*:00000001 __zero_reg__
-     /tmp/ccPWDwyV.s:102    .text:00000000 init_lcd
-     /tmp/ccPWDwyV.s:144    .text:0000001a set_orientation
-     /tmp/ccPWDwyV.s:1284   .data:00000000 display
-     /tmp/ccPWDwyV.s:325    .text:00000122 fill_rectangle
-     /tmp/ccPWDwyV.s:484    .text:000001ee draw_rectangle
-     /tmp/ccPWDwyV.s:664    .text:00000304 fill_rectangle_indexed
-     /tmp/ccPWDwyV.s:830    .text:000003da clear_screen
-     /tmp/ccPWDwyV.s:915    .text:00000450 display_char
-     /tmp/ccPWDwyV.s:1233   .text:000005f2 display_string
+                            *ABS*:0000000000000000 lcd.c
+     /tmp/ccIzpQRS.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccIzpQRS.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccIzpQRS.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccIzpQRS.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccIzpQRS.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccIzpQRS.s:122    .text:0000000000000000 init_lcd
+     /tmp/ccIzpQRS.s:160    .text:0000000000000018 set_orientation
+     /tmp/ccIzpQRS.s:1630   .data:0000000000000000 display
+     /tmp/ccIzpQRS.s:337    .text:000000000000011e fill_rectangle
+     /tmp/ccIzpQRS.s:491    .text:00000000000001e6 draw_rectangle
+     /tmp/ccIzpQRS.s:668    .text:00000000000002fc fill_rectangle_indexed
+     /tmp/ccIzpQRS.s:825    .text:00000000000003ce clear_screen
+     /tmp/ccIzpQRS.s:907    .text:000000000000044a display_char
+     /tmp/ccIzpQRS.s:1246   .text:0000000000000616 display_char_inPlace
+     /tmp/ccIzpQRS.s:1509   .text:0000000000000750 display_string
+     /tmp/ccIzpQRS.s:1562   .text:0000000000000776 display_string_in_place
 
 UNDEFINED SYMBOLS
 init_display_controller

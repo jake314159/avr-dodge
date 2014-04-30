@@ -45,3 +45,6 @@ void display_string(char *str);
 /* My functions */
 
 void draw_rectangle(rectangle r, uint16_t col);
+void display_char_inPlace(char c, uint16_t x, uint16_t y);
+void display_string_in_place(char *str, uint16_t displayx, uint16_t displayy);
+
