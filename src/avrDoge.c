@@ -54,9 +54,9 @@ volatile int16_t delta;
 void pushed(char type);
 
 int16_t testVal; //A signed int for use for testing certain things
-rectangle player = {10,20,10,20};
+rectangle player;
 
-rectangle drop = {10,20,10,20}; //One used for all drops to save memory
+rectangle drop; //One used for all drops to save memory
 
 
 int16_t dropX[DROP_NUMBER];
@@ -64,7 +64,7 @@ int16_t dropY[DROP_NUMBER];
 uint8_t dropTimer[DROP_NUMBER]; //0 == should be displayed
 
 //4 is 3 digits for the number and 1 for \0
-char scoreString[4] = {'0', '\0'};
+char scoreString[8] = {'0', '\0'};
 
 /*
     'N' North
@@ -190,7 +190,13 @@ void set_gameOver()
 void draw_task(void)
 {
     #if DEBUG
-      if(pause) return;
+        IF_BUTTON_C { 
+            pause = !pause;
+        }
+        if(pause) {
+            iob_delta(); //Consume any rotory data
+            return;
+        }
     #endif
 
     DDRC    = ddrc;  // Restore display configuration of Port C
@@ -263,6 +269,7 @@ void draw_task(void)
                     (drop.right > player.left && drop.right < player.right) || 
                     (drop.left > player.left && drop.left < player.right)) 
                     ) {
+                fill_rectangle(player, BLUE);
                 fill_rectangle(drop, YELLOW);
                 set_gameOver();
                 return;
