@@ -46,7 +46,7 @@
 #include <avr/interrupt.h>
 #include "RIOS.h"
 
-#define MAX_TASK_NUMBER 3
+#define MAX_TASK_NUMBER 2
 
 task tasks[MAX_TASK_NUMBER];
 unsigned char tasksNum = 0;

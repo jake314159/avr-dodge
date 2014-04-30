@@ -180,65 +180,6 @@ int16_t iob_delta(){
     return val >> 1;
 }
 
-void pushed(char type) {
-    switch(type) {
-        case 'W':
-           if(buttonPressed != 'S')
-                buttonPressed = 'N';
-           break; 
-        case 'E':
-           if(buttonPressed != 'N')
-                buttonPressed = 'S';
-           break; 
-        case 'S':
-           if(buttonPressed != 'E')
-                buttonPressed = 'W';
-           break; 
-        case 'N':
-           if(buttonPressed != 'W')
-                buttonPressed = 'E';
-           break; 
-        case 'C':
-           #if DEBUG
-             if(gameOver) {
-                 LED_OFF;
-                 init_game(); 
-             } else {
-                 pause = !pause;
-             }
-           #else
-             LED_OFF;
-             init_game(); 
-           #endif
-           break;
-    }
-}
-
-// Task to check for button presses
-void button_task(void)
-{
-    D0_H D0_R
-
-    IF_BUTTON_S { pushed('S'); }
-    IF_BUTTON_W { pushed('W'); }
-    IF_BUTTON_N { pushed('N'); }
-    IF_BUTTON_E { pushed('E'); }
-
-    D0_Z D1_H D1_R
-         
-    //The if statment should be removed if in debug mode
-    #if !DEBUG
-      if(gameOver) {
-    #endif
-         IF_BUTTON_C { pushed('C'); }
-    #if !DEBUG
-      }
-    #endif
-
-    DDRC    = ddrc;  /* Restore display configuration of Port C */
-    PORTC   = portc;
-}
-
 // Game over
 void set_gameOver()
 {
@@ -258,8 +199,15 @@ void draw_task(void)
     _delay_ms(3);
     
     if(gameOver) {
-        //display_string("GAME OVER  \n");
-        LED_ON;
+
+        IF_BUTTON_C { 
+            LED_OFF;
+            init_game(); 
+        } else {
+            LED_ON;
+        }
+        DDRC    = ddrc;  /* Restore display configuration of Port C */
+        PORTC   = portc;
         return;
     }
 
@@ -309,7 +257,8 @@ void draw_task(void)
             drop.top += DROP_SIZE;
             drop.bottom += DROP_SIZE;
             dropY[i] += DROP_SIZE;
-            
+
+            // If touching the player end the game            
             if(drop.bottom > player.top && (
                     (drop.right > player.left && drop.right < player.right) || 
                     (drop.left > player.left && drop.left < player.right)) 
@@ -364,13 +313,6 @@ int main(void)
     t.elapsedTime = ROTOR_TIME;
     t.running = 0;
     t.TickFct = &rotor_task;
-    addTask(t);
-
-    // Make the button read task
-    t.period = BUTTON_TIME;
-    t.elapsedTime = BUTTON_TIME;
-    t.running = 0;
-    t.TickFct = &button_task;
     addTask(t);
 
     // Make the draw screen task

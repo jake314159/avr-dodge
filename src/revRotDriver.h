@@ -68,7 +68,7 @@ uint8_t ddrc, portc;
     _delay_ms(3);\
     if (!(PIND & _BV(PD0)))
 
-#define IF_BUTTON_C C2_Z C3_Z C4_L C5_Z\
+#define IF_BUTTON_C D0_Z D1_H D1_R C2_Z C3_Z C4_L C5_Z\
          if (!(PIND & _BV(PD1)))
 
 
