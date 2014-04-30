@@ -43,7 +43,7 @@
 
 #define SPEED_MULTIPLIER 4
 
-#define DROP_NUMBER 6
+#define DROP_NUMBER 8
 #define DROP_SIZE 10 
 #define PLAYER_SIZE 30
 
@@ -108,7 +108,7 @@ void init_game()
     score = 0;
     
     player.top = LCDHEIGHT-PLAYER_SIZE;
-    player.bottom = LCDHEIGHT;
+    player.bottom = LCDHEIGHT-1;
     player.right = PLAYER_SIZE;
     player.left = 1;
 
@@ -259,16 +259,15 @@ void draw_task(void)
             dropY[i] += DROP_SIZE;
 
             // If touching the player end the game            
-            if(drop.bottom > player.top && (
+            if(drop.bottom > player.top && drop.top < player.bottom && (
                     (drop.right > player.left && drop.right < player.right) || 
                     (drop.left > player.left && drop.left < player.right)) 
                     ) {
                 fill_rectangle(drop, YELLOW);
                 set_gameOver();
                 return;
-            } else {
-                fill_rectangle(drop, RED);
             }
+            fill_rectangle(drop, RED);
         } else {
             dropTimer[i]--;
         }
