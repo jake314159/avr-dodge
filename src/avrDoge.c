@@ -105,8 +105,8 @@ void init_game()
     buttonPressed = 'E';
     score = 0;
     
-    player.top = 1;
-    player.bottom = PLAYER_SIZE;
+    player.top = LCDHEIGHT-PLAYER_SIZE;
+    player.bottom = LCDHEIGHT;
     player.right = PLAYER_SIZE;
     player.left = 1;
 
@@ -115,7 +115,7 @@ void init_game()
     while(i) {
         --i;
         dropX[i] = (234*(i+1)) % (LCDWIDTH-DROP_SIZE);
-        dropY[i] = LCDHEIGHT-1;
+        dropY[i] = 1;
         dropTimer[i] = i*5;
     }
 
@@ -272,7 +272,7 @@ void draw_task(void)
     //draw the player
     uint16_t val = iob_delta();
     if(val != 0) {
-        val *= SPEED_MULTIPLIER;
+        val *= -SPEED_MULTIPLIER;
         fill_rectangle(player, BLACK);
         
         if(val < PLAYER_SIZE) {
@@ -300,9 +300,9 @@ void draw_task(void)
         --i;
 
         if(dropTimer[i] == 0) {
-            if(dropY[i] <= 0) {
-                dropTimer[i] = dropX[i] % 10;
-                dropY[i] = LCDHEIGHT;
+            if(dropY[i] > LCDHEIGHT) {
+                dropTimer[i] = dropX[i] % 30;
+                dropY[i] = 0;
                 dropX[i] = ((dropX[i]+(i*i))*41) % (LCDWIDTH-DROP_SIZE);
                 score++; //inc score for every doged thing
             }
@@ -312,11 +312,11 @@ void draw_task(void)
             drop.right = dropX[i] + DROP_SIZE +1;
             
             fill_rectangle(drop, BLACK);
-            drop.top -= DROP_SIZE;
-            drop.bottom -= DROP_SIZE;
-            dropY[i] -= DROP_SIZE;
+            drop.top += DROP_SIZE;
+            drop.bottom += DROP_SIZE;
+            dropY[i] += DROP_SIZE;
             
-            if(drop.top < player.bottom && (
+            if(drop.bottom > player.top && (
                     (drop.right > player.left && drop.right < player.right) || 
                     (drop.left > player.left && drop.left < player.right)) 
                     ) {
@@ -352,6 +352,8 @@ int main(void)
     init_LED();
 
     init_lcd();
+    orientation o = South;
+    set_orientation(o);
     portc  = PORTC;  /* Store display configuration of Port C */
     ddrc   = DDRC;
     
